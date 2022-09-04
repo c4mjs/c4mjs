@@ -54,7 +54,8 @@ module.exports = ws;
 
 Or it can be used to document maintain an entire architecture with multiple levels of detail up to level 3.
 
-See [Full Example](https://github.com)
+See [Full Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc-full/src) where system components are
+broken out into individual files
 
 ![img_1.png](img_1.png)
 
