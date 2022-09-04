@@ -1,0 +1,15 @@
+{
+  "name": "@c4mjs/bbplc-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Big Bank PLC Example",
+  "main": "workspace/workspace.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "make": "c4mjs build -i ./workspace/workspace.js > workspace.xml"
+  },
+  "dependencies": {
+    "@c4mjs/dsl": "^0.1.0",
+    "@c4mjs/cli": "^0.1.0"
+  }
+}

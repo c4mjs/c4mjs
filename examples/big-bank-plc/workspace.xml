@@ -1,0 +1,36 @@
+<Workspace name="Big Bank PLC" version="1.0.0">
+	<Group name="Internet Banking System">
+		<Person id="personalBankingCustomer-664063" name="Personal Banking Customer" desc="A customer of the bank, with personal bank accounts.">
+			<Relationship sender="personalBankingCustomer-664063" recipient="internetBankingSystem-588768" action="Views account balances, and makes payments using"/>
+		</Person>
+		<System id="internetBankingSystem-588768" name="Internet Banking System" desc="Allows customers to view information about their bank accountsm and make payments.">
+			<Relationship sender="internetBankingSystem-588768" recipient="eMailSystem-565361" action="Sends e-mails using"/>
+			<Relationship sender="internetBankingSystem-588768" recipient="mainframeBankingSystem-457415" action="Gets account information from, and makes payments using"/>
+			<Container id="webApplication-400973" name="Web Application" desc="Delivers the static content and the Internet Banking single page application." tech="Java and Spring MVC">
+				<Relationship sender="personalBankingCustomer-664063" recipient="webApplication-400973" action="Visits bigbank.com/ib using"/>
+				<Relationship sender="webApplication-400973" recipient="singlePageApplication-945283" action="Delivers to the customers web browser"/>
+			</Container>
+			<Container id="singlePageApplication-945283" name="Single-Page Application" desc="Provides all of the Internet Banking functionality to the customers via their web browser" tech="Javascript and Angular">
+				<Relationship sender="personalBankingCustomer-664063" recipient="singlePageApplication-945283" action="Views account balances, and makes payments using"/>
+				<Relationship sender="singlePageApplication-945283" recipient="apiApplication-498894" action="Makes API Calls to"/>
+			</Container>
+			<Container id="mobileApplication-464100" name="Mobile Application" desc="Provides a limited subset of the internet banking functionality to customers via their mobile device." tech="Xamarmin">
+				<Relationship sender="personalBankingCustomer-664063" recipient="mobileApplication-464100" action="Views account balances, and makes payments using"/>
+				<Relationship sender="mobileApplication-464100" recipient="apiApplication-498894" action="Makes API Calls to"/>
+			</Container>
+			<Container id="apiApplication-498894" name="API Application" desc="Provides internet banking functionality via a JSON/HTTPS api." tech="Java and Spring MVC">
+				<Relationship sender="apiApplication-498894" recipient="database-936413" action="Read from and Writes to"/>
+				<Relationship sender="apiApplication-498894" recipient="mainframeBankingSystem-457415" action="Makes API Calls to"/>
+				<Relationship sender="apiApplication-498894" recipient="eMailSystem-565361" action="Sends emails using"/>
+			</Container>
+			<Container id="database-936413" name="Database" desc="Stores user registration information, hashed authentication credentials, access logs etc." tech="Oracle Database Schema">
+			</Container>
+		</System>
+		<System id="mainframeBankingSystem-457415" name="Mainframe Banking System" external="true" desc="Stores all of the core banking information about customers, accounts, transactions etc">
+			<Relationship sender="mainframeBankingSystem-457415" recipient="eMailSystem-565361" action="Sends e-mail using"/>
+		</System>
+		<System id="eMailSystem-565361" name="E-mail System" external="true" desc="The internal Microsoft Exchange e-mail system.">
+			<Relationship sender="eMailSystem-565361" recipient="personalBankingCustomer-664063" action="Sends e-mail to"/>
+		</System>
+	</Group>
+</Workspace>
