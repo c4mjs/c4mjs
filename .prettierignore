@@ -1,0 +1,7 @@
+node_modules
+build
+results
+coverage
+dist
+.legacy
+*.hbs
