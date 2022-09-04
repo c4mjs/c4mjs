@@ -35,9 +35,9 @@ NOTE: We must export the workspace as a module.export for the cli to be able to 
 One of the most important parts of the entire DSL is the arrow function provided to the factory, this is known as the setup function and 
 is lazily called just before the library renders the XML. 
 
-The setup function is passed the instance, allowing you to perform operations on it, such as setting values.
-
 This means Variables referenced in the arrow function should exist meaning foward and backwards lookups work fine.
+
+The setup function is passed the instance, allowing you to perform operations on it, such as setting values.
 
 The Setup callback is always optional and its only purpose is to neatly allow code folding, feel free to perform actions inline after declaring a variable which
 works just the same.
