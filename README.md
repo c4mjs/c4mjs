@@ -68,6 +68,34 @@ So we decided to use a collection of constructs in typescript to give great type
 and leave it up to you how to manage those code files. See the full example to see how powerful this concept can be when it comes 
 to modularising the fragments.
 
+The JS DSL tooling procuces a workspace exchange file, this is used by [c4model.app](https://c4model.app/) to render the workspace.
+
+It looks something like the following:
+```xml
+<Workspace name="Big Bank PLC" version="1.0.0">
+	<Group name="Internet Banking System">
+		<Person id="personalBankingCustomer-664063" name="Personal Banking Customer" desc="A customer of the bank, with personal bank accounts.">
+			<Relationship sender="personalBankingCustomer-664063" recipient="internetBankingSystem-588768" action="Views account balances, and makes payments using"/>
+		</Person>
+		<System id="internetBankingSystem-588768" name="Internet Banking System" desc="Allows customers to view information about their bank accountsm and make payments.">
+			<Relationship sender="internetBankingSystem-588768" recipient="eMailSystem-565361" action="Sends e-mails using"/>
+			<Relationship sender="internetBankingSystem-588768" recipient="mainframeBankingSystem-457415" action="Gets account information from, and makes payments using"/>
+			<Container id="webApplication-400973" name="Web Application" desc="Delivers the static content and the Internet Banking single page application." tech="Java and Spring MVC">
+				<Relationship sender="personalBankingCustomer-664063" recipient="webApplication-400973" action="Visits bigbank.com/ib using"/>
+				<Relationship sender="webApplication-400973" recipient="singlePageApplication-945283" action="Delivers to the customers web browser"/>
+			</Container>
+			...
+	</Group>
+</Workspace>
+```
+## Getting Started
+
+First task is to Author a `workspace.xml` file, this is done by either creating one by hand, creating your own tool to make one or use our JS DSL to generate one.
+
+See the [Author](./AUTHOR.md) guide on how to create Workspace files using the JS DSL.
+
+With the `workspace.xml` generated see the [Viewer](./VIEWER.md) guide to see how to view the C4 Model Diagrams.
+
 # Thanks
 
 - Big thanks for the Authors of the [C4Model](https://c4model.com/)
