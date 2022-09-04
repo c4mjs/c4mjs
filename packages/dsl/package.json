@@ -1,0 +1,32 @@
+{
+  "name": "@c4mjs/dsl",
+  "version": "0.1.0",
+  "private": true,
+  "description": "C4Model JS Domain Specific Language to Create Workspace XMLs",
+  "keywords": [
+    "c4mjs",
+    "dsl"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc --outDir dist",
+    "build:watch": "tsc-watch --outDir dist",
+    "test": "jest --passWithNoTests --coverage src"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.184",
+    "@types/xml": "^1.0.8",
+    "class-transformer": "^0.5.1",
+    "glob": "^8.0.3",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "xml": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.184"
+  }
+}
