@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace name="Big Bank PLC" version="1.0.0">
+	<Group name="Internet Banking System">
+		<Person id="personalBankingCustomer-564186" name="Personal Banking Customer" desc="A customer of the bank, with personal bank accounts.">
+			<Relationship sender="personalBankingCustomer-564186" recipient="internetBankingSystem-994827" action="Views account balances, and makes payments using"/>
+		</Person>
+		<System id="internetBankingSystem-994827" name="Internet Banking System" desc="Allows customers to view information about their bank accountsm and make payments.">
+		</System>
+	</Group>
+</Workspace>

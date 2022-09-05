@@ -4,7 +4,8 @@
   "private": true,
   "description": "Big Bank PLC Example",
   "scripts": {
-    "make": "c4mjs build -i ./workspace/workspace.js > workspace.xml"
+    "make": "c4mjs build -i ./workspace/workspace.js > workspace.xml",
+    "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
     "@c4mjs/dsl": "^0.1.0",

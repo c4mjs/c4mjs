@@ -16,6 +16,11 @@ A simple context diagram might look like this 😌
 
 Along the way we get built in intellisense 😍
 
+It's javascript, so if theres something not to your liking find another language that sits on top of js 🤯
+
+- https://www.typescriptlang.org/ - Better Type Safety. [See Example](https://github.com/c4mjs/c4mjs/tree/main/examples/big-bank-plc-full)
+- https://coffeescript.org/ - Less brackets. [See Example](https://github.com/c4mjs/c4mjs/tree/main/examples/big-bank-plc-cs)
+
 ```javascript
 // workspace.js
 const { workspace } = require("@c4mjs/dsl");

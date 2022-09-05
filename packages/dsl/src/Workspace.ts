@@ -41,7 +41,7 @@ export class Workspace {
           ...this.groups.map((it) => it.toXmlObject()),
         ],
       },
-      { indent: "\t" }
+      { indent: "\t", declaration: true }
     );
   }
 
