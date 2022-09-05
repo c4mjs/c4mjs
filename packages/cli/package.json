@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "commander": "^9.4.0",
+    "inquirer": "8.2.4",
+    "handlebars": "^4.7.7",
     "debug": "^4.3.4",
     "eslint": "8.22.0"
   }

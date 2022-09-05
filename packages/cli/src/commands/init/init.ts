@@ -1,4 +1,27 @@
-const { workspace } = require("@c4mjs/dsl");
+import * as process from "node:process";
+import { writeFileSync, mkdirSync } from "node:fs";
+import { basename } from "node:path";
+import { Command } from "commander";
+import inquirer from "inquirer";
+import Handlebars from "handlebars";
+import { debug } from "../../debug";
+
+const packageJsonTemplate = Handlebars.compile(`{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "private": true,
+  "description": "{{description}}",
+  "scripts": {
+    "make": "c4mjs build -i ./src/workspace.js > workspace.xml"
+    "serve": "npx http-server -p 9876 --cors -c-1"
+  },
+  "dependencies": {
+    "@c4mjs/dsl": "^0.1.0",
+    "@c4mjs/cli": "^0.1.0"
+  }
+}
+`);
+const workspaceJsFileTemplate = Handlebars.compile(`const { workspace } = require("@c4mjs/dsl");
 
 const ws = workspace("Big Bank PLC", "1.0.0");
 
@@ -65,4 +88,48 @@ ws.group("Internet Banking System", (g) => {
   });
 });
 
+// MUST BE EXPORTED FOR THE \`build\` command to work
 module.exports = ws;
+`);
+
+export const init = new Command()
+  .name("init")
+  .description("creates a new c4mjs workspace project in the current directory")
+  .action(async () => {
+    const { name, description } = await inquirer.prompt([
+      {
+        message: "project name",
+        name: "name",
+        default: basename(process.cwd()),
+      },
+      {
+        message: "version",
+        name: "version",
+        default: "1.0.0",
+      },
+      {
+        message: "description",
+        name: "description",
+      },
+    ]);
+
+    debug("Generating new C4MJS workspace with args %o", { name, description });
+
+    const { proceed } = await inquirer.prompt([
+      {
+        message: `Generate new C4MJS workspace '${name}' in '${process.cwd()}'`,
+        name: "proceed",
+        type: "confirm",
+      },
+    ]);
+
+    if (proceed) {
+      console.log("Generating...");
+      debug("Writing package.json");
+      writeFileSync("package.json", packageJsonTemplate({ name, description }));
+      debug("Writing src/workspace.js");
+      mkdirSync("src");
+      writeFileSync("src/workspace.js", workspaceJsFileTemplate({}));
+      console.log("Project Generated");
+    }
+  });
