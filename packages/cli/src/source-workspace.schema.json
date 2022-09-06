@@ -1,0 +1,205 @@
+{
+    "$ref": "#/definitions/SourceWorkspaceDto",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "SourceComponentDto": {
+            "additionalProperties": false,
+            "properties": {
+                "deps": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tech": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "SourceContainerDto": {
+            "additionalProperties": false,
+            "properties": {
+                "components": {
+                    "items": {
+                        "$ref": "#/definitions/SourceComponentDto"
+                    },
+                    "type": "array"
+                },
+                "deps": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tech": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "SourceGroupDto": {
+            "additionalProperties": false,
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "people": {
+                    "items": {
+                        "$ref": "#/definitions/SourcePersonDto"
+                    },
+                    "type": "array"
+                },
+                "systems": {
+                    "items": {
+                        "$ref": "#/definitions/SourceSystemDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "SourcePersonDto": {
+            "additionalProperties": false,
+            "properties": {
+                "deps": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "SourceSystemDto": {
+            "additionalProperties": false,
+            "properties": {
+                "containers": {
+                    "items": {
+                        "$ref": "#/definitions/SourceContainerDto"
+                    },
+                    "type": "array"
+                },
+                "deps": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "SourceWorkspaceDto": {
+            "additionalProperties": false,
+            "properties": {
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/SourceGroupDto"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "version"
+            ],
+            "type": "object"
+        }
+    }
+}
+

@@ -1,16 +1,14 @@
 {
-  "name": "@c4mjs/bbplc-example-full",
+  "name": "big-bank-plc-full",
   "version": "1.0.0",
   "private": true,
-  "description": "Big Bank PLC Example",
-  "main": "workspace/workspace.js",
+  "description": "Bing Bank PLC Architecture",
   "scripts": {
-    "clean": "rimraf workspace",
-    "premake": "tsc --outDir workspace",
-    "make": "c4mjs build -i workspace/workspace.js > workspace.xml"
+    "build": "c4mjs build -i ./workspace.yaml > workspace.json",
+    "build:watch": "npx watch \"npm run build\" workspace",
+    "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
-    "@c4mjs/dsl": "^0.1.0",
     "@c4mjs/cli": "^0.1.0"
   }
 }

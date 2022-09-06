@@ -1,45 +1,17 @@
 # C4Model JS
 
-Architecture Documentation as code **LITERALLY**
-
 The aim of this repository is to make it easier to store architecture as code and view it dynmaically by providing:
 
-1. **@c4mjs/dsl** _Javascript Library to describe your architecture_
-2. **@c4mjs/cli** _Command line utility to build the js workspace definition to a `workspace.xml`_
-3. **[c4model.app](https://c4model.app/)** _React App to view your `workspace.xml` as interactive C4 Diagraphs rendered by [Graphviz](https://graphviz.org/)_
+2. **@c4mjs/cli** _Command line utility to build the yaml/json workspace definition to a converted `workspace.json`_
+3. **[c4model.app](https://c4model.app/)** _React App to view your `workspace.json` as interactive C4 Diagraphs rendered by [Graphviz](https://graphviz.org/)_
 
-### DSL
+The stored workspace files accept some shortcuts to make common activities easier.
 
-The DSL allows us to describe our architecture in Js 😄
+### Workspace
 
-A simple context diagram might look like this 😌
+The Workspace allows us to describe our architecture in YAML/JSON 😄
 
-Along the way we get built in intellisense 😍
-
-It's javascript, so if theres something not to your liking find another language that sits on top of js 🤯
-
-- https://www.typescriptlang.org/ - Better Type Safety. [See Example](https://github.com/c4mjs/c4mjs/tree/main/examples/big-bank-plc-full)
-- https://coffeescript.org/ - Less brackets. [See Example](https://github.com/c4mjs/c4mjs/tree/main/examples/big-bank-plc-cs)
-
-```javascript
-// workspace.js
-const { workspace } = require("@c4mjs/dsl");
-
-const ws = workspace("Big Bank PLC", "1.0.0");
-
-ws.group("Internet Banking System", (group) => {
-  const personalBankingCustomer = group.person("Personal Banking Customer", (person) => {
-    person.desc = "A customer of the bank, with personal bank accounts.";
-    person.calls(internetBankingSystem, "Views account balances, and makes payments using");
-  });
-
-  const internetBankingSystem = group.system("Internet Banking System", (system) => {
-    system.desc = "Allows customers to view information about their bank accountsm and make payments.";
-  });
-});
-
-module.exports = ws;
-```
+$ref parsing is done automatically so you can aggregate your architecture docs as you see fit, see [Swagger](https://swagger.io/docs/specification/using-ref/) for more info.
 
 > See [Basic Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc) where we create **context** and **container**
 > levels as a single source file.
@@ -56,10 +28,10 @@ mkdir my-super-architecture && cd my-super-architecture
 
 npx @c4mjs/cli init
 
-npm install && npm run make
+npm install && npm run build
 ```
 
-This will now generate a `workspace.xml` file in the folders root. 🚀
+This will now generate a `workspace.json` file in the folders root. 🚀
 
 Serve it
 
@@ -67,7 +39,7 @@ Serve it
 npm run serve
 ```
 
-Visit [c4model.app](https://c4model.app/) to view it, pop the URL `http://localhost:9876/workspace.xml` into the bar.
+Visit [c4model.app](https://c4model.app/) to view it, pop the URL `http://localhost:9876/workspace.json` into the bar.
 
 🎉 Tada 🎉
 
@@ -75,11 +47,9 @@ Explore the workspace using the interactive viewer.
 
 ## Guides
 
-See the [Author](./AUTHOR.md) guide on how to create Workspace files using the JS DSL.
+See the [Author](./AUTHOR.md) guide on how to create a Workspace.
 
 See the [Viewer](./VIEWER.md) guide on how to view the C4 Model Diagrams.
-
-Alternatively see the [XML Ref](./XML_REF.md) guide to author it yourself or build custom tooling.
 
 # References
 

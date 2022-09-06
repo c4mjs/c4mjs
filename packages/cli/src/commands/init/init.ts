@@ -12,84 +12,86 @@ const packageJsonTemplate = Handlebars.compile(`{
   "private": true,
   "description": "{{description}}",
   "scripts": {
-    "make": "c4mjs build -i ./src/workspace.js > workspace.xml"
+    "build": "c4mjs build -i workspace.yaml > workspace.json",
+    "build:watch": "npx watch \\"npm run build\\" workspace",
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
-    "@c4mjs/dsl": "^0.1.0",
     "@c4mjs/cli": "^0.1.0"
   }
 }
+
 `);
-const workspaceJsFileTemplate = Handlebars.compile(`const { workspace } = require("@c4mjs/dsl");
+const workspaceYamlFile = Handlebars.compile(`---
+name: Big Bank PLC
+version: 1.0.0
+groups:
+  - id: internet-banking
+    name: Internet Banking System
+    people:
+      - id: customer
+        name: Personal Banking Customer
+        desc: A customer of the bank, with personal bank accounts.
+        deps: |
+          this -> internet-banking-system : Views account balances, and makes payments using
 
-const ws = workspace("Big Bank PLC", "1.0.0");
+    systems:
+      - id: internet-banking-system
+        name: Internet Banking System
+        desc: Allows customers to view information about their bank accounts and make payments.
+        deps: |
+          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
 
-ws.group("Internet Banking System", (g) => {
-  const personalBankingCustomer = g.person("Personal Banking Customer", (p) => {
-    p.desc = "A customer of the bank, with personal bank accounts.";
+        containers:
+          - id: web-app
+            name: Web Application
+            desc: Delivers the static content and the Internet Banking single page application.
+            tech: Java and Spring MVC
+            deps: |
+              this <- customer : Visits bigbank.com/ib using : HTTPS
+              this -> single-page-app : Delivers to the customers web browser
 
-    p.calls(internetBankingSystem, "Views account balances, and makes payments using");
-  });
+          - id: single-page-app
+            name: Single-Page Application
+            desc: Provides all of the Internet Banking functionality to the customers via their web browser
+            tech: Javascript and Angular
+            deps: |
+              this <- customer : Views account balances, and makes payments using
+              this -> api-app : Delivers to the customers web browser
 
-  const internetBankingSystem = g.system("Internet Banking System", (s) => {
-    s.desc = "Allows customers to view information about their bank accountsm and make payments.";
+          - id: mobile-app
+            name: Mobile Application
+            desc: Provides a limited subset of the internet banking functionality to customers via their mobile device.
+            tech: Xamarmin
+            deps: |
+              this <- customer : Views account balances, and makes payments using
+              this -> api-app : Delivers to the customers web browser
 
-    s.calls(emailSystem, "Sends e-mails using");
-    s.calls(mainframeBankingSystem, "Gets account information from, and makes payments using");
+          - id: api-app
+            name: Api Application
+            desc: Provides internet banking functionality via a JSON/HTTPS api.
+            tech: Java and Spring MVC
+            deps: |
+              this <- customer : Views account balances, and makes payments using
+              this -> api-app : Delivers to the customers web browser
 
-    const webApp = s.container("Web Application", (c) => {
-      c.desc = "Delivers the static content and the Internet Banking single page application.";
-      c.tech = "Java and Spring MVC";
+          - id: database
+            name: Database
+            desc: Stores user registration information, hashed authentication credentials, access logs etc.
+            tech: Oracle Database Schema
 
-      c.receives(personalBankingCustomer, "Visits bigbank.com/ib using");
-      c.calls(singlePageApp, "Delivers to the customers web browser");
-    });
-    const singlePageApp = s.container("Single-Page Application", (c) => {
-      c.desc = "Provides all of the Internet Banking functionality to the customers via their web browser";
-      c.tech = "Javascript and Angular";
 
-      c.receives(personalBankingCustomer, "Views account balances, and makes payments using");
-      c.calls(apiApp, "Makes API Calls to");
-    });
-    const mobileApp = s.container("Mobile Application", (c) => {
-      c.desc = "Provides a limited subset of the internet banking functionality to customers via their mobile device.";
-      c.tech = "Xamarmin";
+      - id: mainframe-banking-system
+        name: Mainframe Banking System
+        desc: Stores all of the core banking information about customers, accounts, transactions etc
+        deps: |
+          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
 
-      c.receives(personalBankingCustomer, "Views account balances, and makes payments using");
-      c.calls(apiApp, "Makes API Calls to");
-    });
-    const apiApp = s.container("API Application", (c) => {
-      c.desc = "Provides internet banking functionality via a JSON/HTTPS api.";
-      c.tech = "Java and Spring MVC";
-
-      c.calls(database, "Read from and Writes to");
-      c.calls(mainframeBankingSystem, "Makes API Calls to");
-      c.calls(emailSystem, "Sends emails using");
-    });
-    const database = s.container("Database", (c) => {
-      c.desc = "Stores user registration information, hashed authentication credentials, access logs etc.";
-      c.tech = "Oracle Database Schema";
-    });
-  });
-
-  const mainframeBankingSystem = g.system("Mainframe Banking System", (s) => {
-    s.desc = "Stores all of the core banking information about customers, accounts, transactions etc";
-    s.external = true;
-
-    s.calls(emailSystem, "Sends e-mail using");
-  });
-
-  const emailSystem = g.system("E-mail System", (s) => {
-    s.desc = "The internal Microsoft Exchange e-mail system.";
-    s.external = true;
-
-    s.calls(personalBankingCustomer, "Sends e-mail to");
-  });
-});
-
-// MUST BE EXPORTED FOR THE \`build\` command to work
-module.exports = ws;
+      - id: email-system
+        name: Email System
+        desc: The internal Microsoft Exchange e-mail system.
+        deps: |
+          this -> customer : Sends email to
 `);
 
 export const init = new Command()
@@ -127,9 +129,8 @@ export const init = new Command()
       console.log("Generating...");
       debug("Writing package.json");
       writeFileSync("package.json", packageJsonTemplate({ name, description }));
-      debug("Writing src/workspace.js");
-      mkdirSync("src");
-      writeFileSync("src/workspace.js", workspaceJsFileTemplate({}));
+      debug("Writing workspace.yaml");
+      writeFileSync("workspace.yaml", workspaceYamlFile({}));
       console.log("Project Generated");
     }
   });

@@ -1,10 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: [
-    "@typescript-eslint/eslint-plugin",
-    "sort-class-members",
-    "unicorn",
-  ],
+  plugins: ["@typescript-eslint/eslint-plugin", "sort-class-members", "unicorn"],
   extends: [
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -19,6 +15,7 @@ module.exports = {
   },
   ignorePatterns: [".eslintrc.js"],
   rules: {
+    "import/no-cycle": "error",
     "import/named": "off",
     "import/order": "error",
     "import/no-extraneous-dependencies": "error",

@@ -1,0 +1,248 @@
+{
+    "$ref": "#/definitions/WorkspaceDto",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ComponentDto": {
+            "additionalProperties": false,
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "relationships": {
+                    "items": {
+                        "$ref": "#/definitions/RelationshipDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tech": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "relationships"
+            ],
+            "type": "object"
+        },
+        "ContainerDto": {
+            "additionalProperties": false,
+            "properties": {
+                "components": {
+                    "items": {
+                        "$ref": "#/definitions/ComponentDto"
+                    },
+                    "type": "array"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "relationships": {
+                    "items": {
+                        "$ref": "#/definitions/RelationshipDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tech": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "components",
+                "id",
+                "name",
+                "relationships"
+            ],
+            "type": "object"
+        },
+        "GroupDto": {
+            "additionalProperties": false,
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "people": {
+                    "items": {
+                        "$ref": "#/definitions/PersonDto"
+                    },
+                    "type": "array"
+                },
+                "systems": {
+                    "items": {
+                        "$ref": "#/definitions/SystemDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "people",
+                "systems"
+            ],
+            "type": "object"
+        },
+        "PersonDto": {
+            "additionalProperties": false,
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "relationships": {
+                    "items": {
+                        "$ref": "#/definitions/RelationshipDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "relationships"
+            ],
+            "type": "object"
+        },
+        "RelationshipDto": {
+            "additionalProperties": false,
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "receiver": {
+                    "type": "string"
+                },
+                "sender": {
+                    "type": "string"
+                },
+                "tech": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "receiver",
+                "sender"
+            ],
+            "type": "object"
+        },
+        "SystemDto": {
+            "additionalProperties": false,
+            "properties": {
+                "containers": {
+                    "items": {
+                        "$ref": "#/definitions/ContainerDto"
+                    },
+                    "type": "array"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "relationships": {
+                    "items": {
+                        "$ref": "#/definitions/RelationshipDto"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "containers",
+                "id",
+                "name",
+                "relationships"
+            ],
+            "type": "object"
+        },
+        "WorkspaceDto": {
+            "additionalProperties": false,
+            "properties": {
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/GroupDto"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "groups",
+                "name",
+                "version"
+            ],
+            "type": "object"
+        }
+    }
+}
+
