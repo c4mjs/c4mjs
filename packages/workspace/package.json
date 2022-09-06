@@ -1,0 +1,31 @@
+{
+  "name": "@c4mjs/workspace",
+  "version": "0.1.0",
+  "license": "ISC",
+  "description": "C4Model JS Workspace Library",
+  "keywords": [
+    "c4mjs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'WorkspaceDto' > 'src/workspace.schema.json' --required --noExtraProps --refs --topRef",
+    "build": "tsc --outDir dist",
+    "postbuild": "jsdoc2md dist/**/* > API.md",
+    "build:watch": "tsc-watch --outDir dist",
+    "test": "jest --passWithNoTests --coverage src"
+  },
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "debug": "^4.3.4",
+    "lodash": "^4.17.21",
+    "typescript-json-schema": "^0.54.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.184",
+    "jsdoc-to-markdown": "^7.1.1"
+  }
+}

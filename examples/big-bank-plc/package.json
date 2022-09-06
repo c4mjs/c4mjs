@@ -1,0 +1,15 @@
+{
+  "name": "big-bank-plc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "build": "c4mjs build -i workspace.yaml > workspace.json",
+    "build:watch": "npx watch \"npm run make\" workspace",
+    "serve": "npx http-server -p 9876 --cors -c-1"
+  },
+  "dependencies": {
+    "@c4mjs/cli": "^0.1.0"
+  }
+}
+

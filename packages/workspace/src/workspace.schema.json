@@ -158,17 +158,29 @@
         },
         "RelationshipDto": {
             "additionalProperties": false,
+            "description": "Defines a Relationship Between a Sender and a Receiver",
             "properties": {
                 "desc": {
+                    "description": "Description of the Message",
+                    "title": "Receiver",
                     "type": "string"
                 },
                 "receiver": {
+                    "description": "ID of the Message Receiver",
+                    "title": "Receiver",
                     "type": "string"
                 },
                 "sender": {
+                    "description": "ID of the Message Sender",
+                    "title": "Sender",
                     "type": "string"
                 },
                 "tech": {
+                    "description": "Technology Used",
+                    "examples": [
+                        "HTTP"
+                    ],
+                    "title": "tech",
                     "type": "string"
                 }
             },
@@ -176,6 +188,7 @@
                 "receiver",
                 "sender"
             ],
+            "title": "Relationship",
             "type": "object"
         },
         "SystemDto": {

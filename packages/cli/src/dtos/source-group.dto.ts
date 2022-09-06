@@ -1,4 +1,4 @@
-import { GroupDto } from "./group.dto";
+import { GroupDto } from "@c4mjs/workspace";
 import { SourceSystemDto } from "./source-system.dto";
 import { SourcePersonDto } from "./source-person.dto";
 

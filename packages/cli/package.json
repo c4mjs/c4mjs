@@ -15,14 +15,13 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "prebuild": "npm run generate:SourceWorkspaceDto && npm run generate:WorkspaceDto",
+    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'SourceWorkspaceDto' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --topRef",
     "build": "tsc --outDir dist",
     "build:watch": "tsc-watch --outDir dist",
-    "test": "jest --passWithNoTests --coverage src",
-    "generate:SourceWorkspaceDto": "typescript-json-schema 'src/dtos/*.dto.ts' 'SourceWorkspaceDto' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --topRef",
-    "generate:WorkspaceDto": "typescript-json-schema 'src/dtos/*.dto.ts' 'WorkspaceDto' > 'src/workspace.schema.json' --required --noExtraProps --refs --topRef"
+    "test": "jest --passWithNoTests --coverage src"
   },
   "dependencies": {
+    "@c4mjs/workspace": "0.1.0",
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "ajv": "^8.11.0",
     "commander": "^9.4.0",
