@@ -22,5 +22,7 @@ jobs:
       - name: Release
         run: lerna publish --yes
         env:
+          GIT_AUTHOR_NAME: ghactions
+          GIT_AUTHOR_EMAIL: actions@github.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
