@@ -14,7 +14,7 @@
     "prettier:fix": "prettier . --write",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "lerna run build",
+    "build": "lerna run build --ignore=\"big-bank-*\"",
     "clean": "lerna run clean"
   },
   "devDependencies": {
