@@ -3,5 +3,17 @@
   "packages": ["packages/*", "examples/*"],
   "useNx": true,
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "version": {
+      "noPush": true,
+      "conventionalCommits": true
+    },
+    "publish": {
+      "verifyAccess": false,
+      "conventionalCommits": true,
+      "message": "chore: publish",
+      "ignoreChanges": ["**/*.md"]
+    }
+  }
 }

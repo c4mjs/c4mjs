@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Release
-        run: lerna publish
+        run: lerna publish --yes
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
