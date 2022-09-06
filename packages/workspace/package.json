@@ -1,7 +1,7 @@
 {
   "name": "@c4mjs/workspace",
   "version": "0.1.0",
-  "license": "ISC",
+  "license": "MIT",
   "description": "C4Model JS Workspace Library",
   "keywords": [
     "c4mjs"
