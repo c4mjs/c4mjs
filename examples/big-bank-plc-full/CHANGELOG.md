@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/JonathanTurnock/c4mjs/compare/big-bank-plc-full@1.0.8...big-bank-plc-full@1.0.9) (2022-09-07)
+
+**Note:** Version bump only for package big-bank-plc-full
+
+
+
+
+
 ## [1.0.8](https://github.com/JonathanTurnock/c4mjs/compare/big-bank-plc-full@1.0.7...big-bank-plc-full@1.0.8) (2022-09-07)
 
 **Note:** Version bump only for package big-bank-plc-full
