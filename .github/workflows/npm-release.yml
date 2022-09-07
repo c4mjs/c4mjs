@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18
       - name: Install
-        run: npm ci
+        run: npm login && npm ci
       - name: Build
         run: npm run build
       - name: Setup Git
