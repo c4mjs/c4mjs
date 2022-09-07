@@ -21,8 +21,10 @@ jobs:
         run: npm run build
       - name: Setup Git
         run: git config user.name ghactions && git config user.email actions@github.com
+      - name: Setup NPM
+        run: npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
       - name: Release
-        run: lerna publish --yes
+        run: lerna publish from-package --yes --no-private --no-verify-access
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
