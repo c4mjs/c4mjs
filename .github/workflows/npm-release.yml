@@ -22,7 +22,7 @@ jobs:
       - name: Setup Git
         run: git config user.name ghactions && git config user.email actions@github.com
       - name: Release
-        run: lerna publish from-git --yes --no-private
+        run: lerna publish --yes --no-private
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
