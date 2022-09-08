@@ -11,7 +11,7 @@ containers:
     desc: Delivers the static content and the Internet Banking single page application.
     tech: Java and Spring MVC
     deps: |
-      this <- customer : Visits bigbank.com/ib using : HTTPS
+      customer -> this : Visits bigbank.com/ib using : HTTPS
       this -> singlePageApp : Delivers to the customers web browser
 
   - id: singlePageApp
@@ -19,24 +19,25 @@ containers:
     desc: Provides all of the Internet Banking functionality to the customers via their web browser
     tech: Javascript and Angular
     deps: |
-      this <- customer : Views account balances, and makes payments using
-      this -> apiApp : Delivers to the customers web browser
+      customer -> this : Views account balances, and makes payments using
+      this -> apiApp : Makes API calls to
 
   - id: mobileApp
     name: Mobile Application
     desc: Provides a limited subset of the internet banking functionality to customers via their mobile device.
     tech: Xamarmin
     deps: |
-      this <- customer : Views account balances, and makes payments using
-      this -> apiApp : Delivers to the customers web browser
+      customer -> this : Views account balances, and makes payments using
+      this -> apiApp : Makes API calls to
 
   - id: apiApp
     name: Api Application
     desc: Provides internet banking functionality via a JSON/HTTPS api.
     tech: Java and Spring MVC
     deps: |
-      this <- customer : Views account balances, and makes payments using
-      this -> apiApp : Delivers to the customers web browser
+      this -> database : Reads and writes to 
+      this -> emailSystem : Sends e-mail using
+      this -> mainframeBankingSystem : Makes API calls to
 
   - id: database
     name: Database

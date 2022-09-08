@@ -1,6 +1,7 @@
 import { config } from "../config";
 import { arrow, body, Renderable } from "../dot";
 import { Entity } from "./entity";
+import { Scope } from "./scope";
 
 let ID_SEQ = 100_000;
 
@@ -14,6 +15,12 @@ export class Relationship implements Renderable {
     public readonly tech?: string
   ) {
     this.id = `${ID_SEQ++}`;
+  }
+
+  get scope(): Scope {
+    if (this.sender.type === "container" || this.receiver.type === "container") return Scope.CONTAINER;
+
+    return Scope.CONTEXT;
   }
 
   get dot() {
