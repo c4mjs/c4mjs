@@ -1,6 +1,6 @@
 {
   "name": "@c4mjs/cli",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "license": "MIT",
   "description": "C4Model JS Command Line Utility",
   "keywords": [
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
-    "@c4mjs/validation": "0.1.0",
-    "@c4mjs/workspace": "^0.1.14",
+    "@c4mjs/validation": "^0.1.1",
+    "@c4mjs/workspace": "^0.1.15",
     "commander": "^9.4.0",
     "debug": "^4.3.4",
     "eslint": "8.22.0",
