@@ -1,6 +1,6 @@
 {
   "name": "@c4mjs/graphviz",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "C4Model JS Graphviz Workspace Library",
   "keywords": [
@@ -19,7 +19,7 @@
     "test": "jest --passWithNoTests --coverage src"
   },
   "dependencies": {
-    "@c4mjs/workspace": "^0.1.15",
+    "@c4mjs/workspace": "^0.2.0",
     "class-transformer": "^0.5.1",
     "debug": "^4.3.4",
     "lodash": "^4.17.21",
