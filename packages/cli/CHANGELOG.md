@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2022-09-08)
+
+
+### Features
+
+* **graphviz:** bump all to v1 ([52b6592](https://github.com/c4mjs/c4mjs/commit/52b65923d4e87b84f2b5785cc72f0beed318b15f))
+
+
+
+
+
 # 0.2.0 (2022-09-08)
 
 
