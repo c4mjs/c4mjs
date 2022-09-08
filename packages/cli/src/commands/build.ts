@@ -1,11 +1,15 @@
 import { exit } from "node:process";
 import RefParser from "@apidevtools/json-schema-ref-parser";
 import { Command } from "commander";
-import { ValidationService, WorkspaceDto } from "@c4mjs/workspace";
+import { EntityDto, GroupDto, RelationshipDto, ValidationService, WorkspaceDto } from "@c4mjs/workspace";
 import { debug } from "../debug";
 import { SourceWorkspaceDto } from "../dtos/source-workspace.dto";
-import { SourceDtoTransformer } from "../transformers/source-dto.transformer";
 import { SourceValidationService } from "../services/source-validation.service";
+import { SourceIngestionService } from "../services/source-ingestion.service";
+import { GroupRepository } from "../dao/group.repository";
+import { EntityRepository } from "../dao/entity.repository";
+import { RelationshipRepository } from "../dao/relationship.repository";
+import { close, setup } from "../dao/database";
 
 export const build = new Command()
   .name("build")
@@ -26,7 +30,25 @@ export const build = new Command()
       exit(1);
     }
 
-    const workspace: WorkspaceDto = SourceDtoTransformer.transformWorkspace(sourceWorkspace);
+    await setup();
+    await SourceIngestionService.ingestWorkspace(sourceWorkspace);
+
+    const { id, name, version } = sourceWorkspace;
+
+    const groups: GroupDto[] = (await GroupRepository.findAll()).map((it) => ({
+      ...it,
+      address: it.id,
+      tags: it.tags ? it.tags.split(",") : [],
+    }));
+
+    const entities: EntityDto[] = (await EntityRepository.findAll()).map((it) => ({
+      ...it,
+      tags: it.tags ? it.tags.split(",") : [],
+    }));
+    const relationships: RelationshipDto[] = await RelationshipRepository.findAll();
+
+    const workspace: WorkspaceDto = { id, name, version, groups, entities, relationships };
+
     const workspaceErrors = ValidationService.validateWorkspace(workspace);
     if (workspaceErrors) {
       debug("Validation Failed for Transformed Workspace");
@@ -36,5 +58,6 @@ export const build = new Command()
       exit(1);
     }
 
+    await close();
     console.log(JSON.stringify(workspace, undefined, 2));
   });

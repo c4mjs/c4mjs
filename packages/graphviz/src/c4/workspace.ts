@@ -1,5 +1,5 @@
-import { Describable, Identifiable, RelationshipDto, Taggable, WorkspaceDto } from "@c4mjs/workspace";
-import { filter, find, keyBy } from "lodash";
+import { GroupDto, WorkspaceDto } from "@c4mjs/workspace";
+import { filter, find } from "lodash";
 import { Entity } from "./entity";
 import { Relationship } from "./relationship";
 import { Scope } from "./scope";
@@ -11,13 +11,13 @@ export class Workspace {
 
   readonly version: string;
 
-  private groups: (Identifiable & Describable & Taggable)[];
+  private groups: GroupDto[];
 
   private entities: Entity[];
 
   private relationships: Relationship[];
 
-  constructor({ id, name, version, groups }: WorkspaceDto) {
+  constructor({ id, name, version, groups, entities, relationships }: WorkspaceDto) {
     this.id = id;
 
     this.name = name;
@@ -26,25 +26,17 @@ export class Workspace {
 
     this.groups = groups;
 
-    this.entities = groups.flatMap((g) => [
-      ...g.people.map((p) => new Entity({ ...p, type: "person", groupId: g.id })),
-      ...g.systems.map((s) => new Entity({ ...s, type: "system", groupId: g.id })),
-      ...g.systems.flatMap((s) =>
-        s.containers.map((c) => new Entity({ ...c, type: "container", groupId: g.id, systemId: s.id }))
-      ),
-    ]);
+    this.entities = entities.map((it) => new Entity(it));
 
-    const entitiesLookup = keyBy(this.entities, "id");
-    const mapRelationship = (r: RelationshipDto) =>
-      new Relationship(entitiesLookup[r.sender], entitiesLookup[r.receiver], r.desc, r.tech);
+    this.relationships = relationships.map(
+      (it) => new Relationship(this.getEntity(it.sender), this.getEntity(it.receiver), it.desc, it.tech)
+    );
+  }
 
-    this.relationships = groups.flatMap((g) => [
-      ...g.people.flatMap((p) => p.relationships.map(mapRelationship)),
-      ...g.systems.flatMap((s) => [
-        ...s.relationships.map(mapRelationship),
-        ...s.containers.flatMap((c) => c.relationships.map(mapRelationship)),
-      ]),
-    ]);
+  getEntity(address: string): Entity {
+    const entity = find(this.entities, { address });
+    if (!entity) throw new Error(`Unable to find entity with address ${entity} in workspace`);
+    return entity as Entity;
   }
 
   getGroups() {

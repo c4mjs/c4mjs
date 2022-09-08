@@ -9,8 +9,8 @@ export class Relationship implements Renderable {
   readonly id: string;
 
   constructor(
-    public readonly sender: Entity,
-    public readonly receiver: Entity,
+    public sender: Entity,
+    public receiver: Entity,
     public readonly desc?: string,
     public readonly tech?: string
   ) {

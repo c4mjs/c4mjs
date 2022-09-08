@@ -1,37 +1,42 @@
+import { split } from "lodash";
+import { EntityDto } from "@c4mjs/workspace";
 import { body, node, Renderable, subtitle, title } from "../dot";
 import { config } from "../config";
 import { Scope } from "./scope";
 
-export type EntityProperties = {
-  id: string;
-  name: string;
-  type: "person" | "system" | "container";
-  groupId: string;
-  systemId?: string;
-  desc?: string;
-  tech?: string;
-  external?: boolean;
-};
-
 export class Entity implements Renderable {
   public readonly id: string;
+  public readonly address: string;
   public readonly name: string;
-  public readonly type: EntityProperties["type"];
-  public readonly groupId: string;
-  public readonly systemId?: string;
+  public readonly type: EntityDto["type"];
   public readonly desc?: string;
   public readonly tech?: string;
   public readonly external?: boolean;
 
-  constructor(private readonly properties: EntityProperties) {
+  constructor(private readonly properties: EntityDto) {
     this.id = properties.id;
+    this.address = properties.address;
     this.name = properties.name;
     this.type = properties.type;
-    this.groupId = properties.groupId;
-    this.systemId = properties.systemId;
     this.desc = properties.desc;
     this.tech = properties.tech;
     this.external = properties.external;
+  }
+
+  get parentAddress() {
+    return split(this.address, ".").slice(0, -1).join(".");
+  }
+
+  get groupId() {
+    return split(this.address, ".")[0];
+  }
+
+  get systemId() {
+    return split(this.address, ".")[1];
+  }
+
+  get containerId() {
+    return split(this.address, ".")[2];
   }
 
   get scope(): Scope {

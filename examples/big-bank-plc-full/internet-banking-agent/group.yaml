@@ -13,5 +13,13 @@ systems:
     name: Internet Banking Management System
     desc: Allows agents to manage customer banking information and perform actions on their behalf
     deps: |
-      this -> emailSystem : Sends emails using
-      this -> mainframeBankingSystem : Gets account information from, and makes payments using
+      this -> internetBanking.emailSystem : Sends emails using
+      this -> internetBanking.mainframeBankingSystem : Gets account information from, and makes payments using
+
+    containers:
+      - id: agentPortal
+        name: Agent Portal
+        desc: Allows agents to log in and perform actions
+        deps: |
+          agent -> this : Perform actions using
+          this -> internetBanking.internetBankingSystem.apiApp : Sends API requests to

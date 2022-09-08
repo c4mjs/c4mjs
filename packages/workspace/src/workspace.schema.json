@@ -37,7 +37,6 @@
                 "address",
                 "id",
                 "name",
-                "tech",
                 "type"
             ],
             "type": "object"
@@ -117,9 +116,6 @@
         "WorkspaceDto": {
             "additionalProperties": false,
             "properties": {
-                "address": {
-                    "type": "string"
-                },
                 "entities": {
                     "items": {
                         "$ref": "#/definitions/EntityDto"
@@ -155,7 +151,6 @@
                 }
             },
             "required": [
-                "address",
                 "entities",
                 "groups",
                 "id",

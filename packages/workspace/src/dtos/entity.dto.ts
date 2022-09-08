@@ -6,6 +6,6 @@ import { Taggable } from "../interfaces/taggable";
 export type EntityType = "person" | "system" | "container";
 
 export interface EntityDto extends Identifiable, Describable, Taggable, Externalable {
-  tech: string;
+  tech?: string;
   type: EntityType;
 }

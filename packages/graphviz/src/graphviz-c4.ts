@@ -4,6 +4,7 @@ import { debug } from "./debug";
 import { Workspace } from "./c4/workspace";
 import { digraph, subgraph } from "./dot";
 import { render } from "./dot/render";
+import { Scope } from "./c4/scope";
 
 export class GraphvizC4 {
   private readonly workspace: Workspace;
@@ -32,10 +33,10 @@ export class GraphvizC4 {
         .value();
 
       // Get all entities in my group
-      const myEntities = entities.filter((entity) => groupId === entity.groupId);
+      const myEntities = entities.filter((entity) => entity.id.startsWith(groupId));
 
       // Get all entities in groups other than mine
-      const otherEntities = entities.filter((entity) => groupId !== entity.groupId);
+      const otherEntities = entities.filter((entity) => !entity.id.startsWith(groupId));
 
       // Render the Dot Digraph
       return digraph({
@@ -70,6 +71,19 @@ export class GraphvizC4 {
     const system = this.workspace.getSystem(systemId);
 
     const associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(system.groupId, systemId);
+
+    associatedRelationships.forEach((r) => {
+      // If the sender is from a foreign system and is not the system, convert it to the system
+      if (r.sender.systemId !== systemId && r.sender.scope !== Scope.CONTEXT && r.sender.systemId) {
+        debug(`Swapping ${r.sender.id} container for system`);
+        r.sender = this.workspace.getEntity(r.sender.parentAddress);
+      }
+      // If the receiver is from a foreign system and is not the system, convert it to the system
+      if (r.receiver.systemId !== systemId && r.receiver.scope !== Scope.CONTEXT && r.receiver.systemId) {
+        debug(`Swapping ${r.receiver.id} container for system`);
+        r.receiver = this.workspace.getEntity(r.receiver.parentAddress);
+      }
+    });
 
     const entities = uniqBy(
       associatedRelationships.flatMap(({ sender, receiver }) => [sender, receiver]),

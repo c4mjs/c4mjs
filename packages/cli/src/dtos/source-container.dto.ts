@@ -1,7 +1,22 @@
-import { ContainerDto } from "@c4mjs/workspace";
 import { SourceComponentDto } from "./source-component.dto";
 
-export interface SourceContainerDto extends Omit<ContainerDto, "components" | "relationships"> {
+export interface SourceContainerDto {
+  /**
+   * @pattern ^([a-zA-Z0-9])*$
+   */
+  id: string;
+
+  name: string;
+
+  desc?: string;
+
+  tags?: string[];
+
+  tech?: string;
+
   components?: SourceComponentDto[];
+
   deps?: string;
+
+  external?: boolean;
 }

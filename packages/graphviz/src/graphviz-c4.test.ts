@@ -6,7 +6,7 @@ import { GraphvizC4 } from "./graphviz-c4";
 import workspace from "./__stubs__/workspace.json";
 
 describe("GraphvizC4", () => {
-  const graphviz = new GraphvizC4(workspace as WorkspaceDto);
+  const graphviz = new GraphvizC4(workspace as unknown as WorkspaceDto);
 
   describe("getContextDiagram", () => {
     describe("no group limit", () => {
@@ -76,6 +76,24 @@ describe("GraphvizC4", () => {
       ["internetBankingSystem"]: [
         `id="customer",`,
         `id="webApp",`,
+        `id="singlePageApp",`,
+        `id="mobileApp",`,
+        `id="apiApp",`,
+        `id="database",`,
+        `id="mainframeBankingSystem",`,
+        `id="emailSystem",`,
+        "customer -> webApp",
+        "webApp -> singlePageApp",
+        "singlePageApp -> apiApp",
+        "mobileApp -> apiApp",
+        "apiApp -> database",
+        "apiApp -> mainframeBankingSystem",
+        "apiApp -> emailSystem",
+        "emailSystem -> customer",
+      ],
+      ["internetBankingManagementSystem"]: [
+        `id="agent",`,
+        `id="agentPortal",`,
         `id="singlePageApp",`,
         `id="mobileApp",`,
         `id="apiApp",`,

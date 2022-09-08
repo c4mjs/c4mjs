@@ -1,5 +1,16 @@
-import { PersonDto } from "@c4mjs/workspace";
+export interface SourcePersonDto {
+  /**
+   * @pattern ^([a-zA-Z0-9])*$
+   */
+  id: string;
 
-export interface SourcePersonDto extends Omit<PersonDto, "relationships"> {
+  name: string;
+
+  desc?: string;
+
+  tags?: string[];
+
   deps?: string;
+
+  external?: boolean;
 }

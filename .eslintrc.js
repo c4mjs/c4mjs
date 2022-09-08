@@ -15,6 +15,7 @@ module.exports = {
   },
   ignorePatterns: [".eslintrc.js"],
   rules: {
+    "unicorn/no-array-for-each": "off",
     "import/no-cycle": "error",
     "import/named": "off",
     "import/order": "error",
@@ -22,6 +23,7 @@ module.exports = {
     "unicorn/prefer-module": "off",
     "unicorn/no-useless-undefined": "off",
     "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-await-expression-member": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

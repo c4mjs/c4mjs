@@ -24,16 +24,19 @@
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "@c4mjs/validation": "^0.1.1",
     "@c4mjs/workspace": "^0.1.15",
+    "aigle": "^1.14.1",
     "commander": "^9.4.0",
     "debug": "^4.3.4",
     "eslint": "8.22.0",
     "handlebars": "^4.7.7",
     "inquirer": "8.2.4",
     "lodash": "^4.17.21",
+    "sqlite3": "^5.0.11",
     "typescript-json-schema": "^0.54.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.184"
+    "@types/lodash": "^4.14.184",
+    "@types/sqlite3": "^3.1.8"
   },
   "gitHead": "ebdc771a7840992ef7720e5ccc17a5a91ac7e3af"
 }

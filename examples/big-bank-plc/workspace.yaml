@@ -10,14 +10,14 @@ groups:
         name: Personal Banking Customer
         desc: A customer of the bank, with personal bank accounts.
         deps: |
-          this -> internet-banking-system : Views account balances, and makes payments using
+          this -> internetBankingSystem : Views account balances, and makes payments using
 
     systems:
       - id: internetBankingSystem
         name: Internet Banking System
         desc: Allows customers to view information about their bank accounts and make payments.
         deps: |
-          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
+          this -> mainframeBankingSystem : Stores all of the core banking information about customers, accounts, transactions etc
 
         containers:
           - id: webApp
@@ -26,7 +26,7 @@ groups:
             tech: Java and Spring MVC
             deps: |
               this <- customer : Visits bigbank.com/ib using : HTTPS
-              this -> single-page-app : Delivers to the customers web browser
+              this -> singlePageApp : Delivers to the customers web browser
 
           - id: singlePageApp
             name: Single-Page Application
@@ -34,7 +34,7 @@ groups:
             tech: Javascript and Angular
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
           - id: mobileApp
             name: Mobile Application
@@ -42,7 +42,7 @@ groups:
             tech: Xamarmin
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
           - id: apiApp
             name: Api Application
@@ -50,7 +50,7 @@ groups:
             tech: Java and Spring MVC
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
           - id: database
             name: Database
@@ -62,7 +62,7 @@ groups:
         name: Mainframe Banking System
         desc: Stores all of the core banking information about customers, accounts, transactions etc
         deps: |
-          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
+          this -> mainframeBankingSystem : Stores all of the core banking information about customers, accounts, transactions etc
 
       - id: emailSystem
         name: Email System
