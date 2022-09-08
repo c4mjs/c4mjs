@@ -21,6 +21,7 @@ module.exports = {
     "import/no-extraneous-dependencies": "error",
     "unicorn/prefer-module": "off",
     "unicorn/no-useless-undefined": "off",
+    "unicorn/no-array-callback-reference": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

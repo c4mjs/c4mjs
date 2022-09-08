@@ -5,7 +5,7 @@
   "description": "Bing Bank PLC Architecture",
   "scripts": {
     "build": "c4mjs build -i ./workspace.yaml > workspace.json",
-    "build:watch": "npx watch \"npm run build\" workspace",
+    "build:watch": "npx watch \"npm run build\" internet-banking",
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {

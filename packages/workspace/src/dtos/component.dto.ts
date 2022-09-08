@@ -1,11 +1,9 @@
-import { RelationshipDto } from "./relationship.dto";
+import { Identifiable } from "../interfaces/identifiable";
+import { Describable } from "../interfaces/describable";
+import { Externalable } from "../interfaces/externalable";
+import { Taggable } from "../interfaces/taggable";
+import { Relateable } from "../interfaces/relateable";
 
-export interface ComponentDto {
-  id: string;
-  name: string;
-  desc?: string;
+export interface ComponentDto extends Identifiable, Describable, Externalable, Taggable, Relateable {
   tech?: string;
-  external?: boolean;
-  tags?: string[];
-  relationships: RelationshipDto[];
 }

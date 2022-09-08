@@ -1,9 +1,10 @@
 {
+  "id": "bigBankPlc",
   "name": "Big Bank PLC",
   "version": "1.0.0",
   "groups": [
     {
-      "id": "internet-banking",
+      "id": "internetBanking",
       "name": "Internet Banking System",
       "people": [
         {
@@ -21,12 +22,12 @@
       ],
       "systems": [
         {
-          "id": "internet-banking-system",
+          "id": "internetBankingSystem",
           "name": "Internet Banking System",
           "desc": "Allows customers to view information about their bank accounts and make payments.",
           "containers": [
             {
-              "id": "web-app",
+              "id": "webApp",
               "name": "Web Application",
               "desc": "Delivers the static content and the Internet Banking single page application.",
               "tech": "Java and Spring MVC",
@@ -34,19 +35,19 @@
               "relationships": [
                 {
                   "sender": "customer",
-                  "receiver": "web-app",
+                  "receiver": "webApp",
                   "desc": "Visits bigbank.com/ib using",
                   "tech": "HTTPS"
                 },
                 {
-                  "sender": "web-app",
+                  "sender": "webApp",
                   "receiver": "single-page-app",
                   "desc": "Delivers to the customers web browser"
                 }
               ]
             },
             {
-              "id": "single-page-app",
+              "id": "singlePageApp",
               "name": "Single-Page Application",
               "desc": "Provides all of the Internet Banking functionality to the customers via their web browser",
               "tech": "Javascript and Angular",
@@ -54,18 +55,18 @@
               "relationships": [
                 {
                   "sender": "customer",
-                  "receiver": "single-page-app",
+                  "receiver": "singlePageApp",
                   "desc": "Views account balances, and makes payments using"
                 },
                 {
-                  "sender": "single-page-app",
+                  "sender": "singlePageApp",
                   "receiver": "api-app",
                   "desc": "Delivers to the customers web browser"
                 }
               ]
             },
             {
-              "id": "mobile-app",
+              "id": "mobileApp",
               "name": "Mobile Application",
               "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
               "tech": "Xamarmin",
@@ -73,18 +74,18 @@
               "relationships": [
                 {
                   "sender": "customer",
-                  "receiver": "mobile-app",
+                  "receiver": "mobileApp",
                   "desc": "Views account balances, and makes payments using"
                 },
                 {
-                  "sender": "mobile-app",
+                  "sender": "mobileApp",
                   "receiver": "api-app",
                   "desc": "Delivers to the customers web browser"
                 }
               ]
             },
             {
-              "id": "api-app",
+              "id": "apiApp",
               "name": "Api Application",
               "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
               "tech": "Java and Spring MVC",
@@ -92,11 +93,11 @@
               "relationships": [
                 {
                   "sender": "customer",
-                  "receiver": "api-app",
+                  "receiver": "apiApp",
                   "desc": "Views account balances, and makes payments using"
                 },
                 {
-                  "sender": "api-app",
+                  "sender": "apiApp",
                   "receiver": "api-app",
                   "desc": "Delivers to the customers web browser"
                 }
@@ -113,33 +114,33 @@
           ],
           "relationships": [
             {
-              "sender": "internet-banking-system",
+              "sender": "internetBankingSystem",
               "receiver": "mainframe-banking-system",
               "desc": "Stores all of the core banking information about customers, accounts, transactions etc"
             }
           ]
         },
         {
-          "id": "mainframe-banking-system",
+          "id": "mainframeBankingSystem",
           "name": "Mainframe Banking System",
           "desc": "Stores all of the core banking information about customers, accounts, transactions etc",
           "containers": [],
           "relationships": [
             {
-              "sender": "mainframe-banking-system",
+              "sender": "mainframeBankingSystem",
               "receiver": "mainframe-banking-system",
               "desc": "Stores all of the core banking information about customers, accounts, transactions etc"
             }
           ]
         },
         {
-          "id": "email-system",
+          "id": "emailSystem",
           "name": "Email System",
           "desc": "The internal Microsoft Exchange e-mail system.",
           "containers": [],
           "relationships": [
             {
-              "sender": "email-system",
+              "sender": "emailSystem",
               "receiver": "customer",
               "desc": "Sends email to"
             }

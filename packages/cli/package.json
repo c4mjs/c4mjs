@@ -23,7 +23,7 @@
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "@c4mjs/workspace": "^0.1.13",
-    "ajv": "^8.11.0",
+    "@c4mjs/validation": "0.1.0",
     "commander": "^9.4.0",
     "debug": "^4.3.4",
     "eslint": "8.22.0",

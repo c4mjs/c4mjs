@@ -1,5 +1,7 @@
 ---
+id: bigBankPlc
 name: Big Bank PLC
 version: 1.0.0
 groups:
   - $ref: ./internet-banking/group.yaml
+  - $ref: ./internet-banking-agent/group.yaml

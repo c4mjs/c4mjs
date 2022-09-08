@@ -1,8 +1,6 @@
-import Ajv, { ErrorObject } from "ajv";
+import { ajv, ErrorObject } from "@c4mjs/validation";
 import schema from "../source-workspace.schema.json";
 import { SourceWorkspaceDto } from "../dtos/source-workspace.dto";
-
-const ajv = new Ajv({ allErrors: true, validateFormats: true });
 
 const validateSourceWorkspace = ajv.compile<SourceWorkspaceDto>(schema);
 

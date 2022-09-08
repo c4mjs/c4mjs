@@ -1,24 +1,24 @@
 ---
-id: internet-banking
+id: internetBanking
 name: Internet Banking System
 people:
   - id: customer
     name: Personal Banking Customer
     desc: A customer of the bank, with personal bank accounts.
     deps: |
-      this -> internet-banking-system : Views account balances, and makes payments using
+      this -> internetBankingSystem : Views account balances, and makes payments using
 
 systems:
   - $ref: ./internet-banking-system/system.yaml
 
-  - id: mainframe-banking-system
+  - id: mainframeBankingSystem
     name: Mainframe Banking System
+    external: true
     desc: Stores all of the core banking information about customers, accounts, transactions etc
-    deps: |
-      this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
 
-  - id: email-system
+  - id: emailSystem
     name: Email System
+    external: true
     desc: The internal Microsoft Exchange e-mail system.
     deps: |
       this -> customer : Sends email to

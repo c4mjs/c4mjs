@@ -12,6 +12,7 @@
                     "type": "boolean"
                 },
                 "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -56,6 +57,7 @@
                     "type": "boolean"
                 },
                 "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -92,6 +94,7 @@
                     "type": "string"
                 },
                 "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -130,7 +133,11 @@
                 "desc": {
                     "type": "string"
                 },
+                "external": {
+                    "type": "boolean"
+                },
                 "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -207,6 +214,7 @@
                     "type": "boolean"
                 },
                 "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -242,15 +250,26 @@
                     },
                     "type": "array"
                 },
+                "id": {
+                    "pattern": "^([a-zA-Z0-9])*$",
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
                 "version": {
+                    "description": "Version for the item",
+                    "examples": [
+                        "1.0.0"
+                    ],
+                    "format": "semver",
+                    "title": "version",
                     "type": "string"
                 }
             },
             "required": [
                 "groups",
+                "id",
                 "name",
                 "version"
             ],

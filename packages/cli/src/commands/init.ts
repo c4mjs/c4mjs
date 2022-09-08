@@ -26,54 +26,55 @@ const workspaceYamlFile = Handlebars.compile(`---
 name: Big Bank PLC
 version: 1.0.0
 groups:
-  - id: internet-banking
+  - id: internetBanking
     name: Internet Banking System
     people:
       - id: customer
         name: Personal Banking Customer
         desc: A customer of the bank, with personal bank accounts.
         deps: |
-          this -> internet-banking-system : Views account balances, and makes payments using
+          this -> internetBankingSystem : Views account balances, and makes payments using
 
     systems:
-      - id: internet-banking-system
+      - id: internetBankingSystem
         name: Internet Banking System
         desc: Allows customers to view information about their bank accounts and make payments.
         deps: |
-          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
+          this -> mainframeBankingSystem : Stores all of the core banking information about customers, accounts, transactions etc
+          this -> emailSystem : Sends e-mails using
 
         containers:
-          - id: web-app
+          - id: webApp
             name: Web Application
             desc: Delivers the static content and the Internet Banking single page application.
             tech: Java and Spring MVC
             deps: |
               this <- customer : Visits bigbank.com/ib using : HTTPS
-              this -> single-page-app : Delivers to the customers web browser
+              this -> singlePageApp : Delivers to the customers web browser
 
-          - id: single-page-app
+          - id: singlePageApp
             name: Single-Page Application
             desc: Provides all of the Internet Banking functionality to the customers via their web browser
             tech: Javascript and Angular
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
-          - id: mobile-app
+          - id: mobileApp
             name: Mobile Application
             desc: Provides a limited subset of the internet banking functionality to customers via their mobile device.
             tech: Xamarmin
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
-          - id: api-app
+          - id: apiApp
             name: Api Application
             desc: Provides internet banking functionality via a JSON/HTTPS api.
             tech: Java and Spring MVC
             deps: |
               this <- customer : Views account balances, and makes payments using
-              this -> api-app : Delivers to the customers web browser
+              this -> apiApp : Delivers to the customers web browser
 
           - id: database
             name: Database
@@ -81,13 +82,11 @@ groups:
             tech: Oracle Database Schema
 
 
-      - id: mainframe-banking-system
+      - id: mainframeBankingSystem
         name: Mainframe Banking System
         desc: Stores all of the core banking information about customers, accounts, transactions etc
-        deps: |
-          this -> mainframe-banking-system : Stores all of the core banking information about customers, accounts, transactions etc
 
-      - id: email-system
+      - id: emailSystem
         name: Email System
         desc: The internal Microsoft Exchange e-mail system.
         deps: |
