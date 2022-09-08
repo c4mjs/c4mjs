@@ -1,6 +1,6 @@
 {
   "name": "@c4mjs/workspace",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "C4Model JS Workspace Library",
   "keywords": [
