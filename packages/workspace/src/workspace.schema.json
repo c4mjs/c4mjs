@@ -2,9 +2,12 @@
     "$ref": "#/definitions/WorkspaceDto",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
-        "ComponentDto": {
+        "EntityDto": {
             "additionalProperties": false,
             "properties": {
+                "address": {
+                    "type": "string"
+                },
                 "desc": {
                     "type": "string"
                 },
@@ -12,17 +15,10 @@
                     "type": "boolean"
                 },
                 "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
                     "type": "string"
-                },
-                "relationships": {
-                    "items": {
-                        "$ref": "#/definitions/RelationshipDto"
-                    },
-                    "type": "array"
                 },
                 "tags": {
                     "items": {
@@ -32,85 +28,42 @@
                 },
                 "tech": {
                     "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityType"
                 }
             },
             "required": [
+                "address",
                 "id",
                 "name",
-                "relationships"
+                "tech",
+                "type"
             ],
             "type": "object"
         },
-        "ContainerDto": {
-            "additionalProperties": false,
-            "properties": {
-                "components": {
-                    "items": {
-                        "$ref": "#/definitions/ComponentDto"
-                    },
-                    "type": "array"
-                },
-                "desc": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
-                },
-                "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "relationships": {
-                    "items": {
-                        "$ref": "#/definitions/RelationshipDto"
-                    },
-                    "type": "array"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "tech": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "components",
-                "id",
-                "name",
-                "relationships"
+        "EntityType": {
+            "enum": [
+                "container",
+                "person",
+                "system"
             ],
-            "type": "object"
+            "type": "string"
         },
         "GroupDto": {
             "additionalProperties": false,
             "properties": {
+                "address": {
+                    "type": "string"
+                },
                 "desc": {
                     "type": "string"
                 },
                 "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
                     "type": "string"
-                },
-                "people": {
-                    "items": {
-                        "$ref": "#/definitions/PersonDto"
-                    },
-                    "type": "array"
-                },
-                "systems": {
-                    "items": {
-                        "$ref": "#/definitions/SystemDto"
-                    },
-                    "type": "array"
                 },
                 "tags": {
                     "items": {
@@ -120,46 +73,9 @@
                 }
             },
             "required": [
+                "address",
                 "id",
-                "name",
-                "people",
-                "systems"
-            ],
-            "type": "object"
-        },
-        "PersonDto": {
-            "additionalProperties": false,
-            "properties": {
-                "desc": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
-                },
-                "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "relationships": {
-                    "items": {
-                        "$ref": "#/definitions/RelationshipDto"
-                    },
-                    "type": "array"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "id",
-                "name",
-                "relationships"
+                "name"
             ],
             "type": "object"
         },
@@ -198,23 +114,25 @@
             "title": "Relationship",
             "type": "object"
         },
-        "SystemDto": {
+        "WorkspaceDto": {
             "additionalProperties": false,
             "properties": {
-                "containers": {
+                "address": {
+                    "type": "string"
+                },
+                "entities": {
                     "items": {
-                        "$ref": "#/definitions/ContainerDto"
+                        "$ref": "#/definitions/EntityDto"
                     },
                     "type": "array"
                 },
-                "desc": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/GroupDto"
+                    },
+                    "type": "array"
                 },
                 "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
                     "type": "string"
                 },
                 "name": {
@@ -225,37 +143,6 @@
                         "$ref": "#/definitions/RelationshipDto"
                     },
                     "type": "array"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "containers",
-                "id",
-                "name",
-                "relationships"
-            ],
-            "type": "object"
-        },
-        "WorkspaceDto": {
-            "additionalProperties": false,
-            "properties": {
-                "groups": {
-                    "items": {
-                        "$ref": "#/definitions/GroupDto"
-                    },
-                    "type": "array"
-                },
-                "id": {
-                    "pattern": "^([a-zA-Z0-9])*$",
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
                 },
                 "version": {
                     "description": "Version for the item",
@@ -268,9 +155,12 @@
                 }
             },
             "required": [
+                "address",
+                "entities",
                 "groups",
                 "id",
                 "name",
+                "relationships",
                 "version"
             ],
             "type": "object"
