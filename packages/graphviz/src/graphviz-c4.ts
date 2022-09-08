@@ -63,14 +63,13 @@ export class GraphvizC4 {
   /**
    * Render a Container Dot Diagram for the system.
    *
-   * @param groupId {string} id of the group to render the context diagram for
    * @param systemId {string} id of the system to render the context diagram for
    */
-  getContainerDiagram(groupId: string, systemId: string) {
-    debug("Rendering System Container Diagram for %s/%s", groupId, systemId);
+  getContainerDiagram(systemId: string) {
+    debug("Rendering System Container Diagram for %s", systemId);
     const system = this.workspace.getSystem(systemId);
 
-    const associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(groupId, systemId);
+    const associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(system.groupId, systemId);
 
     const entities = uniqBy(
       associatedRelationships.flatMap(({ sender, receiver }) => [sender, receiver]),

@@ -142,6 +142,107 @@ apiApp -> apiApp [ id=\\"100010\\", label=<<font point-size=\\"14\\">  Delivers 
 }"
 `;
 
+exports[`GraphvizC4 getContainerDiagram context: internetBankingSystem should render and match snapshot 1`] = `
+"digraph {
+    compound=true
+    graph [fontname=\\"Arial\\", rankdir=TB, ranksep=1.0, nodesep=1.0]
+    node [fontname=\\"Arial\\", shape=box, margin=\\"0.3,0.3\\"]
+    edge [fontname=\\"Arial\\"]
+
+    subgraph cluster_internetBankingSystem {
+        label = \\"Internet Banking System\\"
+        style = \\"dashed\\"
+        color = \\"grey\\"
+        margin=\\"50,50\\"
+        
+        webApp [
+        id=\\"webApp\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Web Application</b></font><br /><font point-size=\\"12\\">[Container]: Java and Spring MVC</font><br /><font point-size=\\"14\\">  Delivers the static content <br />and the Internet Banking <br />single page application.</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+singlePageApp [
+        id=\\"singlePageApp\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Single-Page Application</b></font><br /><font point-size=\\"12\\">[Container]: Javascript and Angular</font><br /><font point-size=\\"14\\">  Provides all of the Internet <br />Banking functionality to the <br />customers via their web <br />browser</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+apiApp [
+        id=\\"apiApp\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Api Application</b></font><br /><font point-size=\\"12\\">[Container]: Java and Spring MVC</font><br /><font point-size=\\"14\\">  Provides internet banking <br />functionality via a JSON/HTTPS <br />api.</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+mobileApp [
+        id=\\"mobileApp\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Mobile Application</b></font><br /><font point-size=\\"12\\">[Container]: Xamarmin</font><br /><font point-size=\\"14\\">  Provides a limited subset of <br />the internet banking <br />functionality to customers via <br />their mobile device.</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+database [
+        id=\\"database\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Database</b></font><br /><font point-size=\\"12\\">[Container]: Oracle Database Schema</font><br /><font point-size=\\"14\\">  Stores user registration <br />information, hashed <br />authentication credentials, <br />access logs etc.</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+        
+    }
+
+customer [
+        id=\\"customer\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Personal Banking Customer</b></font><br /><font point-size=\\"12\\">[Person]</font><br /><font point-size=\\"14\\">  A customer of the bank, with <br />personal bank accounts.</font>>,
+        style=\\"filled\\",
+        color=\\"#0b4884\\",
+        fillcolor=\\"#1C4177\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+emailSystem [
+        id=\\"emailSystem\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
+        style=\\"filled\\",
+        color=\\"#5a5a5a\\",
+        fillcolor=\\"#999999\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+mainframeBankingSystem [
+        id=\\"mainframeBankingSystem\\",
+        shape=\\"rect\\",
+        label=<<font point-size=\\"18\\"><b>Mainframe Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Stores all of the core banking <br />information about customers, <br />accounts, transactions etc</font>>,
+        style=\\"filled\\",
+        color=\\"#5a5a5a\\",
+        fillcolor=\\"#999999\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+customer -> webApp [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Visits bigbank.com/ib using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+webApp -> singlePageApp [ id=\\"100004\\", label=<<font point-size=\\"14\\">  Delivers to the customers web <br />browser</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+customer -> singlePageApp [ id=\\"100005\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+singlePageApp -> apiApp [ id=\\"100006\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+customer -> mobileApp [ id=\\"100007\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+mobileApp -> apiApp [ id=\\"100008\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+apiApp -> database [ id=\\"100009\\", label=<<font point-size=\\"14\\">  Reads and writes to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+apiApp -> emailSystem [ id=\\"100010\\", label=<<font point-size=\\"14\\">  Sends e-mail using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+apiApp -> mainframeBankingSystem [ id=\\"100011\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+     
+}"
+`;
+
 exports[`GraphvizC4 getContextDiagram limited to group context: internetBanking should render and match snapshot 1`] = `
 "digraph {
     compound=true

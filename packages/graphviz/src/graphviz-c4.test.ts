@@ -73,7 +73,7 @@ describe("GraphvizC4", () => {
 
   describe("getContainerDiagram", () => {
     const shouldInclude = {
-      ["internetBanking/internetBankingSystem"]: [
+      ["internetBankingSystem"]: [
         `id="customer",`,
         `id="webApp",`,
         `id="singlePageApp",`,
@@ -93,16 +93,15 @@ describe("GraphvizC4", () => {
       ],
     };
 
-    describe.each(keys(shouldInclude))("context: %s", (groupSystem) => {
-      const [group, system] = groupSystem.split("/");
-      const dotDiagram = graphviz.getContainerDiagram(group, system);
-      writeFileSync(resolve(__dirname, `./__stubs__/${group}_${system}.c2.dot`), dotDiagram);
+    describe.each(keys(shouldInclude))("context: %s", (system) => {
+      const dotDiagram = graphviz.getContainerDiagram(system);
+      writeFileSync(resolve(__dirname, `./__stubs__/${system}.c2.dot`), dotDiagram);
 
       it("should render and match snapshot", () => {
         expect(dotDiagram).toMatchSnapshot();
       });
 
-      it.each(shouldInclude[groupSystem])("should contain: %s", (include) => {
+      it.each(shouldInclude[system])("should contain: %s", (include) => {
         expect(dotDiagram.includes(include)).toBeTruthy();
       });
     });
