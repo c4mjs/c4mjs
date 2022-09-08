@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.3.0 (2022-09-08)
+
+
+### Features
+
+* **graphviz:** simplify workspace ([0d06606](https://github.com/c4mjs/c4mjs/commit/0d06606c63ecb25430e1912ca7f90cd102df8e06))
+
+
+
+
+
 # 0.2.0 (2022-09-08)
 
 
