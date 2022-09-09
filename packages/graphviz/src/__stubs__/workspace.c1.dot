@@ -76,12 +76,12 @@ internetBankingManagementSystem [
         
     }
 
+internetBankingManagementSystem -> emailSystem [ id="100000", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
 internetBankingManagementSystem -> mainframeBankingSystem [ id="100002", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingManagementSystem -> emailSystem [ id="100003", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-customer -> internetBankingSystem [ id="100004", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-emailSystem -> customer [ id="100006", label=<<font point-size="14">  Sends email to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingSystem -> emailSystem [ id="100008", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingSystem -> mainframeBankingSystem [ id="100009", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-agent -> internetBankingManagementSystem [ id="100011", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+agent -> internetBankingManagementSystem [ id="100003", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+emailSystem -> customer [ id="100004", label=<<font point-size="14">  Sends email to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingSystem -> mainframeBankingSystem [ id="100008", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingSystem -> emailSystem [ id="100010", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+customer -> internetBankingSystem [ id="100016", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
      
 }

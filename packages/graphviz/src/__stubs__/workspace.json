@@ -48,15 +48,6 @@
       ]
     },
     {
-      "id": "internetBankingManagementSystem",
-      "address": "internetBankingAgent.internetBankingManagementSystem",
-      "name": "Internet Banking Management System",
-      "desc": "Allows agents to manage customer banking information and perform actions on their behalf",
-      "external": false,
-      "type": "system",
-      "tags": []
-    },
-    {
       "id": "emailSystem",
       "address": "internetBanking.emailSystem",
       "name": "Email System",
@@ -75,28 +66,19 @@
       "tags": []
     },
     {
+      "id": "internetBankingManagementSystem",
+      "address": "internetBankingAgent.internetBankingManagementSystem",
+      "name": "Internet Banking Management System",
+      "desc": "Allows agents to manage customer banking information and perform actions on their behalf",
+      "external": false,
+      "type": "system",
+      "tags": []
+    },
+    {
       "id": "webApp",
       "address": "internetBanking.internetBankingSystem.webApp",
       "name": "Web Application",
       "desc": "Delivers the static content and the Internet Banking single page application.",
-      "external": false,
-      "type": "container",
-      "tags": []
-    },
-    {
-      "id": "singlePageApp",
-      "address": "internetBanking.internetBankingSystem.singlePageApp",
-      "name": "Single-Page Application",
-      "desc": "Provides all of the Internet Banking functionality to the customers via their web browser",
-      "external": false,
-      "type": "container",
-      "tags": []
-    },
-    {
-      "id": "apiApp",
-      "address": "internetBanking.internetBankingSystem.apiApp",
-      "name": "Api Application",
-      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
       "external": false,
       "type": "container",
       "tags": []
@@ -111,15 +93,6 @@
       "tags": []
     },
     {
-      "id": "mobileApp",
-      "address": "internetBanking.internetBankingSystem.mobileApp",
-      "name": "Mobile Application",
-      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
-      "external": false,
-      "type": "container",
-      "tags": []
-    },
-    {
       "id": "agentPortal",
       "address": "internetBankingAgent.internetBankingManagementSystem.agentPortal",
       "name": "Agent Portal",
@@ -127,18 +100,45 @@
       "external": false,
       "type": "container",
       "tags": []
+    },
+    {
+      "id": "apiApp",
+      "address": "internetBanking.internetBankingSystem.apiApp",
+      "name": "Api Application",
+      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
+      "external": false,
+      "type": "container",
+      "tags": []
+    },
+    {
+      "id": "singlePageApp",
+      "address": "internetBanking.internetBankingSystem.singlePageApp",
+      "name": "Single-Page Application",
+      "desc": "Provides all of the Internet Banking functionality to the customers via their web browser",
+      "external": false,
+      "type": "container",
+      "tags": []
+    },
+    {
+      "id": "mobileApp",
+      "address": "internetBanking.internetBankingSystem.mobileApp",
+      "name": "Mobile Application",
+      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
+      "external": false,
+      "type": "container",
+      "tags": []
     }
   ],
   "relationships": [
     {
-      "sender": "internetBankingAgent.internetBankingManagementSystem.agentPortal",
-      "receiver": "internetBanking.internetBankingSystem.apiApp",
-      "desc": "Sends API requests to"
+      "sender": "internetBankingAgent.internetBankingManagementSystem",
+      "receiver": "internetBanking.emailSystem",
+      "desc": "Sends emails using"
     },
     {
       "sender": "internetBankingAgent.internetBankingManagementSystem.agentPortal",
-      "receiver": "internetBanking.internetBankingSystem.database",
-      "desc": "Does Naughty things to"
+      "receiver": "internetBanking.internetBankingSystem.apiApp",
+      "desc": "Sends API requests to"
     },
     {
       "sender": "internetBankingAgent.internetBankingManagementSystem",
@@ -146,14 +146,59 @@
       "desc": "Gets account information from, and makes payments using"
     },
     {
-      "sender": "internetBankingAgent.internetBankingManagementSystem",
+      "sender": "internetBankingAgent.agent",
+      "receiver": "internetBankingAgent.internetBankingManagementSystem",
+      "desc": "Views account balances, and makes payments using"
+    },
+    {
+      "sender": "internetBanking.emailSystem",
+      "receiver": "internetBanking.customer",
+      "desc": "Sends email to"
+    },
+    {
+      "sender": "internetBankingAgent.agent",
+      "receiver": "internetBankingAgent.internetBankingManagementSystem.agentPortal",
+      "desc": "Perform actions using"
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
+      "desc": "Views account balances, and makes payments using"
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.mobileApp",
+      "desc": "Views account balances, and makes payments using"
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem",
+      "receiver": "internetBanking.mainframeBankingSystem",
+      "desc": "Gets account information from, and makes payments using"
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem.mobileApp",
+      "receiver": "internetBanking.internetBankingSystem.apiApp",
+      "desc": "Makes API calls to"
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem",
       "receiver": "internetBanking.emailSystem",
       "desc": "Sends emails using"
     },
     {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem",
-      "desc": "Views account balances, and makes payments using"
+      "sender": "internetBanking.internetBankingSystem.apiApp",
+      "receiver": "internetBanking.mainframeBankingSystem",
+      "desc": "Makes API calls to the silly system"
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem.webApp",
+      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
+      "desc": "Delivers to the customers web browser"
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem.singlePageApp",
+      "receiver": "internetBanking.internetBankingSystem.apiApp",
+      "desc": "Makes API calls to"
     },
     {
       "sender": "internetBanking.customer",
@@ -162,69 +207,19 @@
       "tech": "HTTPS"
     },
     {
-      "sender": "internetBanking.emailSystem",
-      "receiver": "internetBanking.customer",
-      "desc": "Sends email to"
-    },
-    {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
-      "desc": "Views account balances, and makes payments using"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem",
-      "receiver": "internetBanking.emailSystem",
-      "desc": "Sends emails using"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem",
-      "receiver": "internetBanking.mainframeBankingSystem",
-      "desc": "Gets account information from, and makes payments using"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.webApp",
-      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
-      "desc": "Delivers to the customers web browser"
-    },
-    {
-      "sender": "internetBankingAgent.agent",
-      "receiver": "internetBankingAgent.internetBankingManagementSystem",
-      "desc": "Views account balances, and makes payments using"
-    },
-    {
       "sender": "internetBanking.internetBankingSystem.apiApp",
       "receiver": "internetBanking.emailSystem",
       "desc": "Sends e-mail using"
     },
     {
       "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.mobileApp",
+      "receiver": "internetBanking.internetBankingSystem",
       "desc": "Views account balances, and makes payments using"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.mobileApp",
-      "receiver": "internetBanking.internetBankingSystem.apiApp",
-      "desc": "Makes API calls to"
-    },
-    {
-      "sender": "internetBankingAgent.agent",
-      "receiver": "internetBankingAgent.internetBankingManagementSystem.agentPortal",
-      "desc": "Perform actions using"
     },
     {
       "sender": "internetBanking.internetBankingSystem.apiApp",
       "receiver": "internetBanking.internetBankingSystem.database",
       "desc": "Reads and writes to"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.apiApp",
-      "receiver": "internetBanking.mainframeBankingSystem",
-      "desc": "Makes API calls to the silly system"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.singlePageApp",
-      "receiver": "internetBanking.internetBankingSystem.apiApp",
-      "desc": "Makes API calls to"
     }
   ]
 }

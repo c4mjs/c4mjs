@@ -4,7 +4,7 @@ import { debug } from "./debug";
 import { Workspace } from "./c4/workspace";
 import { digraph, subgraph } from "./dot";
 import { render } from "./dot/render";
-import { Scope } from "./c4/scope";
+import { Entity } from "./c4/entity";
 
 export class GraphvizC4 {
   private readonly workspace: Workspace;
@@ -33,10 +33,10 @@ export class GraphvizC4 {
         .value();
 
       // Get all entities in my group
-      const myEntities = entities.filter((entity) => entity.id.startsWith(groupId));
+      const myEntities = entities.filter((entity) => entity.groupId === groupId);
 
       // Get all entities in groups other than mine
-      const otherEntities = entities.filter((entity) => !entity.id.startsWith(groupId));
+      const otherEntities = entities.filter((entity) => entity.groupId !== groupId);
 
       // Render the Dot Digraph
       return digraph({
@@ -70,28 +70,41 @@ export class GraphvizC4 {
     debug("Rendering System Container Diagram for %s", systemId);
     const system = this.workspace.getSystem(systemId);
 
-    const associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(system.groupId, systemId);
+    // Get Relationships in and out of the group
+    let associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(system.groupId, systemId);
 
+    // Replace senders and receivers where they are conainers outside the system with the system
     associatedRelationships.forEach((r) => {
+      const isADifferentSoftwareSystem = (entity: Entity) =>
+        entity.type === "container" && entity.parentAddress !== system.address;
+
       // If the sender is from a foreign system and is not the system, convert it to the system
-      if (r.sender.systemId !== systemId && r.sender.scope !== Scope.CONTEXT && r.sender.systemId) {
+      if (isADifferentSoftwareSystem(r.sender)) {
         debug(`Swapping ${r.sender.id} container for system`);
         r.sender = this.workspace.getEntity(r.sender.parentAddress);
       }
+
       // If the receiver is from a foreign system and is not the system, convert it to the system
-      if (r.receiver.systemId !== systemId && r.receiver.scope !== Scope.CONTEXT && r.receiver.systemId) {
+      if (isADifferentSoftwareSystem(r.receiver)) {
         debug(`Swapping ${r.receiver.id} container for system`);
         r.receiver = this.workspace.getEntity(r.receiver.parentAddress);
       }
     });
+
+    // Strip out the system being rendereds relationships
+    associatedRelationships = associatedRelationships.filter(
+      (r) => !(r.sender.address === system.address || r.receiver.address === system.address)
+    );
 
     const entities = uniqBy(
       associatedRelationships.flatMap(({ sender, receiver }) => [sender, receiver]),
       "id"
     );
 
-    // Get all entities in my system
-    const myEntities = entities.filter((entity) => systemId === entity.systemId);
+    // Get all entities in my system but not me
+    const myEntities = entities
+      .filter((entity) => systemId === entity.systemId)
+      .filter(({ address }) => address !== system.address);
 
     // Get all entities in groups other than mine
     const otherEntities = entities.filter((entity) => systemId !== entity.systemId);
