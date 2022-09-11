@@ -1,3 +1,4 @@
+[< Home](/)
 # C4Model JS - Authoring
 
 The main goal of the Authoring workflow is to produce a workspace in JSON format, see the for more information on this.

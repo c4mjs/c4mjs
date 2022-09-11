@@ -47,9 +47,9 @@ Explore the workspace using the interactive viewer.
 
 ## Guides
 
-See the [Author](./AUTHOR.md) guide on how to create a Workspace.
+See the [Author](docs/author.md) guide on how to create a Workspace.
 
-See the [Viewer](./VIEWER.md) guide on how to view the C4 Model Diagrams.
+See the [Viewer](docs/viewer.md) guide on how to view the C4 Model Diagrams.
 
 # References
 
