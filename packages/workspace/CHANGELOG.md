@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.8 (2022-09-12)
+
+
+### Bug Fixes
+
+* remove self messages ([4054ee6](https://github.com/c4mjs/c4mjs/commit/4054ee6d1d9b3981fc9249c8e9bc440565c2cdcf))
+
+
+
+
+
 ## 1.1.7 (2022-09-12)
 
 
