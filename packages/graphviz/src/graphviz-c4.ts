@@ -99,6 +99,9 @@ export class GraphvizC4 {
       (r) => !(r.sender.address === system.address || r.receiver.address === system.address)
     );
 
+    // Strip out self messages where containers from other systems were converted to systems
+    associatedRelationships = filter(associatedRelationships, (r) => r.sender.address !== r.receiver.address);
+
     const entities = uniqBy(
       associatedRelationships.flatMap(({ sender, receiver }) => [sender, receiver]),
       "id"
