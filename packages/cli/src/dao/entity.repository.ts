@@ -5,7 +5,7 @@ import { database } from "./database";
 export const EntityRepository = {
   findAll: (): Promise<EntityEntity[]> =>
     new Promise((resolve, reject) =>
-      database.all(`select id, address, name, desc, external, type, tags from "entity"`, (error, rows) => {
+      database.all(`select id, address, name, desc, tech, external, type, tags from "entity"`, (error, rows) => {
         if (error) reject(error);
         resolve(
           _(rows)
@@ -28,8 +28,8 @@ export const EntityRepository = {
   save: async (entity: EntityEntity) => {
     return new Promise((resolve, reject) =>
       database.run(
-        `insert into "entity" (id, address, name, desc, external, type, tags) values (?, ?, ?, ?, ?, ?, ?)`,
-        [entity.id, entity.address, entity.name, entity.desc, entity.external, entity.type, entity.tags],
+        `insert into "entity" (id, address, name, desc, tech, external, type, tags) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+        [entity.id, entity.address, entity.name, entity.desc, entity.tech, entity.external, entity.type, entity.tags],
         (error) => {
           if (error) reject(error);
           resolve(entity);
