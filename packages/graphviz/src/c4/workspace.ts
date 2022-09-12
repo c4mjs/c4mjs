@@ -83,9 +83,6 @@ export class Workspace {
   }
 
   getContainerRelationshipsWithSystem(groupId: string, systemId: string) {
-    return [
-      ...this.getContextRelationshipsWithGroup(groupId),
-      ...this.getContainerRelationshipsWithGroup(groupId),
-    ].filter(({ sender, receiver }) => sender.systemId === systemId || receiver.systemId === systemId);
+    return [...this.getContextRelationshipsWithGroup(groupId), ...this.getContainerRelationshipsWithGroup(groupId)];
   }
 }

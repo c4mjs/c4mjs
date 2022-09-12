@@ -19,6 +19,15 @@ digraph {
         fillcolor="#568BCF",
         fontcolor="#ffffff"
     ]
+internetBanking__internetBankingSystem__webApp [
+        id="internetBanking__internetBankingSystem__webApp",
+        shape="rectangle",
+        label=<<font point-size="18"><b>Web Application</b></font><br /><font point-size="12">[Container]</font><br /><font point-size="14">  Delivers the static content <br />and the Internet Banking <br />single page application.</font>>,
+        style="filled",
+        color="#568BCF",
+        fillcolor="#568BCF",
+        fontcolor="#ffffff"
+    ]
 internetBanking__internetBankingSystem__singlePageApp [
         id="internetBanking__internetBankingSystem__singlePageApp",
         shape="rectangle",
@@ -32,15 +41,6 @@ internetBanking__internetBankingSystem__mobileApp [
         id="internetBanking__internetBankingSystem__mobileApp",
         shape="rectangle",
         label=<<font point-size="18"><b>Mobile Application</b></font><br /><font point-size="12">[Container]</font><br /><font point-size="14">  Provides a limited subset of <br />the internet banking <br />functionality to customers via <br />their mobile device.</font>>,
-        style="filled",
-        color="#568BCF",
-        fillcolor="#568BCF",
-        fontcolor="#ffffff"
-    ]
-internetBanking__internetBankingSystem__webApp [
-        id="internetBanking__internetBankingSystem__webApp",
-        shape="rectangle",
-        label=<<font point-size="18"><b>Web Application</b></font><br /><font point-size="12">[Container]</font><br /><font point-size="14">  Delivers the static content <br />and the Internet Banking <br />single page application.</font>>,
         style="filled",
         color="#568BCF",
         fillcolor="#568BCF",
@@ -67,15 +67,6 @@ internetBankingAgent__internetBankingManagementSystem [
         fillcolor="#1168bd",
         fontcolor="#ffffff"
     ]
-internetBanking__customer [
-        id="internetBanking__customer",
-        shape="rectangle",
-        label=<<font point-size="18"><b>Personal Banking Customer</b></font><br /><font point-size="12">[Person]</font><br /><font point-size="14">  A customer of the bank, with <br />personal bank accounts.</font>>,
-        style="filled,rounded",
-        color="#0b4884",
-        fillcolor="#1C4177",
-        fontcolor="#ffffff"
-    ]
 internetBanking__mainframeBankingSystem [
         id="internetBanking__mainframeBankingSystem",
         shape="rectangle",
@@ -94,15 +85,27 @@ internetBanking__emailSystem [
         fillcolor="#999999",
         fontcolor="#ffffff"
     ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem__apiApp [ id="100001", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__singlePageApp [ id="100006", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__mobileApp [ id="100007", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__mobileApp -> internetBanking__internetBankingSystem__apiApp [ id="100009", label=<<font point-size="14">  Makes API calls to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__mainframeBankingSystem [ id="100011", label=<<font point-size="14">  Makes API calls to the silly <br />system</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__webApp -> internetBanking__internetBankingSystem__singlePageApp [ id="100012", label=<<font point-size="14">  Delivers to the customers web <br />browser</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__singlePageApp -> internetBanking__internetBankingSystem__apiApp [ id="100013", label=<<font point-size="14">  Makes API calls to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__webApp [ id="100014", label=<<font point-size="14">  Visits bigbank.com/ib using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__emailSystem [ id="100015", label=<<font point-size="14">  Sends e-mail using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__internetBankingSystem__database [ id="100017", label=<<font point-size="14">  Reads and writes to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__customer [
+        id="internetBanking__customer",
+        shape="rectangle",
+        label=<<font point-size="18"><b>Personal Banking Customer</b></font><br /><font point-size="12">[Person]</font><br /><font point-size="14">  A customer of the bank, with <br />personal bank accounts.</font>>,
+        style="filled,rounded",
+        color="#0b4884",
+        fillcolor="#1C4177",
+        fontcolor="#ffffff"
+    ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id="100020", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id="100021", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__emailSystem -> internetBanking__customer [ id="100023", label=<<font point-size="14">  Sends email to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem__apiApp [ id="100026", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__webApp [ id="100027", label=<<font point-size="14">  Visits bigbank.com/ib using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__webApp -> internetBanking__internetBankingSystem__singlePageApp [ id="100028", label=<<font point-size="14">  Delivers to the customers web <br />browser</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__mobileApp [ id="100029", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__mobileApp -> internetBanking__internetBankingSystem__apiApp [ id="100030", label=<<font point-size="14">  Makes API calls to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__singlePageApp -> internetBanking__internetBankingSystem__apiApp [ id="100031", label=<<font point-size="14">  Makes API calls to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__internetBankingSystem__database [ id="100032", label=<<font point-size="14">  Reads and writes to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__emailSystem [ id="100033", label=<<font point-size="14">  Sends e-mail using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__singlePageApp [ id="100034", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__mainframeBankingSystem [ id="100035", label=<<font point-size="14">  Makes API calls to the silly <br />system</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
      
 }

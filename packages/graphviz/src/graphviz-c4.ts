@@ -1,10 +1,10 @@
 import { WorkspaceDto } from "@c4mjs/workspace";
-import _, { groupBy, uniqBy } from "lodash";
+import _, { filter, groupBy, remove, uniqBy } from "lodash";
 import { debug } from "./debug";
 import { Workspace } from "./c4/workspace";
 import { digraph, subgraph } from "./dot";
 import { render } from "./dot/render";
-import { Entity } from "./c4/entity";
+import { Relationship } from "./c4/relationship";
 
 export class GraphvizC4 {
   private readonly workspace: Workspace;
@@ -74,25 +74,28 @@ export class GraphvizC4 {
     let associatedRelationships = this.workspace.getContainerRelationshipsWithSystem(system.groupId, systemId);
 
     // Replace senders and receivers where they are conainers outside the system with the system
-    associatedRelationships.forEach((r) => {
-      const isADifferentSoftwareSystem = (entity: Entity) =>
-        entity.type === "container" && entity.parentAddress !== system.address;
+    associatedRelationships = associatedRelationships.map((r) => {
+      let sender = r.sender;
+      let receiver = r.receiver;
 
       // If the sender is from a foreign system and is not the system, convert it to the system
-      if (isADifferentSoftwareSystem(r.sender)) {
+      if (sender.type === "container" && sender.parentAddress !== system.address) {
         debug(`Swapping ${r.sender.id} container for system`);
-        r.sender = this.workspace.getEntity(r.sender.parentAddress);
+        sender = this.workspace.getEntity(r.sender.parentAddress);
       }
 
       // If the receiver is from a foreign system and is not the system, convert it to the system
-      if (isADifferentSoftwareSystem(r.receiver)) {
+      if (receiver.type === "container" && receiver.parentAddress !== system.address) {
         debug(`Swapping ${r.receiver.id} container for system`);
-        r.receiver = this.workspace.getEntity(r.receiver.parentAddress);
+        receiver = this.workspace.getEntity(r.receiver.parentAddress);
       }
+
+      return new Relationship(sender, receiver, r.desc, r.tech);
     });
 
     // Strip out the system being rendereds relationships
-    associatedRelationships = associatedRelationships.filter(
+    associatedRelationships = filter(
+      associatedRelationships,
       (r) => !(r.sender.address === system.address || r.receiver.address === system.address)
     );
 

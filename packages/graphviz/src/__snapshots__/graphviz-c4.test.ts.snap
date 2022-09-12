@@ -1,45 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GraphvizC4 getContainerDiagram context: internetBankingManagementSystem should render and match snapshot 1`] = `
-"digraph {
-    compound=true
-    graph [fontname=\\"Arial\\", rankdir=TB, ranksep=1.0, nodesep=1.0]
-    node [fontname=\\"Arial\\", shape=box, margin=\\"0.3,0.3\\"]
-    edge [fontname=\\"Arial\\"]
-
-    subgraph cluster_internetBankingManagementSystem {
-        label = \\"Internet Banking Management System\\"
-        style = \\"dashed\\"
-        color = \\"grey\\"
-        margin=\\"50,50\\"
-        
-        internetBankingAgent__internetBankingManagementSystem__agentPortal [
-        id=\\"internetBankingAgent__internetBankingManagementSystem__agentPortal\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Agent Portal</b></font><br /><font point-size=\\"12\\">[Container]</font><br /><font point-size=\\"14\\">  Allows agents to log in and <br />perform actions</font>>,
-        style=\\"filled\\",
-        color=\\"#568BCF\\",
-        fillcolor=\\"#568BCF\\",
-        fontcolor=\\"#ffffff\\"
-    ]
-        
-    }
-
-internetBankingAgent__agent [
-        id=\\"internetBankingAgent__agent\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Personal Banking Agent</b></font><br /><font point-size=\\"12\\">[Person]</font><br /><font point-size=\\"14\\">  An agent of the bank, managing <br />accounts on behalf of <br />customers.</font>>,
-        style=\\"filled,rounded\\",
-        color=\\"#0b4884\\",
-        fillcolor=\\"#1C4177\\",
-        fontcolor=\\"#ffffff\\"
-    ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem__agentPortal [ id=\\"100005\\", label=<<font point-size=\\"14\\">  Perform actions using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-     
-}"
-`;
-
-exports[`GraphvizC4 getContainerDiagram context: internetBankingSystem should render and match snapshot 1`] = `
+exports[`GraphvizC4 getContainerDiagram container: internetBankingSystem should render and match snapshot 1`] = `
 "digraph {
     compound=true
     graph [fontname=\\"Arial\\", rankdir=TB, ranksep=1.0, nodesep=1.0]
@@ -61,6 +22,15 @@ exports[`GraphvizC4 getContainerDiagram context: internetBankingSystem should re
         fillcolor=\\"#568BCF\\",
         fontcolor=\\"#ffffff\\"
     ]
+internetBanking__internetBankingSystem__webApp [
+        id=\\"internetBanking__internetBankingSystem__webApp\\",
+        shape=\\"rectangle\\",
+        label=<<font point-size=\\"18\\"><b>Web Application</b></font><br /><font point-size=\\"12\\">[Container]</font><br /><font point-size=\\"14\\">  Delivers the static content <br />and the Internet Banking <br />single page application.</font>>,
+        style=\\"filled\\",
+        color=\\"#568BCF\\",
+        fillcolor=\\"#568BCF\\",
+        fontcolor=\\"#ffffff\\"
+    ]
 internetBanking__internetBankingSystem__singlePageApp [
         id=\\"internetBanking__internetBankingSystem__singlePageApp\\",
         shape=\\"rectangle\\",
@@ -74,15 +44,6 @@ internetBanking__internetBankingSystem__mobileApp [
         id=\\"internetBanking__internetBankingSystem__mobileApp\\",
         shape=\\"rectangle\\",
         label=<<font point-size=\\"18\\"><b>Mobile Application</b></font><br /><font point-size=\\"12\\">[Container]</font><br /><font point-size=\\"14\\">  Provides a limited subset of <br />the internet banking <br />functionality to customers via <br />their mobile device.</font>>,
-        style=\\"filled\\",
-        color=\\"#568BCF\\",
-        fillcolor=\\"#568BCF\\",
-        fontcolor=\\"#ffffff\\"
-    ]
-internetBanking__internetBankingSystem__webApp [
-        id=\\"internetBanking__internetBankingSystem__webApp\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Web Application</b></font><br /><font point-size=\\"12\\">[Container]</font><br /><font point-size=\\"14\\">  Delivers the static content <br />and the Internet Banking <br />single page application.</font>>,
         style=\\"filled\\",
         color=\\"#568BCF\\",
         fillcolor=\\"#568BCF\\",
@@ -109,6 +70,24 @@ internetBankingAgent__internetBankingManagementSystem [
         fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
+internetBanking__mainframeBankingSystem [
+        id=\\"internetBanking__mainframeBankingSystem\\",
+        shape=\\"rectangle\\",
+        label=<<font point-size=\\"18\\"><b>Mainframe Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Stores all of the core banking <br />information about customers, <br />accounts, transactions etc</font>>,
+        style=\\"filled\\",
+        color=\\"#5a5a5a\\",
+        fillcolor=\\"#999999\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+internetBanking__emailSystem [
+        id=\\"internetBanking__emailSystem\\",
+        shape=\\"rectangle\\",
+        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
+        style=\\"filled\\",
+        color=\\"#5a5a5a\\",
+        fillcolor=\\"#999999\\",
+        fontcolor=\\"#ffffff\\"
+    ]
 internetBanking__customer [
         id=\\"internetBanking__customer\\",
         shape=\\"rectangle\\",
@@ -116,6 +95,45 @@ internetBanking__customer [
         style=\\"filled,rounded\\",
         color=\\"#0b4884\\",
         fillcolor=\\"#1C4177\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id=\\"100020\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100021\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__emailSystem -> internetBanking__customer [ id=\\"100023\\", label=<<font point-size=\\"14\\">  Sends email to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem__apiApp [ id=\\"100026\\", label=<<font point-size=\\"14\\">  Sends API requests to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__webApp [ id=\\"100027\\", label=<<font point-size=\\"14\\">  Visits bigbank.com/ib using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__webApp -> internetBanking__internetBankingSystem__singlePageApp [ id=\\"100028\\", label=<<font point-size=\\"14\\">  Delivers to the customers web <br />browser</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__mobileApp [ id=\\"100029\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__mobileApp -> internetBanking__internetBankingSystem__apiApp [ id=\\"100030\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__singlePageApp -> internetBanking__internetBankingSystem__apiApp [ id=\\"100031\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__internetBankingSystem__database [ id=\\"100032\\", label=<<font point-size=\\"14\\">  Reads and writes to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__emailSystem [ id=\\"100033\\", label=<<font point-size=\\"14\\">  Sends e-mail using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__customer -> internetBanking__internetBankingSystem__singlePageApp [ id=\\"100034\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem__apiApp -> internetBanking__mainframeBankingSystem [ id=\\"100035\\", label=<<font point-size=\\"14\\">  Makes API calls to the silly <br />system</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+     
+}"
+`;
+
+exports[`GraphvizC4 getContextDiagram limited to group context: internetBanking should render and match snapshot 1`] = `
+"digraph {
+    compound=true
+    graph [fontname=\\"Arial\\", rankdir=TB, ranksep=1.0, nodesep=1.0]
+    node [fontname=\\"Arial\\", shape=box, margin=\\"0.3,0.3\\"]
+    edge [fontname=\\"Arial\\"]
+
+    subgraph cluster_internetBanking {
+        label = \\"Internet Banking System\\"
+        style = \\"dashed\\"
+        color = \\"grey\\"
+        margin=\\"50,50\\"
+        
+        internetBanking__internetBankingSystem [
+        id=\\"internetBanking__internetBankingSystem\\",
+        shape=\\"rectangle\\",
+        label=<<font point-size=\\"18\\"><b>Internet Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Allows customers to view <br />information about their bank <br />accounts and make payments.</font>>,
+        style=\\"filled\\",
+        color=\\"#0b4884\\",
+        fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
 internetBanking__mainframeBankingSystem [
@@ -136,51 +154,6 @@ internetBanking__emailSystem [
         fillcolor=\\"#999999\\",
         fontcolor=\\"#ffffff\\"
     ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem__apiApp [ id=\\"100001\\", label=<<font point-size=\\"14\\">  Sends API requests to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__singlePageApp [ id=\\"100006\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__mobileApp [ id=\\"100007\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__mobileApp -> internetBanking__internetBankingSystem__apiApp [ id=\\"100009\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__mainframeBankingSystem [ id=\\"100011\\", label=<<font point-size=\\"14\\">  Makes API calls to the silly <br />system</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__webApp -> internetBanking__internetBankingSystem__singlePageApp [ id=\\"100012\\", label=<<font point-size=\\"14\\">  Delivers to the customers web <br />browser</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__singlePageApp -> internetBanking__internetBankingSystem__apiApp [ id=\\"100013\\", label=<<font point-size=\\"14\\">  Makes API calls to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__customer -> internetBanking__internetBankingSystem__webApp [ id=\\"100014\\", label=<<font point-size=\\"14\\">  Visits bigbank.com/ib using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__emailSystem [ id=\\"100015\\", label=<<font point-size=\\"14\\">  Sends e-mail using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem__apiApp -> internetBanking__internetBankingSystem__database [ id=\\"100017\\", label=<<font point-size=\\"14\\">  Reads and writes to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-     
-}"
-`;
-
-exports[`GraphvizC4 getContextDiagram limited to group context: internetBanking should render and match snapshot 1`] = `
-"digraph {
-    compound=true
-    graph [fontname=\\"Arial\\", rankdir=TB, ranksep=1.0, nodesep=1.0]
-    node [fontname=\\"Arial\\", shape=box, margin=\\"0.3,0.3\\"]
-    edge [fontname=\\"Arial\\"]
-
-    subgraph cluster_internetBanking {
-        label = \\"Internet Banking System\\"
-        style = \\"dashed\\"
-        color = \\"grey\\"
-        margin=\\"50,50\\"
-        
-        internetBanking__emailSystem [
-        id=\\"internetBanking__emailSystem\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
-        style=\\"filled\\",
-        color=\\"#5a5a5a\\",
-        fillcolor=\\"#999999\\",
-        fontcolor=\\"#ffffff\\"
-    ]
-internetBanking__mainframeBankingSystem [
-        id=\\"internetBanking__mainframeBankingSystem\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Mainframe Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Stores all of the core banking <br />information about customers, <br />accounts, transactions etc</font>>,
-        style=\\"filled\\",
-        color=\\"#5a5a5a\\",
-        fillcolor=\\"#999999\\",
-        fontcolor=\\"#ffffff\\"
-    ]
 internetBanking__customer [
         id=\\"internetBanking__customer\\",
         shape=\\"rectangle\\",
@@ -188,15 +161,6 @@ internetBanking__customer [
         style=\\"filled,rounded\\",
         color=\\"#0b4884\\",
         fillcolor=\\"#1C4177\\",
-        fontcolor=\\"#ffffff\\"
-    ]
-internetBanking__internetBankingSystem [
-        id=\\"internetBanking__internetBankingSystem\\",
-        shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Internet Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Allows customers to view <br />information about their bank <br />accounts and make payments.</font>>,
-        style=\\"filled\\",
-        color=\\"#0b4884\\",
-        fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
         
@@ -211,12 +175,13 @@ internetBankingAgent__internetBankingManagementSystem [
         fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100000\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id=\\"100001\\", label=<<font point-size=\\"14\\">  Sends API requests to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
 internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id=\\"100002\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__emailSystem -> internetBanking__customer [ id=\\"100004\\", label=<<font point-size=\\"14\\">  Sends email to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id=\\"100008\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id=\\"100010\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__customer -> internetBanking__internetBankingSystem [ id=\\"100016\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__customer -> internetBanking__internetBankingSystem [ id=\\"100004\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__emailSystem -> internetBanking__customer [ id=\\"100006\\", label=<<font point-size=\\"14\\">  Sends email to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id=\\"100011\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id=\\"100014\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
      
 }"
 `;
@@ -255,13 +220,13 @@ internetBankingAgent__agent [
         
     }
 
-internetBanking__emailSystem [
-        id=\\"internetBanking__emailSystem\\",
+internetBanking__internetBankingSystem [
+        id=\\"internetBanking__internetBankingSystem\\",
         shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
+        label=<<font point-size=\\"18\\"><b>Internet Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Allows customers to view <br />information about their bank <br />accounts and make payments.</font>>,
         style=\\"filled\\",
-        color=\\"#5a5a5a\\",
-        fillcolor=\\"#999999\\",
+        color=\\"#0b4884\\",
+        fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
 internetBanking__mainframeBankingSystem [
@@ -273,9 +238,19 @@ internetBanking__mainframeBankingSystem [
         fillcolor=\\"#999999\\",
         fontcolor=\\"#ffffff\\"
     ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100000\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__emailSystem [
+        id=\\"internetBanking__emailSystem\\",
+        shape=\\"rectangle\\",
+        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
+        style=\\"filled\\",
+        color=\\"#5a5a5a\\",
+        fillcolor=\\"#999999\\",
+        fontcolor=\\"#ffffff\\"
+    ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id=\\"100001\\", label=<<font point-size=\\"14\\">  Sends API requests to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
 internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id=\\"100002\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id=\\"100005\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
      
 }"
 `;
@@ -311,19 +286,19 @@ internetBanking__internetBankingSystem [
         fillcolor=\\"#1168bd\\",
         fontcolor=\\"#ffffff\\"
     ]
-internetBanking__emailSystem [
-        id=\\"internetBanking__emailSystem\\",
+internetBanking__mainframeBankingSystem [
+        id=\\"internetBanking__mainframeBankingSystem\\",
         shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
+        label=<<font point-size=\\"18\\"><b>Mainframe Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Stores all of the core banking <br />information about customers, <br />accounts, transactions etc</font>>,
         style=\\"filled\\",
         color=\\"#5a5a5a\\",
         fillcolor=\\"#999999\\",
         fontcolor=\\"#ffffff\\"
     ]
-internetBanking__mainframeBankingSystem [
-        id=\\"internetBanking__mainframeBankingSystem\\",
+internetBanking__emailSystem [
+        id=\\"internetBanking__emailSystem\\",
         shape=\\"rectangle\\",
-        label=<<font point-size=\\"18\\"><b>Mainframe Banking System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  Stores all of the core banking <br />information about customers, <br />accounts, transactions etc</font>>,
+        label=<<font point-size=\\"18\\"><b>Email System</b></font><br /><font point-size=\\"12\\">[Software System]</font><br /><font point-size=\\"14\\">  The internal Microsoft <br />Exchange e-mail system.</font>>,
         style=\\"filled\\",
         color=\\"#5a5a5a\\",
         fillcolor=\\"#999999\\",
@@ -359,13 +334,14 @@ internetBankingAgent__internetBankingManagementSystem [
         
     }
 
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100000\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id=\\"100001\\", label=<<font point-size=\\"14\\">  Sends API requests to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
 internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id=\\"100002\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__emailSystem -> internetBanking__customer [ id=\\"100004\\", label=<<font point-size=\\"14\\">  Sends email to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id=\\"100008\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id=\\"100010\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
-internetBanking__customer -> internetBanking__internetBankingSystem [ id=\\"100016\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id=\\"100003\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__customer -> internetBanking__internetBankingSystem [ id=\\"100004\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id=\\"100005\\", label=<<font point-size=\\"14\\">  Views account balances, and <br />makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__emailSystem -> internetBanking__customer [ id=\\"100006\\", label=<<font point-size=\\"14\\">  Sends email to</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id=\\"100011\\", label=<<font point-size=\\"14\\">  Gets account information from, <br />and makes payments using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
+internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id=\\"100014\\", label=<<font point-size=\\"14\\">  Sends emails using</font>>, style=\\"dashed\\", color=\\"#707070\\", fontcolor=\\"#707070\\" ]
      
 }"
 `;

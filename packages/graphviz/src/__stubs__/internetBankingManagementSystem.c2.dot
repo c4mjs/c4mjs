@@ -22,6 +22,15 @@ digraph {
         
     }
 
+internetBanking__internetBankingSystem [
+        id="internetBanking__internetBankingSystem",
+        shape="rectangle",
+        label=<<font point-size="18"><b>Internet Banking System</b></font><br /><font point-size="12">[Software System]</font><br /><font point-size="14">  Allows customers to view <br />information about their bank <br />accounts and make payments.</font>>,
+        style="filled",
+        color="#0b4884",
+        fillcolor="#1168bd",
+        fontcolor="#ffffff"
+    ]
 internetBankingAgent__agent [
         id="internetBankingAgent__agent",
         shape="rectangle",
@@ -31,6 +40,7 @@ internetBankingAgent__agent [
         fillcolor="#1C4177",
         fontcolor="#ffffff"
     ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem__agentPortal [ id="100005", label=<<font point-size="14">  Perform actions using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__internetBankingManagementSystem__agentPortal -> internetBanking__internetBankingSystem [ id="100037", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem__agentPortal [ id="100038", label=<<font point-size="14">  Perform actions using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
      
 }
