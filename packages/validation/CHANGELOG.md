@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.10 (2022-09-12)
+
+
+### Bug Fixes
+
+* read tech for container ([5021cda](https://github.com/c4mjs/c4mjs/commit/5021cda02dc7ecd86cf6b82eb543e236c5d64477))
+
+
+
+
+
 ## 1.1.9 (2022-09-12)
 
 
