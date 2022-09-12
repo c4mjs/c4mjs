@@ -62,8 +62,19 @@ export class Workspace {
     return filter(this.entities, { scope: Scope.CONTEXT });
   }
 
-  getContextRelationships() {
-    return filter(this.relationships, { scope: Scope.CONTEXT });
+  getContextRelationships(): Relationship[] {
+    // Hoist all Relationships if they are container relationships
+    const hoistedRelationships = this.relationships
+      .map((r) => {
+        let sender = r.sender;
+        let receiver = r.receiver;
+        if (r.sender.scope === Scope.CONTAINER) sender = this.getEntity(sender.parentAddress);
+        if (r.receiver.scope === Scope.CONTAINER) receiver = this.getEntity(receiver.parentAddress);
+        return new Relationship(sender, receiver, r.desc, r.tech, r.tags);
+      })
+      // Remove Inter System Messages
+      .filter(({ sender, receiver }) => sender.address !== receiver.address);
+    return filter(hoistedRelationships, { scope: Scope.CONTEXT });
   }
 
   getContainerRelationships() {

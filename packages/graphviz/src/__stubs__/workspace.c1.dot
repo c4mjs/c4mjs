@@ -84,21 +84,35 @@ internetBankingAgent__internetBankingManagementSystem [
         
     }
 
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id="100001", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id="100019", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id="100002", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id="100020", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id="100003", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id="100021", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBanking__customer -> internetBanking__internetBankingSystem [ id="100004", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id="100022", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id="100005", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBanking__customer -> internetBanking__internetBankingSystem [ id="100023", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBanking__emailSystem -> internetBanking__customer [ id="100006", label=<<font point-size="14">  Sends email to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id="100024", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id="100011", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBanking__emailSystem -> internetBanking__customer [ id="100025", label=<<font point-size="14">  Sends email to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
-internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id="100014", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+internetBanking__customer -> internetBanking__internetBankingSystem [ id="100026", label=<<font point-size="14">  Visits bigbank.com/ib using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__customer -> internetBanking__internetBankingSystem [ id="100028", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id="100030", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id="100033", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id="100034", label=<<font point-size="14">  Perform actions using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__internetBankingSystem -> internetBanking__emailSystem [ id="100035", label=<<font point-size="14">  Sends e-mail using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__customer -> internetBanking__internetBankingSystem [ id="100036", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBanking__internetBankingSystem -> internetBanking__mainframeBankingSystem [ id="100037", label=<<font point-size="14">  Makes API calls to the silly <br />system</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
  ]
      
 }
