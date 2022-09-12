@@ -90,7 +90,7 @@
       "desc": "Stores user registration information, hashed authentication credentials, access logs etc.",
       "external": false,
       "type": "container",
-      "tags": []
+      "tags": ["database"]
     },
     {
       "id": "agentPortal",

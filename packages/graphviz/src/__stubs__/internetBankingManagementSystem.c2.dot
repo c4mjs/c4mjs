@@ -10,9 +10,9 @@ digraph {
         color = "grey"
         margin="50,50"
         
-        agentPortal [
-        id="agentPortal",
-        shape="rect",
+        internetBankingAgent__internetBankingManagementSystem__agentPortal [
+        id="internetBankingAgent__internetBankingManagementSystem__agentPortal",
+        shape="rectangle",
         label=<<font point-size="18"><b>Agent Portal</b></font><br /><font point-size="12">[Container]</font><br /><font point-size="14">  Allows agents to log in and <br />perform actions</font>>,
         style="filled",
         color="#568BCF",
@@ -22,15 +22,15 @@ digraph {
         
     }
 
-agent [
-        id="agent",
-        shape="rect",
+internetBankingAgent__agent [
+        id="internetBankingAgent__agent",
+        shape="rectangle",
         label=<<font point-size="18"><b>Personal Banking Agent</b></font><br /><font point-size="12">[Person]</font><br /><font point-size="14">  An agent of the bank, managing <br />accounts on behalf of <br />customers.</font>>,
-        style="filled",
+        style="filled,rounded",
         color="#0b4884",
         fillcolor="#1C4177",
         fontcolor="#ffffff"
     ]
-agent -> agentPortal [ id="100005", label=<<font point-size="14">  Perform actions using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem__agentPortal [ id="100005", label=<<font point-size="14">  Perform actions using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
      
 }

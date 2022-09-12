@@ -26,8 +26,8 @@ export class Relationship implements Renderable {
   get dot() {
     return arrow({
       id: `${this.id}`,
-      senderId: this.sender.id,
-      receiverId: this.receiver.id,
+      senderId: this.sender.dotAddress,
+      receiverId: this.receiver.dotAddress,
       style: ["dashed"],
       label: this.desc ? body(this.desc) : "",
       color: config.relationship.color,

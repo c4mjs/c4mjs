@@ -9,6 +9,6 @@
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
-    "@c4mjs/cli": "1.1.2"
+    "@c4mjs/cli": "1.1.3"
   }
 }

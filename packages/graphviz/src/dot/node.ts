@@ -1,4 +1,4 @@
-export type NodeShape = "rect";
+export type NodeShape = "rectangle" | "cylinder";
 export type NodeStyle = "filled" | "rounded";
 
 export type NodeProperties = {

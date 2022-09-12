@@ -11,6 +11,7 @@ export class Entity implements Renderable {
   public readonly type: EntityDto["type"];
   public readonly desc?: string;
   public readonly tech?: string;
+  public readonly tags: string[];
   public readonly external?: boolean;
 
   constructor(private readonly properties: EntityDto) {
@@ -20,7 +21,12 @@ export class Entity implements Renderable {
     this.type = properties.type;
     this.desc = properties.desc;
     this.tech = properties.tech;
+    this.tags = properties.tags || [];
     this.external = properties.external;
+  }
+
+  get dotAddress() {
+    return this.address.replace(/\./g, "__");
   }
 
   get parentAddress() {
@@ -45,15 +51,21 @@ export class Entity implements Renderable {
     return Scope.CONTEXT;
   }
 
+  get shape() {
+    if (this.tags.includes("database")) return "cylinder";
+
+    return "rectangle";
+  }
+
   get dot() {
     switch (this.type) {
       case "system":
         return node({
-          id: this.id,
+          id: this.dotAddress,
           label: [title(this.name), subtitle("[Software System]"), this.desc ? body(this.desc) : undefined].join(
             "<br />"
           ),
-          shape: "rect",
+          shape: this.shape,
           style: ["filled"],
           fillcolor: this.external ? config.softwareSystem.fillcolor_ext : config.softwareSystem.fillcolor,
           color: this.external ? config.softwareSystem.color_ext : config.softwareSystem.color,
@@ -61,23 +73,23 @@ export class Entity implements Renderable {
         });
       case "person":
         return node({
-          id: this.id,
+          id: this.dotAddress,
           label: [title(this.name), subtitle("[Person]"), this.desc ? body(this.desc) : undefined].join("<br />"),
-          shape: "rect",
-          style: ["filled"],
+          shape: this.shape,
+          style: ["filled", "rounded"],
           fillcolor: this.properties.external ? config.person.fillcolor_ext : config.person.fillcolor,
           color: this.properties.external ? config.person.color_ext : config.person.color,
           fontcolor: config.person.fontcolor,
         });
       case "container":
         return node({
-          id: this.id,
+          id: this.dotAddress,
           label: [
             title(this.name),
             subtitle(this.tech ? `[Container]: ${this.tech}` : "[Container]"),
             this.desc ? body(this.desc) : undefined,
           ].join("<br />"),
-          shape: "rect",
+          shape: this.shape,
           style: ["filled"],
           fillcolor: this.properties.external ? config.container.fillcolor_ext : config.container.fillcolor,
           color: this.properties.external ? config.container.color_ext : config.container.color,
