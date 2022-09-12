@@ -1,7 +1,7 @@
 # Untitled string in C4MJS Schema Schema
 
 ```txt
-C4MJS#/definitions/SourceWorkspaceDto/properties/css
+C4MJS#/definitions/SourceWorkspaceDto/properties/styles
 ```
 
 
@@ -10,6 +10,6 @@ C4MJS#/definitions/SourceWorkspaceDto/properties/css
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [source-workspace.schema.json\*](source-workspace.schema.json "open original schema") |
 
-## css Type
+## styles Type
 
 `string`

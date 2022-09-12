@@ -1101,29 +1101,11 @@ Reference this group by using
 
 | Property            | Type     | Required | Nullable       | Defined by                                                                                                                              |
 | :------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| [css](#css)         | `string` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-css.md "C4MJS#/definitions/SourceWorkspaceDto/properties/css")         |
 | [groups](#groups)   | `array`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-groups.md "C4MJS#/definitions/SourceWorkspaceDto/properties/groups")   |
 | [id](#id-5)         | `string` | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-id.md "C4MJS#/definitions/SourceWorkspaceDto/properties/id")           |
 | [name](#name-5)     | `string` | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")       |
+| [styles](#styles)   | `string` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")   |
 | [version](#version) | `string` | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-workspace-properties-version.md "C4MJS#/definitions/SourceWorkspaceDto/properties/version") |
-
-### css
-
-
-
-`css`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-css.md "C4MJS#/definitions/SourceWorkspaceDto/properties/css")
-
-#### css Type
-
-`string`
 
 ### groups
 
@@ -1204,6 +1186,24 @@ ID, must be camel case
 *   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")
 
 #### name Type
+
+`string`
+
+### styles
+
+
+
+`styles`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")
+
+#### styles Type
 
 `string`
 

@@ -6,4 +6,4 @@ build/
 coverage/
 results/
 /packages/cli/.schema/
-/yarn-error.log
+yarn-error.log

@@ -389,9 +389,6 @@
             "additionalProperties": false,
             "description": "Workspace object, sits at the top level",
             "properties": {
-                "css": {
-                    "type": "string"
-                },
                 "groups": {
                     "description": "Workspace groups",
                     "items": {
@@ -413,6 +410,9 @@
                     "type": "string"
                 },
                 "name": {
+                    "type": "string"
+                },
+                "styles": {
                     "type": "string"
                 },
                 "version": {

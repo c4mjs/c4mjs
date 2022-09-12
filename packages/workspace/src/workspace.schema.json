@@ -116,9 +116,6 @@
         "WorkspaceDto": {
             "additionalProperties": false,
             "properties": {
-                "css": {
-                    "type": "string"
-                },
                 "entities": {
                     "items": {
                         "$ref": "#/definitions/EntityDto"
@@ -142,6 +139,9 @@
                         "$ref": "#/definitions/RelationshipDto"
                     },
                     "type": "array"
+                },
+                "styles": {
+                    "type": "string"
                 },
                 "version": {
                     "description": "Version for the item",

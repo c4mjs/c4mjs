@@ -19,7 +19,7 @@
     "test": "jest --passWithNoTests --coverage src"
   },
   "dependencies": {
-    "@c4mjs/workspace": "^1.1.8",
+    "@c4mjs/workspace": "1.1.8",
     "class-transformer": "^0.5.1",
     "debug": "^4.3.4",
     "dotenv": "^16.0.2",

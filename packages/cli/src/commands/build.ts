@@ -33,7 +33,7 @@ export const build = new Command()
     await setup();
     await SourceIngestionService.ingestWorkspace(sourceWorkspace);
 
-    const { id, name, version, css } = sourceWorkspace;
+    const { id, name, version, styles } = sourceWorkspace;
 
     const groups: GroupDto[] = (await GroupRepository.findAll()).map((it) => ({
       ...it,
@@ -47,7 +47,7 @@ export const build = new Command()
     }));
     const relationships: RelationshipDto[] = await RelationshipRepository.findAll();
 
-    const workspace: WorkspaceDto = { id, name, version, css, groups, entities, relationships };
+    const workspace: WorkspaceDto = { id, name, version, styles, groups, entities, relationships };
 
     const workspaceErrors = ValidationService.validateWorkspace(workspace);
     if (workspaceErrors) {
