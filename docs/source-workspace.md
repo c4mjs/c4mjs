@@ -211,7 +211,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ### tech
@@ -456,7 +456,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ### tech
@@ -646,7 +646,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ## Definitions group SourcePersonDto
@@ -843,7 +843,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ## Definitions group SourceSystemDto
@@ -1060,7 +1060,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ### tech

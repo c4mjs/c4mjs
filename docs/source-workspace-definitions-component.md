@@ -203,7 +203,7 @@ Tags that can be attached to an entity
 ```
 
 ```json
-"critica"
+"critical"
 ```
 
 ## tech
