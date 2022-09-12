@@ -6,6 +6,8 @@ import inquirer from "inquirer";
 import Handlebars from "handlebars";
 import { debug } from "../debug";
 
+const { version } = require("../../package.json");
+
 const packageJsonTemplate = Handlebars.compile(`{
   "name": "{{name}}",
   "version": "1.0.0",
@@ -13,16 +15,18 @@ const packageJsonTemplate = Handlebars.compile(`{
   "description": "{{description}}",
   "scripts": {
     "build": "c4mjs build -i workspace.yaml > workspace.json",
-    "build:watch": "npx watch \\"npm run build\\" workspace",
+    "build:watch": "npx watch \\"npm run build\\" */ --ignoreDirectoryPattern=/node_modules/",
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
-    "@c4mjs/cli": "^0.1.0"
+    "@c4mjs/cli": "^${version}"
   }
 }
 
 `);
-const workspaceYamlFile = Handlebars.compile(`---
+const workspaceYamlFile =
+  Handlebars.compile(`# yaml-language-server: $schema=https://raw.githubusercontent.com/c4mjs/c4mjs/main/packages/cli/src/source-workspace.schema.json#/definitions/SourceWorkspaceDto
+---
 name: Big Bank PLC
 version: 1.0.0
 groups:

@@ -1,20 +1,14 @@
 import { SourceContainerDto } from "./source-container.dto";
+import { SourceEntityDto } from "./source-entity.dto";
 
-export interface SourceSystemDto {
+/**
+ * @title System
+ * @description System inside a Workspace group, represents a Software System in the Group
+ */
+export interface SourceSystemDto extends SourceEntityDto {
   /**
-   * @pattern ^([a-zA-Z0-9])*$
+   * @title Containers
+   * @description System containers
    */
-  id: string;
-
-  name: string;
-
-  desc?: string;
-
-  tags?: string[];
-
   containers?: SourceContainerDto[];
-
-  deps?: string;
-
-  external?: boolean;
 }

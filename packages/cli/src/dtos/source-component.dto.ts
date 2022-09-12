@@ -1,18 +1,7 @@
-export interface SourceComponentDto {
-  /**
-   * @pattern ^([a-zA-Z0-9])*$
-   */
-  id: string;
+import { SourceEntityDto } from "./source-entity.dto";
 
-  name: string;
-
-  desc?: string;
-
-  tags?: string[];
-
-  tech?: string;
-
-  deps?: string;
-
-  external?: boolean;
-}
+/**
+ * @title Component
+ * @description Component inside a Systems Container, represents a software component
+ */
+export interface SourceComponentDto extends SourceEntityDto {}

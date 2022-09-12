@@ -15,8 +15,9 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'SourceWorkspaceDto' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --topRef",
+    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'SourceWorkspaceDto' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --topRef --id C4MJS",
     "build": "tsc --outDir dist",
+    "postbuild": "rimraf ../../docs/source-workspace* && node ./scripts/prepare-docs-schema.js && jsonschema2md -d .schema && rimraf out/README.md && mv out/* ../../docs",
     "build:watch": "tsc-watch --outDir dist",
     "test": "jest --passWithNoTests --coverage src"
   },
@@ -35,6 +36,7 @@
     "typescript-json-schema": "^0.54.0"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^7.1.1",
     "@types/lodash": "^4.14.184",
     "@types/sqlite3": "^3.1.8"
   },

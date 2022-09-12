@@ -104,7 +104,8 @@ const ingestSystem = async (
     tags: tags?.join(","),
   });
 
-  if (containers) await Aigle.forEach(containers, (container) => ingestContainer(container, [...lineage, id]));
+  if (containers)
+    await Aigle.forEach(containers, (container) => ingestContainer(<SourceContainerDto>container, [...lineage, id]));
   if (deps) ingestDeps(deps, id, lineage);
 };
 
@@ -121,16 +122,16 @@ const ingestPerson = async ({ id, name, desc, external, tags, deps }: SourcePers
   if (deps) ingestDeps(deps, id, lineage);
 };
 
-const ingestGroup = async ({ id, name, desc, people, systems, tags }: SourceGroupDto) => {
-  await GroupRepository.save({ id, name, desc, tags: tags?.join(",") });
+const ingestGroup = async ({ id, name, people, systems, tags }: SourceGroupDto) => {
+  await GroupRepository.save({ id, name, tags: tags?.join(",") });
 
-  if (people) await Aigle.forEach(people, (person) => ingestPerson(person, [id]));
+  if (people) await Aigle.forEach(people, (person) => ingestPerson(<SourcePersonDto>person, [id]));
   if (systems) await Aigle.forEach(systems, (system) => ingestSystem(system, [id]));
 };
 
 export const SourceIngestionService = {
   ingestWorkspace: async (workspace: SourceWorkspaceDto) => {
-    if (workspace.groups) await Aigle.forEach(workspace.groups, (group) => ingestGroup(group));
+    if (workspace.groups) await Aigle.forEach(workspace.groups, (group) => ingestGroup(<SourceGroupDto>group));
     await Aigle.forEach(relationships, (relationship) => relationship());
   },
 };

@@ -27,7 +27,6 @@ export const setup = async () => {
     id   string not null
       constraint group_pk primary key,
     name string not null,
-    desc string,
     tags string
   );
 

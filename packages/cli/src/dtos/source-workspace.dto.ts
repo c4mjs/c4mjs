@@ -1,17 +1,18 @@
 import { SourceGroupDto } from "./source-group.dto";
+import { ID } from "./shared";
 
+/**
+ * @title Workspace
+ * @description Workspace object, sits at the top level
+ */
 export interface SourceWorkspaceDto {
-  /**
-   * @pattern ^([a-zA-Z0-9])*$
-   */
-  id: string;
-
+  id: ID;
   name: string;
-
-  /**
-   * @format semver
-   */
   version: string;
 
+  /**
+   * @title Groups
+   * @description Workspace groups
+   */
   groups?: SourceGroupDto[];
 }

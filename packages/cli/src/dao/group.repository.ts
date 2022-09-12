@@ -17,8 +17,8 @@ export const GroupRepository = {
   save: (group: GroupEntity): Promise<GroupEntity> =>
     new Promise((resolve, reject) =>
       database.run(
-        `insert into "group" (id, name, desc, tags) values (?, ?, ?, ?)`,
-        [group.id, group.name, group.desc, group.tags],
+        `insert into "group" (id, name, tags) values (?, ?, ?)`,
+        [group.id, group.name, group.tags],
         (error) => {
           if (error) reject(error);
           resolve(group);
