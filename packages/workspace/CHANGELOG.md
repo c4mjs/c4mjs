@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.7 (2022-09-12)
+
+
+### Bug Fixes
+
+* bump package versions ([cedf62d](https://github.com/c4mjs/c4mjs/commit/cedf62d0fccc953d294455526920ce0a82e9c444))
+
+
+
+
+
 ## 1.1.6 (2022-09-12)
 
 **Note:** Version bump only for package @c4mjs/workspace
