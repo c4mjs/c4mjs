@@ -15,14 +15,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install
-        run: yarn install
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Build
-        run: yarn build
       - name: Setup Git
         run: git config user.name ghactions && git config user.email actions@github.com
+      - name: Install & Build
+        run: yarn install && yarn build
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Release
         run: lerna publish --yes
         env:
