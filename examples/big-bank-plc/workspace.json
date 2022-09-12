@@ -30,19 +30,19 @@
       "tags": []
     },
     {
-      "id": "emailSystem",
-      "address": "internetBanking.emailSystem",
-      "name": "Email System",
-      "desc": "The internal Microsoft Exchange e-mail system.",
+      "id": "mainframeBankingSystem",
+      "address": "internetBanking.mainframeBankingSystem",
+      "name": "Mainframe Banking System",
+      "desc": "Stores all of the core banking information about customers, accounts, transactions etc",
       "external": false,
       "type": "system",
       "tags": []
     },
     {
-      "id": "mainframeBankingSystem",
-      "address": "internetBanking.mainframeBankingSystem",
-      "name": "Mainframe Banking System",
-      "desc": "Stores all of the core banking information about customers, accounts, transactions etc",
+      "id": "emailSystem",
+      "address": "internetBanking.emailSystem",
+      "name": "Email System",
+      "desc": "The internal Microsoft Exchange e-mail system.",
       "external": false,
       "type": "system",
       "tags": []
@@ -57,19 +57,19 @@
       "tags": []
     },
     {
-      "id": "apiApp",
-      "address": "internetBanking.internetBankingSystem.apiApp",
-      "name": "Api Application",
-      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
+      "id": "mobileApp",
+      "address": "internetBanking.internetBankingSystem.mobileApp",
+      "name": "Mobile Application",
+      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
       "external": false,
       "type": "container",
       "tags": []
     },
     {
-      "id": "mobileApp",
-      "address": "internetBanking.internetBankingSystem.mobileApp",
-      "name": "Mobile Application",
-      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
+      "id": "singlePageApp",
+      "address": "internetBanking.internetBankingSystem.singlePageApp",
+      "name": "Single-Page Application",
+      "desc": "Provides all of the Internet Banking functionality to the customers via their web browser",
       "external": false,
       "type": "container",
       "tags": []
@@ -84,16 +84,22 @@
       "tags": []
     },
     {
-      "id": "singlePageApp",
-      "address": "internetBanking.internetBankingSystem.singlePageApp",
-      "name": "Single-Page Application",
-      "desc": "Provides all of the Internet Banking functionality to the customers via their web browser",
+      "id": "apiApp",
+      "address": "internetBanking.internetBankingSystem.apiApp",
+      "name": "Api Application",
+      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
       "external": false,
       "type": "container",
       "tags": []
     }
   ],
   "relationships": [
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.webApp",
+      "desc": "Visits bigbank.com/ib using",
+      "tech": "HTTPS"
+    },
     {
       "sender": "internetBanking.customer",
       "receiver": "internetBanking.internetBankingSystem",
@@ -105,13 +111,8 @@
       "desc": "Delivers to the customers web browser"
     },
     {
-      "sender": "internetBanking.emailSystem",
-      "receiver": "internetBanking.customer",
-      "desc": "Sends email to"
-    },
-    {
       "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.mobileApp",
+      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
       "desc": "Views account balances, and makes payments using"
     },
     {
@@ -125,35 +126,34 @@
       "desc": "Delivers to the customers web browser"
     },
     {
+      "sender": "internetBanking.internetBankingSystem",
+      "receiver": "internetBanking.mainframeBankingSystem",
+      "desc": "Stores all of the core banking information about customers, accounts, transactions etc"
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.mobileApp",
+      "desc": "Views account balances, and makes payments using"
+    },
+    {
+      "sender": "internetBanking.emailSystem",
+      "receiver": "internetBanking.customer",
+      "desc": "Sends email to"
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.apiApp",
+      "desc": "Views account balances, and makes payments using"
+    },
+    {
       "sender": "internetBanking.mainframeBankingSystem",
       "receiver": "internetBanking.mainframeBankingSystem",
       "desc": "Stores all of the core banking information about customers, accounts, transactions etc"
     },
     {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.apiApp",
-      "desc": "Views account balances, and makes payments using"
-    },
-    {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.webApp",
-      "desc": "Visits bigbank.com/ib using",
-      "tech": "HTTPS"
-    },
-    {
       "sender": "internetBanking.internetBankingSystem.singlePageApp",
       "receiver": "internetBanking.internetBankingSystem.apiApp",
       "desc": "Delivers to the customers web browser"
-    },
-    {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
-      "desc": "Views account balances, and makes payments using"
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem",
-      "receiver": "internetBanking.mainframeBankingSystem",
-      "desc": "Stores all of the core banking information about customers, accounts, transactions etc"
     }
   ]
 }
