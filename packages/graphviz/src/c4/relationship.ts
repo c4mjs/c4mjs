@@ -12,7 +12,8 @@ export class Relationship implements Renderable {
     public sender: Entity,
     public receiver: Entity,
     public readonly desc?: string,
-    public readonly tech?: string
+    public readonly tech?: string,
+    public readonly tags?: string[]
   ) {
     this.id = `${ID_SEQ++}`;
   }
@@ -32,6 +33,7 @@ export class Relationship implements Renderable {
       label: this.desc ? body(this.desc) : "",
       color: config.relationship.color,
       fontcolor: config.relationship.fontcolor,
+      classNames: this.tags,
     });
   }
 }

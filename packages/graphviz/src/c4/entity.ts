@@ -11,7 +11,7 @@ export class Entity implements Renderable {
   public readonly type: EntityDto["type"];
   public readonly desc?: string;
   public readonly tech?: string;
-  public readonly tags: string[];
+  public readonly tags?: string[];
   public readonly external?: boolean;
 
   constructor(private readonly properties: EntityDto) {
@@ -52,7 +52,7 @@ export class Entity implements Renderable {
   }
 
   get shape() {
-    if (this.tags.includes("database")) return "cylinder";
+    if (this.tags?.includes("database")) return "cylinder";
 
     return "rectangle";
   }
@@ -70,6 +70,7 @@ export class Entity implements Renderable {
           fillcolor: this.external ? config.softwareSystem.fillcolor_ext : config.softwareSystem.fillcolor,
           color: this.external ? config.softwareSystem.color_ext : config.softwareSystem.color,
           fontcolor: config.softwareSystem.fontcolor,
+          classNames: this.tags,
         });
       case "person":
         return node({
@@ -80,6 +81,7 @@ export class Entity implements Renderable {
           fillcolor: this.properties.external ? config.person.fillcolor_ext : config.person.fillcolor,
           color: this.properties.external ? config.person.color_ext : config.person.color,
           fontcolor: config.person.fontcolor,
+          classNames: this.tags,
         });
       case "container":
         return node({
@@ -94,6 +96,7 @@ export class Entity implements Renderable {
           fillcolor: this.properties.external ? config.container.fillcolor_ext : config.container.fillcolor,
           color: this.properties.external ? config.container.color_ext : config.container.color,
           fontcolor: config.container.fontcolor,
+          classNames: this.tags,
         });
     }
 

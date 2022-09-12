@@ -2,16 +2,26 @@ export type NodeShape = "rectangle" | "cylinder";
 export type NodeStyle = "filled" | "rounded";
 
 export type NodeProperties = {
-  readonly id: string;
-  readonly shape: NodeShape;
-  readonly label: string;
-  readonly style: NodeStyle[];
-  readonly color: string;
-  readonly fillcolor: string;
-  readonly fontcolor: string;
+  id: string;
+  shape: NodeShape;
+  label: string;
+  style: NodeStyle[];
+  color: string;
+  fillcolor: string;
+  fontcolor: string;
+  classNames?: string[];
 };
 
-export const node = ({ id, shape, label, style, color, fillcolor, fontcolor }: NodeProperties) => `${id} [
+export const node = ({
+  id,
+  shape,
+  label,
+  style,
+  color,
+  fillcolor,
+  fontcolor,
+  classNames = [],
+}: NodeProperties) => `${id} [
         id="${id}",
         shape="${shape}",
         label=<${label}>,
@@ -19,4 +29,5 @@ export const node = ({ id, shape, label, style, color, fillcolor, fontcolor }: N
         color="${color}",
         fillcolor="${fillcolor}",
         fontcolor="${fontcolor}"
+        class="${classNames.join(" ")}"
     ]`;

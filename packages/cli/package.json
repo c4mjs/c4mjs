@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
-    "@c4mjs/validation": "^0.3.0",
-    "@c4mjs/workspace": "^0.3.0",
+    "@c4mjs/validation": "1.1.8",
+    "@c4mjs/workspace": "1.1.8",
     "aigle": "^1.14.1",
     "commander": "^9.4.0",
     "debug": "^4.3.4",

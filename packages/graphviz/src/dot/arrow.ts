@@ -1,14 +1,18 @@
 export type ArrowStyle = "dashed";
 
 export type ArrowProperties = {
-  readonly id: string;
-  readonly senderId: string;
-  readonly receiverId: string;
-  readonly label: string;
-  readonly style: ArrowStyle[];
-  readonly color: string;
-  readonly fontcolor: string;
+  id: string;
+  senderId: string;
+  receiverId: string;
+  label: string;
+  style: ArrowStyle[];
+  color: string;
+  fontcolor: string;
+  classNames?: string[];
 };
 
-export const arrow = ({ id, senderId, receiverId, label, style, color, fontcolor }: ArrowProperties) =>
-  `${senderId} -> ${receiverId} [ id="${id}", label=<${label}>, style="${style}", color="${color}", fontcolor="${fontcolor}" ]`;
+export const arrow = ({ id, senderId, receiverId, label, style, color, fontcolor, classNames = [] }: ArrowProperties) =>
+  `${senderId} -> ${receiverId} [ id="${id}", label=<${label}>, style="${style}", color="${color}", fontcolor="${fontcolor}" class="${classNames.join(
+    " "
+  )}"
+ ]`;

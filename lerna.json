@@ -3,12 +3,9 @@
   "packages": ["packages/*", "examples/*"],
   "useNx": true,
   "useWorkspaces": true,
+  "npmClient": "yarn",
   "version": "independent",
   "command": {
-    "version": {
-      "noPush": true,
-      "conventionalCommits": true
-    },
     "publish": {
       "conventionalCommits": true,
       "message": "chore: publish",

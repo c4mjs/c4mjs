@@ -19,7 +19,7 @@
     "test": "jest --passWithNoTests --coverage src"
   },
   "dependencies": {
-    "@c4mjs/validation": "^0.3.0",
+    "@c4mjs/validation": "1.1.8",
     "debug": "^4.3.4",
     "lodash": "^4.17.21",
     "typescript-json-schema": "^0.54.0"

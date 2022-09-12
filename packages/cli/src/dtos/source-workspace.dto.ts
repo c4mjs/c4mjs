@@ -9,6 +9,7 @@ export interface SourceWorkspaceDto {
   id: ID;
   name: string;
   version: string;
+  styles?: string;
 
   /**
    * @title Groups

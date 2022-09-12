@@ -1,6 +1,6 @@
 digraph {
     compound=true
-    graph [fontname="Arial", rankdir=TB, ranksep=1.0, nodesep=1.0]
+    graph [fontname="Arial", rankdir=TB, ranksep=1.0, nodesep=1.0 ]
     node [fontname="Arial", shape=box, margin="0.3,0.3"]
     edge [fontname="Arial"]
 
@@ -8,6 +8,7 @@ digraph {
         label = "Internet Banking Agent System"
         style = "dashed"
         color = "grey"
+        class=""
         margin="50,50"
         
         internetBankingAgent__internetBankingManagementSystem [
@@ -18,6 +19,7 @@ digraph {
         color="#0b4884",
         fillcolor="#1168bd",
         fontcolor="#ffffff"
+        class=""
     ]
 internetBankingAgent__agent [
         id="internetBankingAgent__agent",
@@ -27,6 +29,7 @@ internetBankingAgent__agent [
         color="#0b4884",
         fillcolor="#1C4177",
         fontcolor="#ffffff"
+        class=""
     ]
         
     }
@@ -39,6 +42,7 @@ internetBanking__internetBankingSystem [
         color="#0b4884",
         fillcolor="#1168bd",
         fontcolor="#ffffff"
+        class="critical"
     ]
 internetBanking__mainframeBankingSystem [
         id="internetBanking__mainframeBankingSystem",
@@ -48,6 +52,7 @@ internetBanking__mainframeBankingSystem [
         color="#5a5a5a",
         fillcolor="#999999",
         fontcolor="#ffffff"
+        class=""
     ]
 internetBanking__emailSystem [
         id="internetBanking__emailSystem",
@@ -57,10 +62,15 @@ internetBanking__emailSystem [
         color="#5a5a5a",
         fillcolor="#999999",
         fontcolor="#ffffff"
+        class=""
     ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id="100001", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id="100002", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id="100003", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
-internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id="100005", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__internetBankingSystem [ id="100001", label=<<font point-size="14">  Sends API requests to</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__mainframeBankingSystem [ id="100002", label=<<font point-size="14">  Gets account information from, <br />and makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBankingAgent__internetBankingManagementSystem -> internetBanking__emailSystem [ id="100003", label=<<font point-size="14">  Sends emails using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
+internetBankingAgent__agent -> internetBankingAgent__internetBankingManagementSystem [ id="100005", label=<<font point-size="14">  Views account balances, and <br />makes payments using</font>>, style="dashed", color="#707070", fontcolor="#707070" class=""
+ ]
      
 }
