@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.5 (2022-09-12)
+
+
+### Bug Fixes
+
+* fix issue with build ([ba188a0](https://github.com/c4mjs/c4mjs/commit/ba188a01bcc9f6e628e29ce7b59a3aea4828efd3))
+
+
+
+
+
 ## 1.1.4 (2022-09-12)
 
 **Note:** Version bump only for package @c4mjs/graphviz
