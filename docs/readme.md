@@ -27,7 +27,7 @@ crude drawing tools leaving us with a patchwork quilt of barely legible informat
 > **Brian Foote**
 
 The goal with C4MJS is provide tooling to get an interactive map of your system architecture, do it without cost and enable developers
-to get on with what they do best.a
+to get on with what they do best.
 
 **_Which is not drawing pictures lets face it!!_**
 
