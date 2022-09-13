@@ -1,7 +1,7 @@
 id: internetBankingSystem
 name: Internet Banking System
 desc: Allows customers to view information about their bank accounts and make payments.
-tags: [critical,medium]
+tags: [critical, medium]
 deps: |
   this -> emailSystem : Sends emails using
   this -> mainframeBankingSystem : Gets account information from, and makes payments using

@@ -20,4 +20,3 @@ And visiting http://localhost:9876/workspace.json
 ## Rendering
 
 With the `workspace.json` accessible load up https://c4model.app and paste the workspace file into the URL bar and hit load
-

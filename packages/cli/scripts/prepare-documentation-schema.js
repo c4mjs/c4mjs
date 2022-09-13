@@ -1,10 +1,10 @@
-const { join, dirname } = require("path");
+const { join, dirname } = require("node:path");
 const { ensureDir, writeJsonSync, readJsonSync } = require("fs-extra");
 
 const schemaFile = join(__dirname, "../src/source-workspace.schema.json");
-const dest = join(__dirname, "../", ".schema", "source-workspace.schema.json");
+const destination = join(__dirname, "../", ".schema", "source-workspace.schema.json");
 
-ensureDir(dirname(dest));
+ensureDir(dirname(destination));
 
 let schema = readJsonSync(schemaFile);
 
@@ -15,4 +15,4 @@ schema = {
   ...schema,
 };
 
-writeJsonSync(dest, schema);
+writeJsonSync(destination, schema);

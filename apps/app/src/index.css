@@ -1,0 +1,58 @@
+body,
+html,
+#root {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#page {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 304px auto;
+  grid-template-rows: 48px auto;
+  overflow: inherit;
+}
+
+#app-bar {
+  grid-column: 1/3;
+}
+
+#view {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#view div {
+  display: flex;
+  margin: 0;
+}
+
+.graphviz {
+  height: 100%;
+  width: 100%;
+}
+
+pre {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.diagram-title {
+  position: absolute;
+  bottom: 16px;
+  left: 320px;
+}
+
+.zoomable {
+  cursor: zoom-in;
+}
+
+.zoomable:hover {
+  stroke-width: 3px;
+}
+
+.link {
+  cursor: pointer;
+}

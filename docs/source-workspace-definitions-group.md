@@ -30,13 +30,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-group-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-group-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-id.md "C4MJS#/definitions/SourceGroupDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-id.md "C4MJS#/definitions/SourceGroupDto/properties/id")
 
 ### id Type
 
@@ -50,7 +50,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 ### id Examples
 
@@ -76,13 +76,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-group-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-group-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-name.md "C4MJS#/definitions/SourceGroupDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-name.md "C4MJS#/definitions/SourceGroupDto/properties/name")
 
 ### name Type
 
@@ -112,13 +112,13 @@ People in the Group
 
 `people`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Person](source-workspace-definitions-person.md))
+- Type: `object[]` ([Person](source-workspace-definitions-person.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-people.md "C4MJS#/definitions/SourceGroupDto/properties/people")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-people.md "C4MJS#/definitions/SourceGroupDto/properties/people")
 
 ### people Type
 
@@ -130,13 +130,13 @@ Software Systems in the Group
 
 `systems`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([System](source-workspace-definitions-system.md))
+- Type: `object[]` ([System](source-workspace-definitions-system.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-systems.md "C4MJS#/definitions/SourceGroupDto/properties/systems")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-systems.md "C4MJS#/definitions/SourceGroupDto/properties/systems")
 
 ### systems Type
 
@@ -148,13 +148,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-tags.md "C4MJS#/definitions/SourceGroupDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-tags.md "C4MJS#/definitions/SourceGroupDto/properties/tags")
 
 ### tags Type
 

@@ -57,7 +57,6 @@ groups:
             desc: Stores user registration information, hashed authentication credentials, access logs etc.
             tech: Oracle Database Schema
 
-
       - id: mainframeBankingSystem
         name: Mainframe Banking System
         desc: Stores all of the core banking information about customers, accounts, transactions etc

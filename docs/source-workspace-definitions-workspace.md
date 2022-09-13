@@ -30,13 +30,13 @@ Workspace groups
 
 `groups`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Group](source-workspace-definitions-group.md))
+- Type: `object[]` ([Group](source-workspace-definitions-group.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-groups.md "C4MJS#/definitions/SourceWorkspaceDto/properties/groups")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-groups.md "C4MJS#/definitions/SourceWorkspaceDto/properties/groups")
 
 ### groups Type
 
@@ -48,13 +48,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-workspace-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-workspace-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-id.md "C4MJS#/definitions/SourceWorkspaceDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-id.md "C4MJS#/definitions/SourceWorkspaceDto/properties/id")
 
 ### id Type
 
@@ -68,7 +68,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 ### id Examples
 
@@ -90,17 +90,15 @@ ID, must be camel case
 
 ## name
 
-
-
 `name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")
 
 ### name Type
 
@@ -108,17 +106,15 @@ ID, must be camel case
 
 ## styles
 
-
-
 `styles`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")
 
 ### styles Type
 
@@ -126,17 +122,15 @@ ID, must be camel case
 
 ## version
 
-
-
 `version`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-version.md "C4MJS#/definitions/SourceWorkspaceDto/properties/version")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-version.md "C4MJS#/definitions/SourceWorkspaceDto/properties/version")
 
 ### version Type
 

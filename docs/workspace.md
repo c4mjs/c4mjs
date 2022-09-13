@@ -3,12 +3,11 @@
 ## Workspace
 
 | Name    | Type   | Description                       |
-|---------|--------|-----------------------------------|
+| ------- | ------ | --------------------------------- |
 | id      | string | Workspace ID                      |
 | name    | string | Workspace Name                    |
 | version | string | Semantic Version of the workspace |
 | groups  | string | Workspace Groups                  |
-
 
 ## References
 

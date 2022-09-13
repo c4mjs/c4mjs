@@ -1,0 +1,65 @@
+{
+  "name": "@c4mjs/app",
+  "version": "0.2.0",
+  "private": true,
+  "homepage": "https://c4model.app/",
+  "scripts": {
+    "start": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "example:build": "c4mjs build -i ./big-bank-plc/workspace.yaml > public/workspace.json",
+    "example:build:watch": "npx watch \"npm run example:build\" big-bank-plc"
+  },
+  "dependencies": {
+    "@c4mjs/cli": "1.2.0",
+    "@c4mjs/graphviz": "1.2.0",
+    "@c4mjs/workspace": "1.2.0",
+    "@fluentui/react": "^8.94.1",
+    "@fontsource/montserrat-subrayada": "^4.5.10",
+    "@fontsource/roboto-flex": "^4.5.2",
+    "@fontsource/shadows-into-light": "^4.5.9",
+    "axios": "^0.27.2",
+    "axios-hooks": "^3.1.5",
+    "d3-graphviz": "^4.1.1",
+    "debug": "^4.3.4",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.3",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.184",
+    "@types/react": "^17.0.41",
+    "@types/react-dom": "^17.0.14",
+    "@types/react-router-dom": "^5.3.3",
+    "eslint": "8.22.0",
+    "eslint-config-react-app": "^7.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

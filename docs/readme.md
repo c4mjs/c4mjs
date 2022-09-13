@@ -19,7 +19,7 @@ It includes:
 
 ## Motivation
 
-Sharing architecture as a set of transient diagrams that convey just enough meaning to get by, built with 
+Sharing architecture as a set of transient diagrams that convey just enough meaning to get by, built with
 crude drawing tools leaving us with a patchwork quilt of barely legible information has no long term value to anyone.
 
 > If you think good architecture is expensive, try bad architecture.
@@ -27,7 +27,7 @@ crude drawing tools leaving us with a patchwork quilt of barely legible informat
 > **Brian Foote**
 
 The goal with C4MJS is provide tooling to get an interactive map of your system architecture, do it without cost and enable developers
-to get on with what they do best. 
+to get on with what they do best.
 
 **_Which is not drawing pictures lets face it!!_**
 

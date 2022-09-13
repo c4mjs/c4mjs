@@ -1,168 +1,140 @@
 {
-    "$ref": "#/definitions/WorkspaceDto",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "EntityDto": {
-            "additionalProperties": false,
-            "properties": {
-                "address": {
-                    "type": "string"
-                },
-                "desc": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "tech": {
-                    "type": "string"
-                },
-                "type": {
-                    "$ref": "#/definitions/EntityType"
-                }
-            },
-            "required": [
-                "address",
-                "id",
-                "name",
-                "type"
-            ],
-            "type": "object"
+  "$ref": "#/definitions/WorkspaceDto",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "EntityDto": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
         },
-        "EntityType": {
-            "enum": [
-                "container",
-                "person",
-                "system"
-            ],
+        "desc": {
+          "type": "string"
+        },
+        "external": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
             "type": "string"
+          },
+          "type": "array"
         },
-        "GroupDto": {
-            "additionalProperties": false,
-            "properties": {
-                "address": {
-                    "type": "string"
-                },
-                "desc": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "address",
-                "id",
-                "name"
-            ],
-            "type": "object"
+        "tech": {
+          "type": "string"
         },
-        "RelationshipDto": {
-            "additionalProperties": false,
-            "description": "Defines a Relationship Between a Sender and a Receiver",
-            "properties": {
-                "desc": {
-                    "description": "Description of the Message",
-                    "title": "Receiver",
-                    "type": "string"
-                },
-                "receiver": {
-                    "description": "ID of the Message Receiver",
-                    "title": "Receiver",
-                    "type": "string"
-                },
-                "sender": {
-                    "description": "ID of the Message Sender",
-                    "title": "Sender",
-                    "type": "string"
-                },
-                "tech": {
-                    "description": "Technology Used",
-                    "examples": [
-                        "HTTP"
-                    ],
-                    "title": "tech",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "receiver",
-                "sender"
-            ],
-            "title": "Relationship",
-            "type": "object"
-        },
-        "WorkspaceDto": {
-            "additionalProperties": false,
-            "properties": {
-                "entities": {
-                    "items": {
-                        "$ref": "#/definitions/EntityDto"
-                    },
-                    "type": "array"
-                },
-                "groups": {
-                    "items": {
-                        "$ref": "#/definitions/GroupDto"
-                    },
-                    "type": "array"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "relationships": {
-                    "items": {
-                        "$ref": "#/definitions/RelationshipDto"
-                    },
-                    "type": "array"
-                },
-                "styles": {
-                    "type": "string"
-                },
-                "version": {
-                    "description": "Version for the item",
-                    "examples": [
-                        "1.0.0"
-                    ],
-                    "format": "semver",
-                    "title": "version",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "entities",
-                "groups",
-                "id",
-                "name",
-                "relationships",
-                "version"
-            ],
-            "type": "object"
+        "type": {
+          "$ref": "#/definitions/EntityType"
         }
+      },
+      "required": ["address", "id", "name", "type"],
+      "type": "object"
+    },
+    "EntityType": {
+      "enum": ["container", "person", "system"],
+      "type": "string"
+    },
+    "GroupDto": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["address", "id", "name"],
+      "type": "object"
+    },
+    "RelationshipDto": {
+      "additionalProperties": false,
+      "description": "Defines a Relationship Between a Sender and a Receiver",
+      "properties": {
+        "desc": {
+          "description": "Description of the Message",
+          "title": "Receiver",
+          "type": "string"
+        },
+        "receiver": {
+          "description": "ID of the Message Receiver",
+          "title": "Receiver",
+          "type": "string"
+        },
+        "sender": {
+          "description": "ID of the Message Sender",
+          "title": "Sender",
+          "type": "string"
+        },
+        "tech": {
+          "description": "Technology Used",
+          "examples": ["HTTP"],
+          "title": "tech",
+          "type": "string"
+        }
+      },
+      "required": ["receiver", "sender"],
+      "title": "Relationship",
+      "type": "object"
+    },
+    "WorkspaceDto": {
+      "additionalProperties": false,
+      "properties": {
+        "entities": {
+          "items": {
+            "$ref": "#/definitions/EntityDto"
+          },
+          "type": "array"
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/definitions/GroupDto"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "relationships": {
+          "items": {
+            "$ref": "#/definitions/RelationshipDto"
+          },
+          "type": "array"
+        },
+        "styles": {
+          "type": "string"
+        },
+        "version": {
+          "description": "Version for the item",
+          "examples": ["1.0.0"],
+          "format": "semver",
+          "title": "version",
+          "type": "string"
+        }
+      },
+      "required": ["entities", "groups", "id", "name", "relationships", "version"],
+      "type": "object"
     }
+  }
 }
-

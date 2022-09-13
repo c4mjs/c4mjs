@@ -12,7 +12,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'WorkspaceDto' > 'src/workspace.schema.json' --required --noExtraProps --refs --topRef",
+    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'WorkspaceDto' > 'src/workspace.schema.json' --required --noExtraProps --refs --topRef --ignoreErrors",
     "build": "tsc --outDir dist",
     "postbuild": "jsdoc2md dist/**/* > API.md",
     "build:watch": "tsc-watch --outDir dist",

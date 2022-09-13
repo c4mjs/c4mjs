@@ -16,7 +16,7 @@ $ref parsing is done automatically so you can aggregate your architecture docs a
 > See [Basic Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc) where we create **context** and **container**
 > levels as a single source file.
 >
-> See [Full Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc-full) where we create **context**, **container** 
+> See [Full Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc-full) where we create **context**, **container**
 > and **component** diagrams for an entire system broken into multiple files to ease merge conflicts and cross reference containers and components.
 
 ### CLI

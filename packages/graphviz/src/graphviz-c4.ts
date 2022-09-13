@@ -1,5 +1,5 @@
 import { WorkspaceDto } from "@c4mjs/workspace";
-import _, { filter, groupBy, remove, uniqBy } from "lodash";
+import _, { filter, groupBy, uniqBy } from "lodash";
 import { debug } from "./debug";
 import { Workspace } from "./c4/workspace";
 import { digraph, subgraph } from "./dot";

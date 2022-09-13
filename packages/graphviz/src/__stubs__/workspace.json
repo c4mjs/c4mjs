@@ -42,9 +42,7 @@
       "desc": "Allows customers to view information about their bank accounts and make payments.",
       "external": false,
       "type": "system",
-      "tags": [
-        "critical"
-      ]
+      "tags": ["critical"]
     },
     {
       "id": "mainframeBankingSystem",
@@ -116,9 +114,7 @@
       "desc": "Stores user registration information, hashed authentication credentials, access logs etc.",
       "external": false,
       "type": "container",
-      "tags": [
-        "database"
-      ]
+      "tags": ["database"]
     },
     {
       "id": "agentPortal",

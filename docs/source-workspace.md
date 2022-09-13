@@ -21,7 +21,7 @@ unknown ([C4MJS Schema](source-workspace.md))
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourceComponentDto"}
+{ "$ref": "C4MJS#/definitions/SourceComponentDto" }
 ```
 
 | Property              | Type      | Required | Nullable       | Defined by                                                                                                                                |
@@ -40,13 +40,13 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 `deps`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Dependencies](source-workspace-definitions-component-properties-dependencies.md))
+- Type: `string` ([Dependencies](source-workspace-definitions-component-properties-dependencies.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-dependencies.md "C4MJS#/definitions/SourceComponentDto/properties/deps")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-dependencies.md "C4MJS#/definitions/SourceComponentDto/properties/deps")
 
 #### deps Type
 
@@ -64,13 +64,13 @@ Description to be used to convey information about the entity
 
 `desc`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Description](source-workspace-definitions-component-properties-description.md))
+- Type: `string` ([Description](source-workspace-definitions-component-properties-description.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-description.md "C4MJS#/definitions/SourceComponentDto/properties/desc")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-description.md "C4MJS#/definitions/SourceComponentDto/properties/desc")
 
 #### desc Type
 
@@ -82,13 +82,13 @@ Is the entity external or not
 
 `external`
 
-*   is optional
+- is optional
 
-*   Type: `boolean` ([External](source-workspace-definitions-component-properties-external.md))
+- Type: `boolean` ([External](source-workspace-definitions-component-properties-external.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-external.md "C4MJS#/definitions/SourceComponentDto/properties/external")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-external.md "C4MJS#/definitions/SourceComponentDto/properties/external")
 
 #### external Type
 
@@ -110,13 +110,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-component-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-component-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-id.md "C4MJS#/definitions/SourceComponentDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-id.md "C4MJS#/definitions/SourceComponentDto/properties/id")
 
 #### id Type
 
@@ -130,7 +130,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -156,13 +156,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-component-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-component-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-name.md "C4MJS#/definitions/SourceComponentDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-name.md "C4MJS#/definitions/SourceComponentDto/properties/name")
 
 #### name Type
 
@@ -192,13 +192,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-tags.md "C4MJS#/definitions/SourceComponentDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-tags.md "C4MJS#/definitions/SourceComponentDto/properties/tags")
 
 #### tags Type
 
@@ -220,13 +220,13 @@ What technology does the entity use
 
 `tech`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Tech](source-workspace-definitions-component-properties-tech.md))
+- Type: `string` ([Tech](source-workspace-definitions-component-properties-tech.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-component-properties-tech.md "C4MJS#/definitions/SourceComponentDto/properties/tech")
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-tech.md "C4MJS#/definitions/SourceComponentDto/properties/tech")
 
 #### tech Type
 
@@ -247,7 +247,7 @@ What technology does the entity use
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourceContainerDto"}
+{ "$ref": "C4MJS#/definitions/SourceContainerDto" }
 ```
 
 | Property                  | Type      | Required | Nullable       | Defined by                                                                                                                                    |
@@ -267,13 +267,13 @@ Container Components
 
 `components`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Component](source-workspace-definitions-component.md))
+- Type: `object[]` ([Component](source-workspace-definitions-component.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components")
 
 #### components Type
 
@@ -285,13 +285,13 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 `deps`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Dependencies](source-workspace-definitions-container-properties-dependencies.md))
+- Type: `string` ([Dependencies](source-workspace-definitions-container-properties-dependencies.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")
 
 #### deps Type
 
@@ -309,13 +309,13 @@ Description to be used to convey information about the entity
 
 `desc`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Description](source-workspace-definitions-container-properties-description.md))
+- Type: `string` ([Description](source-workspace-definitions-container-properties-description.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-description.md "C4MJS#/definitions/SourceContainerDto/properties/desc")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-description.md "C4MJS#/definitions/SourceContainerDto/properties/desc")
 
 #### desc Type
 
@@ -327,13 +327,13 @@ Is the entity external or not
 
 `external`
 
-*   is optional
+- is optional
 
-*   Type: `boolean` ([External](source-workspace-definitions-container-properties-external.md))
+- Type: `boolean` ([External](source-workspace-definitions-container-properties-external.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-external.md "C4MJS#/definitions/SourceContainerDto/properties/external")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-external.md "C4MJS#/definitions/SourceContainerDto/properties/external")
 
 #### external Type
 
@@ -355,13 +355,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-container-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-container-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-id.md "C4MJS#/definitions/SourceContainerDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-id.md "C4MJS#/definitions/SourceContainerDto/properties/id")
 
 #### id Type
 
@@ -375,7 +375,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -401,13 +401,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-container-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-container-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-name.md "C4MJS#/definitions/SourceContainerDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-name.md "C4MJS#/definitions/SourceContainerDto/properties/name")
 
 #### name Type
 
@@ -437,13 +437,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")
 
 #### tags Type
 
@@ -465,13 +465,13 @@ What technology does the entity use
 
 `tech`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Tech](source-workspace-definitions-container-properties-tech.md))
+- Type: `string` ([Tech](source-workspace-definitions-container-properties-tech.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")
 
 #### tech Type
 
@@ -492,7 +492,7 @@ What technology does the entity use
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourceGroupDto"}
+{ "$ref": "C4MJS#/definitions/SourceGroupDto" }
 ```
 
 | Property            | Type     | Required | Nullable       | Defined by                                                                                                                      |
@@ -509,13 +509,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-group-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-group-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-id.md "C4MJS#/definitions/SourceGroupDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-id.md "C4MJS#/definitions/SourceGroupDto/properties/id")
 
 #### id Type
 
@@ -529,7 +529,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -555,13 +555,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-group-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-group-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-name.md "C4MJS#/definitions/SourceGroupDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-name.md "C4MJS#/definitions/SourceGroupDto/properties/name")
 
 #### name Type
 
@@ -591,13 +591,13 @@ People in the Group
 
 `people`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Person](source-workspace-definitions-person.md))
+- Type: `object[]` ([Person](source-workspace-definitions-person.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-people.md "C4MJS#/definitions/SourceGroupDto/properties/people")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-people.md "C4MJS#/definitions/SourceGroupDto/properties/people")
 
 #### people Type
 
@@ -609,13 +609,13 @@ Software Systems in the Group
 
 `systems`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([System](source-workspace-definitions-system.md))
+- Type: `object[]` ([System](source-workspace-definitions-system.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-systems.md "C4MJS#/definitions/SourceGroupDto/properties/systems")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-systems.md "C4MJS#/definitions/SourceGroupDto/properties/systems")
 
 #### systems Type
 
@@ -627,13 +627,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-group-properties-tags.md "C4MJS#/definitions/SourceGroupDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-group-properties-tags.md "C4MJS#/definitions/SourceGroupDto/properties/tags")
 
 #### tags Type
 
@@ -654,7 +654,7 @@ Tags that can be attached to an entity
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourcePersonDto"}
+{ "$ref": "C4MJS#/definitions/SourcePersonDto" }
 ```
 
 | Property                | Type      | Required | Nullable       | Defined by                                                                                                                          |
@@ -672,13 +672,13 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 `deps`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Dependencies](source-workspace-definitions-person-properties-dependencies.md))
+- Type: `string` ([Dependencies](source-workspace-definitions-person-properties-dependencies.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps")
 
 #### deps Type
 
@@ -696,13 +696,13 @@ Description to be used to convey information about the entity
 
 `desc`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Description](source-workspace-definitions-person-properties-description.md))
+- Type: `string` ([Description](source-workspace-definitions-person-properties-description.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")
 
 #### desc Type
 
@@ -714,13 +714,13 @@ Is the entity external or not
 
 `external`
 
-*   is optional
+- is optional
 
-*   Type: `boolean` ([External](source-workspace-definitions-person-properties-external.md))
+- Type: `boolean` ([External](source-workspace-definitions-person-properties-external.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external")
 
 #### external Type
 
@@ -742,13 +742,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-person-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-person-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")
 
 #### id Type
 
@@ -762,7 +762,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -788,13 +788,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-person-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-person-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")
 
 #### name Type
 
@@ -824,13 +824,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")
 
 #### tags Type
 
@@ -851,7 +851,7 @@ Tags that can be attached to an entity
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourceSystemDto"}
+{ "$ref": "C4MJS#/definitions/SourceSystemDto" }
 ```
 
 | Property                  | Type      | Required | Nullable       | Defined by                                                                                                                              |
@@ -871,13 +871,13 @@ System containers
 
 `containers`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Container](source-workspace-definitions-container.md))
+- Type: `object[]` ([Container](source-workspace-definitions-container.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-containers.md "C4MJS#/definitions/SourceSystemDto/properties/containers")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-containers.md "C4MJS#/definitions/SourceSystemDto/properties/containers")
 
 #### containers Type
 
@@ -889,13 +889,13 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 `deps`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Dependencies](source-workspace-definitions-system-properties-dependencies.md))
+- Type: `string` ([Dependencies](source-workspace-definitions-system-properties-dependencies.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-dependencies.md "C4MJS#/definitions/SourceSystemDto/properties/deps")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-dependencies.md "C4MJS#/definitions/SourceSystemDto/properties/deps")
 
 #### deps Type
 
@@ -913,13 +913,13 @@ Description to be used to convey information about the entity
 
 `desc`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Description](source-workspace-definitions-system-properties-description.md))
+- Type: `string` ([Description](source-workspace-definitions-system-properties-description.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-description.md "C4MJS#/definitions/SourceSystemDto/properties/desc")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-description.md "C4MJS#/definitions/SourceSystemDto/properties/desc")
 
 #### desc Type
 
@@ -931,13 +931,13 @@ Is the entity external or not
 
 `external`
 
-*   is optional
+- is optional
 
-*   Type: `boolean` ([External](source-workspace-definitions-system-properties-external.md))
+- Type: `boolean` ([External](source-workspace-definitions-system-properties-external.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-external.md "C4MJS#/definitions/SourceSystemDto/properties/external")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-external.md "C4MJS#/definitions/SourceSystemDto/properties/external")
 
 #### external Type
 
@@ -959,13 +959,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-system-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-system-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-id.md "C4MJS#/definitions/SourceSystemDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-id.md "C4MJS#/definitions/SourceSystemDto/properties/id")
 
 #### id Type
 
@@ -979,7 +979,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -1005,13 +1005,13 @@ Workspace name
 
 `name`
 
-*   is required
+- is required
 
-*   Type: `string` ([Name](source-workspace-definitions-system-properties-name.md))
+- Type: `string` ([Name](source-workspace-definitions-system-properties-name.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-name.md "C4MJS#/definitions/SourceSystemDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-name.md "C4MJS#/definitions/SourceSystemDto/properties/name")
 
 #### name Type
 
@@ -1041,13 +1041,13 @@ Tags that can be attached to an entity
 
 `tags`
 
-*   is optional
+- is optional
 
-*   Type: `string[]`
+- Type: `string[]`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-tags.md "C4MJS#/definitions/SourceSystemDto/properties/tags")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-tags.md "C4MJS#/definitions/SourceSystemDto/properties/tags")
 
 #### tags Type
 
@@ -1069,13 +1069,13 @@ What technology does the entity use
 
 `tech`
 
-*   is optional
+- is optional
 
-*   Type: `string` ([Tech](source-workspace-definitions-system-properties-tech.md))
+- Type: `string` ([Tech](source-workspace-definitions-system-properties-tech.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-system-properties-tech.md "C4MJS#/definitions/SourceSystemDto/properties/tech")
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-tech.md "C4MJS#/definitions/SourceSystemDto/properties/tech")
 
 #### tech Type
 
@@ -1096,7 +1096,7 @@ What technology does the entity use
 Reference this group by using
 
 ```json
-{"$ref":"C4MJS#/definitions/SourceWorkspaceDto"}
+{ "$ref": "C4MJS#/definitions/SourceWorkspaceDto" }
 ```
 
 | Property            | Type     | Required | Nullable       | Defined by                                                                                                                              |
@@ -1113,13 +1113,13 @@ Workspace groups
 
 `groups`
 
-*   is optional
+- is optional
 
-*   Type: `object[]` ([Group](source-workspace-definitions-group.md))
+- Type: `object[]` ([Group](source-workspace-definitions-group.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-groups.md "C4MJS#/definitions/SourceWorkspaceDto/properties/groups")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-groups.md "C4MJS#/definitions/SourceWorkspaceDto/properties/groups")
 
 #### groups Type
 
@@ -1131,13 +1131,13 @@ ID, must be camel case
 
 `id`
 
-*   is required
+- is required
 
-*   Type: `string` ([ID](source-workspace-definitions-workspace-properties-id.md))
+- Type: `string` ([ID](source-workspace-definitions-workspace-properties-id.md))
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-id.md "C4MJS#/definitions/SourceWorkspaceDto/properties/id")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-id.md "C4MJS#/definitions/SourceWorkspaceDto/properties/id")
 
 #### id Type
 
@@ -1151,7 +1151,7 @@ ID, must be camel case
 ^([a-zA-Z0-9])*$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9%5D\)*%24 "try regular expression with regexr.com")
+[try pattern](<https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9%5D)*%24> "try regular expression with regexr.com")
 
 #### id Examples
 
@@ -1173,17 +1173,15 @@ ID, must be camel case
 
 ### name
 
-
-
 `name`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-name.md "C4MJS#/definitions/SourceWorkspaceDto/properties/name")
 
 #### name Type
 
@@ -1191,17 +1189,15 @@ ID, must be camel case
 
 ### styles
 
-
-
 `styles`
 
-*   is optional
+- is optional
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-styles.md "C4MJS#/definitions/SourceWorkspaceDto/properties/styles")
 
 #### styles Type
 
@@ -1209,17 +1205,15 @@ ID, must be camel case
 
 ### version
 
-
-
 `version`
 
-*   is required
+- is required
 
-*   Type: `string`
+- Type: `string`
 
-*   cannot be null
+- cannot be null
 
-*   defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-version.md "C4MJS#/definitions/SourceWorkspaceDto/properties/version")
+- defined in: [C4MJS Schema](source-workspace-definitions-workspace-properties-version.md "C4MJS#/definitions/SourceWorkspaceDto/properties/version")
 
 #### version Type
 
