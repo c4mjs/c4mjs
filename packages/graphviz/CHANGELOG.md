@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @c4mjs/graphviz
 
-
-
-
-
 ## 1.2.1 (2022-09-13)
 
 **Note:** Version bump only for package @c4mjs/graphviz

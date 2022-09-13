@@ -11,7 +11,8 @@
   stroke-width: 3px;
 }
 
-.deprecated path {
+.deprecated path,
+.deprecated polygon {
   stroke: darkred;
   stroke-dasharray: 6px;
   stroke-width: 3px;
