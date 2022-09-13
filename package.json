@@ -15,7 +15,7 @@
     "prettier:fix": "prettier . --write",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "lerna run build --ignore=\"big-bank-*\"",
+    "build": "lerna run build --ignore=\"big-bank-*\" && yarn prettier:fix",
     "docs": "docsify serve docs",
     "clean": "lerna run clean"
   },
