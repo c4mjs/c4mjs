@@ -7,6 +7,12 @@
       "additionalProperties": false,
       "description": "Component inside a Systems Container, represents a software component",
       "properties": {
+        "deprecated": {
+          "description": "Is the entity deprecated or not",
+          "examples": ["true", "false"],
+          "title": "Deprecated",
+          "type": "boolean"
+        },
         "deps": {
           "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
           "examples": ["this -> emailSystem : Sends Emails using"],
@@ -35,6 +41,11 @@
           "description": "Workspace name",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Notes to be used to convey information about the entity",
+          "title": "Notes",
           "type": "string"
         },
         "tags": {
@@ -69,6 +80,12 @@
           "title": "Components",
           "type": "array"
         },
+        "deprecated": {
+          "description": "Is the entity deprecated or not",
+          "examples": ["true", "false"],
+          "title": "Deprecated",
+          "type": "boolean"
+        },
         "deps": {
           "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
           "examples": ["this -> emailSystem : Sends Emails using"],
@@ -97,6 +114,11 @@
           "description": "Workspace name",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Notes to be used to convey information about the entity",
+          "title": "Notes",
           "type": "string"
         },
         "tags": {
@@ -170,6 +192,12 @@
       "additionalProperties": false,
       "description": "Person inside a Workspace Group, represents an actor in the Group",
       "properties": {
+        "deprecated": {
+          "description": "Is the entity deprecated or not",
+          "examples": ["true", "false"],
+          "title": "Deprecated",
+          "type": "boolean"
+        },
         "deps": {
           "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
           "examples": ["this -> emailSystem : Sends Emails using"],
@@ -198,6 +226,11 @@
           "description": "Workspace name",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Notes to be used to convey information about the entity",
+          "title": "Notes",
           "type": "string"
         },
         "tags": {
@@ -226,6 +259,12 @@
           "title": "Containers",
           "type": "array"
         },
+        "deprecated": {
+          "description": "Is the entity deprecated or not",
+          "examples": ["true", "false"],
+          "title": "Deprecated",
+          "type": "boolean"
+        },
         "deps": {
           "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
           "examples": ["this -> emailSystem : Sends Emails using"],
@@ -254,6 +293,11 @@
           "description": "Workspace name",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Notes to be used to convey information about the entity",
+          "title": "Notes",
           "type": "string"
         },
         "tags": {

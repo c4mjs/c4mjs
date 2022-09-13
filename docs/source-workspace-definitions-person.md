@@ -16,14 +16,44 @@ Person inside a Workspace Group, represents an actor in the Group
 
 # items Properties
 
-| Property              | Type      | Required | Nullable       | Defined by                                                                                                                          |
-| :-------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| [deps](#deps)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps") |
-| [desc](#desc)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")  |
-| [external](#external) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external") |
-| [id](#id)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")             |
-| [name](#name)         | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")         |
-| [tags](#tags)         | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")         |
+| Property                  | Type      | Required | Nullable       | Defined by                                                                                                                              |
+| :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| [deprecated](#deprecated) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-deprecated.md "C4MJS#/definitions/SourcePersonDto/properties/deprecated") |
+| [deps](#deps)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps")     |
+| [desc](#desc)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")      |
+| [external](#external)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external")     |
+| [id](#id)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")                 |
+| [name](#name)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")             |
+| [notes](#notes)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-notes.md "C4MJS#/definitions/SourcePersonDto/properties/notes")           |
+| [tags](#tags)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")             |
+
+## deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-person-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-deprecated.md "C4MJS#/definitions/SourcePersonDto/properties/deprecated")
+
+### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-person-properties-deprecated.md))
+
+### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ## deps
 
@@ -176,6 +206,24 @@ Workspace name
 ```json
 "Web Application"
 ```
+
+## notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-person-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-notes.md "C4MJS#/definitions/SourcePersonDto/properties/notes")
+
+### notes Type
+
+`string` ([Notes](source-workspace-definitions-person-properties-notes.md))
 
 ## tags
 

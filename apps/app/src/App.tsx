@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useMemo } from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { AppBar } from "./components/app-bar";
 import { Stack } from "@fluentui/react";
@@ -11,6 +11,9 @@ import useAxios from "axios-hooks";
 import { WorkspaceDto } from "@c4mjs/workspace";
 
 export const App = () => {
+  const [expanded, setExpanded] = useState(true);
+  const width = useMemo(() => (expanded ? "304px" : "32px"), [expanded]);
+
   const ref = createRef<HTMLDivElement>();
   const viewport = useMemo(() => ref.current, [ref]);
   const { workspaceUrl, setWorkspaceUrl, path } = useRouting();
@@ -40,9 +43,9 @@ export const App = () => {
   }, [workspace]);
 
   return (
-    <Stack id="page">
+    <Stack id="page" styles={{ root: { gridTemplateColumns: `${width} auto` } }}>
       <AppBar onLoadSchema={setWorkspaceUrl} schemaLoading={loading} url={workspaceUrl} />
-      <NavBar workspace={workspace} />
+      <NavBar workspace={workspace} expanded={expanded} onToggleExpand={() => setExpanded(!expanded)} />
       <div ref={ref} id="view">
         {/*  /!* Loading State *!/*/}
         {loading && <LoadingView />}

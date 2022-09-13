@@ -1,4 +1,4 @@
-import { Dependecies, Description, External, ID, Name, Tags } from "./shared";
+import { Dependecies, Deprecated, Description, External, ID, Name, Notes, Tags } from "./shared";
 
 /**
  * @title Person
@@ -8,7 +8,9 @@ export interface SourcePersonDto {
   id: ID;
   name: Name;
   desc?: Description;
+  notes?: Notes;
   tags?: Tags;
   deps?: Dependecies;
   external?: External;
+  deprecated?: Deprecated;
 }

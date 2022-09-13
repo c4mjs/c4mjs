@@ -1,4 +1,4 @@
-const workspaceExamples = ["/workspace.json"];
+const workspaceExamples = ["/workspace.json", "http://localhost:9876/workspace.json"];
 
 export const config = {
   defaultWorkspaceUrl: workspaceExamples[0],

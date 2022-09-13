@@ -19,11 +19,13 @@ System inside a Workspace group, represents a Software System in the Group
 | Property                  | Type      | Required | Nullable       | Defined by                                                                                                                              |
 | :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
 | [containers](#containers) | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-containers.md "C4MJS#/definitions/SourceSystemDto/properties/containers") |
+| [deprecated](#deprecated) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-deprecated.md "C4MJS#/definitions/SourceSystemDto/properties/deprecated") |
 | [deps](#deps)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-dependencies.md "C4MJS#/definitions/SourceSystemDto/properties/deps")     |
 | [desc](#desc)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-description.md "C4MJS#/definitions/SourceSystemDto/properties/desc")      |
 | [external](#external)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-external.md "C4MJS#/definitions/SourceSystemDto/properties/external")     |
 | [id](#id)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-id.md "C4MJS#/definitions/SourceSystemDto/properties/id")                 |
 | [name](#name)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-name.md "C4MJS#/definitions/SourceSystemDto/properties/name")             |
+| [notes](#notes)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-notes.md "C4MJS#/definitions/SourceSystemDto/properties/notes")           |
 | [tags](#tags)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tags.md "C4MJS#/definitions/SourceSystemDto/properties/tags")             |
 | [tech](#tech)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tech.md "C4MJS#/definitions/SourceSystemDto/properties/tech")             |
 
@@ -44,6 +46,34 @@ System containers
 ### containers Type
 
 `object[]` ([Container](source-workspace-definitions-container.md))
+
+## deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-system-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-deprecated.md "C4MJS#/definitions/SourceSystemDto/properties/deprecated")
+
+### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-system-properties-deprecated.md))
+
+### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ## deps
 
@@ -196,6 +226,24 @@ Workspace name
 ```json
 "Web Application"
 ```
+
+## notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-system-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-notes.md "C4MJS#/definitions/SourceSystemDto/properties/notes")
+
+### notes Type
+
+`string` ([Notes](source-workspace-definitions-system-properties-notes.md))
 
 ## tags
 

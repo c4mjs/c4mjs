@@ -1,0 +1,18 @@
+.link {
+  cursor: pointer;
+}
+
+.edge {
+  user-select: none;
+}
+
+.edge:hover {
+  font-weight: bolder;
+  stroke-width: 3px;
+}
+
+.deprecated path {
+  stroke: darkred;
+  stroke-dasharray: 6px;
+  stroke-width: 3px;
+}

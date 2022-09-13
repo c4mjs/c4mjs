@@ -41,10 +41,12 @@ export const setup = async () => {
       constraint group_pk primary key,
     name     string  not null,
     desc     string,
+    notes     string,
     tech     string,
     type     string  not null,
     tags     string,
-    external boolean not null default false
+    external boolean not null default false,
+    deprecated boolean not null default false
   );
 
   create unique index entity_address_uindex on "entity" (address);
@@ -56,7 +58,10 @@ export const setup = async () => {
     sender   string not null,
     receiver string not null,
     desc     string,
+    notes     string,
     tech     string,
+    deprecated boolean not null default false,
+
 
     foreign key (sender) references entity (address) on delete set null,
     foreign key (receiver) references entity (address) on delete set null

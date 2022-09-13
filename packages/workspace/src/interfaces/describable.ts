@@ -3,4 +3,5 @@
  */
 export interface Describable {
   desc?: string;
+  notes?: string;
 }

@@ -53,12 +53,15 @@ export class GraphvizC4 {
     debug("Rendering System Context Diagram for workspace");
     // Get all Entities
     const entitiesByGroup = groupBy(this.workspace.getContextEntities(), "groupId");
-    return digraph({
+
+    const dot = digraph({
       content: render([
         this.workspace.getGroups().map((group) => subgraph({ ...group, content: render(entitiesByGroup[group.id]) })),
         this.workspace.getContextRelationships(),
       ]),
     });
+    debug(dot);
+    return dot;
   }
 
   /**
@@ -115,11 +118,13 @@ export class GraphvizC4 {
     // Get all entities in groups other than mine
     const otherEntities = entities.filter((entity) => systemId !== entity.systemId);
 
-    return digraph({
+    const dot = digraph({
       content: render([
         subgraph({ ...system, content: render(myEntities) }),
         render([otherEntities, associatedRelationships]),
       ]),
     });
+    debug(dot);
+    return dot;
   }
 }

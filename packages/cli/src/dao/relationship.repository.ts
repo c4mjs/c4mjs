@@ -5,11 +5,11 @@ import { database } from "./database";
 export const RelationshipRepository = {
   findAll: (): Promise<RelationshipEntity[]> =>
     new Promise((resolve, reject) =>
-      database.all(`select sender, receiver, desc, tech from "relationship"`, (error, rows) => {
+      database.all(`select * from "relationship"`, (error, rows) => {
         if (error) reject(error);
         resolve(
           _(rows)
-            .map((it) => omitBy(it, isNil))
+            .map((it) => ({ ...omitBy(it, isNil), deprecated: Boolean(it.deprecated) }))
             .value() as RelationshipEntity[]
         );
       })
@@ -17,8 +17,15 @@ export const RelationshipRepository = {
   save: (relationship: RelationshipEntity): Promise<RelationshipEntity> =>
     new Promise((resolve, reject) =>
       database.run(
-        `insert into "relationship" (sender, receiver, desc, tech) values (?, ?, ?, ?)`,
-        [relationship.sender, relationship.receiver, relationship.desc, relationship.tech],
+        `insert into "relationship" (sender, receiver, desc, notes, tech, deprecated) values (?, ?, ?, ?, ?, ?)`,
+        [
+          relationship.sender,
+          relationship.receiver,
+          relationship.desc,
+          relationship.notes,
+          relationship.tech,
+          relationship.deprecated,
+        ],
         (error) => {
           if (error) reject(error);
           resolve(relationship);

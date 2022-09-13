@@ -1,0 +1,18 @@
+---
+id: internetBanking
+name: Internet Banking
+people:
+  - id: customer
+    name: Personal Banking Customer
+    desc: A customer of the bank, with personal bank accounts.
+
+systems:
+  - $ref: ./internet-banking.system.yaml
+  - $ref: ./mainframe-banking.system.yaml
+
+  - id: emailSystem
+    name: Email System
+    external: true
+    desc: The internal Microsoft Exchange e-mail system.
+    deps: |
+      this -> customer : Sends email to

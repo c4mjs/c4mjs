@@ -52,7 +52,13 @@ const ingestDep = async (dep: string, this_: string, lineage: string[]) => {
         receiver = _(results).compact().first()?.address;
       }
 
-      await RelationshipRepository.save({ sender, receiver, desc: desc && trim(desc), tech: tech && trim(tech) });
+      await RelationshipRepository.save({
+        sender,
+        receiver,
+        desc: desc && trim(desc),
+        tech: tech && trim(tech),
+        deprecated: false,
+      });
     } catch (error) {
       if (error.message.startsWith("SQLITE_CONSTRAINT:")) {
         const offender = error.message.includes("sender") ? sender_ : receiver_;
@@ -74,7 +80,7 @@ const ingestDeps = (deps: string, this_: string, lineage: string[]) => {
 };
 
 const ingestContainer = async (
-  { id, name, desc, external, tags, tech, deps }: SourceContainerDto,
+  { id, name, desc, notes, external, deprecated, tags, tech, deps }: SourceContainerDto,
   lineage: string[]
 ) => {
   await EntityRepository.save({
@@ -82,8 +88,10 @@ const ingestContainer = async (
     address: [...lineage, id].join("."),
     name,
     desc,
+    notes,
     tech,
     external: Boolean(external),
+    deprecated: Boolean(deprecated),
     type: "container",
     tags: tags?.join(","),
   });
@@ -91,7 +99,7 @@ const ingestContainer = async (
 };
 
 const ingestSystem = async (
-  { id, name, desc, external, tags, deps, containers }: SourceSystemDto,
+  { id, name, desc, notes, external, deprecated, tags, deps, containers }: SourceSystemDto,
   lineage: string[]
 ) => {
   await EntityRepository.save({
@@ -100,8 +108,10 @@ const ingestSystem = async (
     name,
     desc,
     external: Boolean(external),
+    deprecated: Boolean(deprecated),
     type: "system",
     tags: tags?.join(","),
+    notes,
   });
 
   if (containers)
@@ -109,13 +119,18 @@ const ingestSystem = async (
   if (deps) ingestDeps(deps, id, lineage);
 };
 
-const ingestPerson = async ({ id, name, desc, external, tags, deps }: SourcePersonDto, lineage: string[]) => {
+const ingestPerson = async (
+  { id, name, desc, notes, external, deprecated, tags, deps }: SourcePersonDto,
+  lineage: string[]
+) => {
   await EntityRepository.save({
     id,
     address: [...lineage, id].join("."),
     name,
     desc,
+    notes,
     external: Boolean(external),
+    deprecated: Boolean(deprecated),
     type: "person",
     tags: tags?.join(","),
   });

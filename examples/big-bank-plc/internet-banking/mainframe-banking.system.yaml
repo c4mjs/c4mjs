@@ -1,0 +1,5 @@
+id: mainframeBankingSystem
+name: Mainframe Banking System
+external: true
+deprecated: true
+desc: Stores all of the core banking information about customers, accounts, transactions etc

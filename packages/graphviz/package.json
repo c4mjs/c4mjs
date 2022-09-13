@@ -24,12 +24,14 @@
     "debug": "^4.3.4",
     "dotenv": "^16.0.2",
     "lodash": "^4.17.21",
+    "object-hash": "^3.0.0",
     "pupa": "^2.1.1",
     "reflect-metadata": "^0.1.13",
     "word-wrap": "^1.2.3"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.184",
+    "@types/object-hash": "^2.2.1",
     "jsdoc-to-markdown": "^7.1.1"
   },
   "gitHead": "ebdc771a7840992ef7720e5ccc17a5a91ac7e3af"

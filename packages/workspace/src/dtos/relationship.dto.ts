@@ -2,7 +2,9 @@
  * @title Relationship
  * @description Defines a Relationship Between a Sender and a Receiver
  */
-export interface RelationshipDto {
+import { Deprecatable } from "../interfaces/deprecatable";
+
+export interface RelationshipDto extends Deprecatable {
   /**
    * @title Sender
    * @description ID of the Message Sender
@@ -20,6 +22,12 @@ export interface RelationshipDto {
    * @description Description of the Message
    */
   desc?: string;
+
+  /**
+   * @title Notes
+   * @description Additional Notes
+   */
+  notes?: string;
 
   /**
    * @title tech

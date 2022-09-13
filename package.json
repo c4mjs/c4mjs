@@ -16,6 +16,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "lerna run build --ignore=\"big-bank-*\" && yarn prettier:fix",
+    "build:watch": "lerna run build:watch --ignore=\"big-bank-*\" --stream",
     "docs": "docsify serve docs",
     "clean": "lerna run clean"
   },

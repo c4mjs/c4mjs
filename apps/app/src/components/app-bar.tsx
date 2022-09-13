@@ -30,7 +30,7 @@ export const AppBar: React.FC<IAppBarCtr> = ({ onLoadSchema, schemaLoading, url 
       verticalAlign="center"
       horizontalAlign="space-between"
       styles={{
-        root: { backgroundColor: palette.themePrimary, padding: spacing.s1 },
+        root: { padding: spacing.s1, backgroundColor: palette.themeLighter, height: "48px" },
       }}
     >
       <Stack horizontal tokens={{ childrenGap: spacing.m }} verticalAlign="center">
@@ -39,16 +39,9 @@ export const AppBar: React.FC<IAppBarCtr> = ({ onLoadSchema, schemaLoading, url 
         </StackItem>
         <StackItem onClick={() => window.open("https://c4mjs.github.io/c4mjs/#/")}>
           <Text
-            styles={{
-              root: {
-                color: palette.white,
-                userSelect: "none",
-                fontSize: 24,
-                cursor: "pointer",
-              },
-            }}
+            styles={{ root: { color: palette.neutralPrimary, userSelect: "none", fontSize: 24, cursor: "pointer" } }}
           >
-            <span style={{ fontFamily: "Montserrat Subrayada" }}>C4 Model</span>
+            <span style={{ whiteSpace: "nowrap", fontFamily: "Montserrat Subrayada" }}>C4 Model</span>
             <span style={{ paddingLeft: 4, fontFamily: "Shadows Into Light" }}>.js</span>
           </Text>
         </StackItem>

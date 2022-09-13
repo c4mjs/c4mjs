@@ -16,6 +16,7 @@
     "@c4mjs/graphviz": "1.2.0",
     "@c4mjs/workspace": "1.2.0",
     "@fluentui/react": "^8.94.1",
+    "@fontsource/open-sans": "^4.5.11",
     "@fontsource/montserrat-subrayada": "^4.5.10",
     "@fontsource/roboto-flex": "^4.5.2",
     "@fontsource/shadows-into-light": "^4.5.9",

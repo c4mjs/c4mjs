@@ -2,10 +2,6 @@ id: internetBankingSystem
 name: Internet Banking System
 desc: Allows customers to view information about their bank accounts and make payments.
 tags: [critical, medium]
-deps: |
-  this -> emailSystem : Sends emails using
-  this -> mainframeBankingSystem : Gets account information from, and makes payments using
-
 containers:
   - id: webApp
     name: Web Application
@@ -43,4 +39,7 @@ containers:
   - id: database
     name: Database
     desc: Stores user registration information, hashed authentication credentials, access logs etc.
+    notes: This database schema exists within the shared database cluster for the organisation
     tech: Oracle Database Schema
+    deprecated: true
+    tags: [database]

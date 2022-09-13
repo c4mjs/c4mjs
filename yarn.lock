@@ -1425,6 +1425,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat-subrayada/-/montserrat-subrayada-4.5.10.tgz#3a99b0426a17b0fe81111b5f6d231a14814dd993"
   integrity sha512-6vxTRiiljaKdUZTMQiFGfL7o2yLWZd7deUwvJ1iTAcO3jq+3Iwt45xMxPfsbouiLLC6BF9PlWlDj1TiomGPqQg==
 
+"@fontsource/open-sans@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.11.tgz#1e9f4346599bdc7752b741d17ee30ef4ebbc15e6"
+  integrity sha512-nG0gmbx4pSr8wltdG/ZdlS6OrsMK40Wt6iyuLTKHEf0TQfzKRMlWaskZHdeuWCwS6WUgqHKMf9KSwGdxPfapOg==
+
 "@fontsource/roboto-flex@^4.5.2":
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto-flex/-/roboto-flex-4.5.2.tgz#f487bd75a52c9fcb3a77d05b10766afbe5c77393"
@@ -3512,6 +3517,11 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
+
+"@types/object-hash@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/object-hash/-/object-hash-2.2.1.tgz#67c169f8f033e0b62abbf81df2d00f4598d540b9"
+  integrity sha512-i/rtaJFCsPljrZvP/akBqEwUP2y5cZLOmvO+JaYnz01aPknrQ+hB5MRcO7iqCUsFaYfTG8kGfKUyboA07xeDHQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"

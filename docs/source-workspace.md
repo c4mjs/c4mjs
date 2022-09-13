@@ -24,15 +24,45 @@ Reference this group by using
 { "$ref": "C4MJS#/definitions/SourceComponentDto" }
 ```
 
-| Property              | Type      | Required | Nullable       | Defined by                                                                                                                                |
-| :-------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| [deps](#deps)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-dependencies.md "C4MJS#/definitions/SourceComponentDto/properties/deps") |
-| [desc](#desc)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-description.md "C4MJS#/definitions/SourceComponentDto/properties/desc")  |
-| [external](#external) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-external.md "C4MJS#/definitions/SourceComponentDto/properties/external") |
-| [id](#id)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-id.md "C4MJS#/definitions/SourceComponentDto/properties/id")             |
-| [name](#name)         | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-name.md "C4MJS#/definitions/SourceComponentDto/properties/name")         |
-| [tags](#tags)         | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tags.md "C4MJS#/definitions/SourceComponentDto/properties/tags")         |
-| [tech](#tech)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tech.md "C4MJS#/definitions/SourceComponentDto/properties/tech")         |
+| Property                  | Type      | Required | Nullable       | Defined by                                                                                                                                    |
+| :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| [deprecated](#deprecated) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-deprecated.md "C4MJS#/definitions/SourceComponentDto/properties/deprecated") |
+| [deps](#deps)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-dependencies.md "C4MJS#/definitions/SourceComponentDto/properties/deps")     |
+| [desc](#desc)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-description.md "C4MJS#/definitions/SourceComponentDto/properties/desc")      |
+| [external](#external)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-external.md "C4MJS#/definitions/SourceComponentDto/properties/external")     |
+| [id](#id)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-id.md "C4MJS#/definitions/SourceComponentDto/properties/id")                 |
+| [name](#name)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-name.md "C4MJS#/definitions/SourceComponentDto/properties/name")             |
+| [notes](#notes)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-notes.md "C4MJS#/definitions/SourceComponentDto/properties/notes")           |
+| [tags](#tags)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tags.md "C4MJS#/definitions/SourceComponentDto/properties/tags")             |
+| [tech](#tech)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tech.md "C4MJS#/definitions/SourceComponentDto/properties/tech")             |
+
+### deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-component-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-deprecated.md "C4MJS#/definitions/SourceComponentDto/properties/deprecated")
+
+#### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-component-properties-deprecated.md))
+
+#### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ### deps
 
@@ -186,6 +216,24 @@ Workspace name
 "Web Application"
 ```
 
+### notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-component-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-notes.md "C4MJS#/definitions/SourceComponentDto/properties/notes")
+
+#### notes Type
+
+`string` ([Notes](source-workspace-definitions-component-properties-notes.md))
+
 ### tags
 
 Tags that can be attached to an entity
@@ -250,16 +298,18 @@ Reference this group by using
 { "$ref": "C4MJS#/definitions/SourceContainerDto" }
 ```
 
-| Property                  | Type      | Required | Nullable       | Defined by                                                                                                                                    |
-| :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
-| [components](#components) | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components") |
-| [deps](#deps-1)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")     |
-| [desc](#desc-1)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-description.md "C4MJS#/definitions/SourceContainerDto/properties/desc")      |
-| [external](#external-1)   | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-external.md "C4MJS#/definitions/SourceContainerDto/properties/external")     |
-| [id](#id-1)               | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-id.md "C4MJS#/definitions/SourceContainerDto/properties/id")                 |
-| [name](#name-1)           | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-name.md "C4MJS#/definitions/SourceContainerDto/properties/name")             |
-| [tags](#tags-1)           | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")             |
-| [tech](#tech-1)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")             |
+| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                    |
+| :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| [components](#components)   | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components") |
+| [deprecated](#deprecated-1) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-deprecated.md "C4MJS#/definitions/SourceContainerDto/properties/deprecated") |
+| [deps](#deps-1)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")     |
+| [desc](#desc-1)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-description.md "C4MJS#/definitions/SourceContainerDto/properties/desc")      |
+| [external](#external-1)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-external.md "C4MJS#/definitions/SourceContainerDto/properties/external")     |
+| [id](#id-1)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-id.md "C4MJS#/definitions/SourceContainerDto/properties/id")                 |
+| [name](#name-1)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-name.md "C4MJS#/definitions/SourceContainerDto/properties/name")             |
+| [notes](#notes-1)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-notes.md "C4MJS#/definitions/SourceContainerDto/properties/notes")           |
+| [tags](#tags-1)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")             |
+| [tech](#tech-1)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")             |
 
 ### components
 
@@ -278,6 +328,34 @@ Container Components
 #### components Type
 
 `object[]` ([Component](source-workspace-definitions-component.md))
+
+### deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-container-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-deprecated.md "C4MJS#/definitions/SourceContainerDto/properties/deprecated")
+
+#### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-container-properties-deprecated.md))
+
+#### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ### deps
 
@@ -430,6 +508,24 @@ Workspace name
 ```json
 "Web Application"
 ```
+
+### notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-container-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-notes.md "C4MJS#/definitions/SourceContainerDto/properties/notes")
+
+#### notes Type
+
+`string` ([Notes](source-workspace-definitions-container-properties-notes.md))
 
 ### tags
 
@@ -657,14 +753,44 @@ Reference this group by using
 { "$ref": "C4MJS#/definitions/SourcePersonDto" }
 ```
 
-| Property                | Type      | Required | Nullable       | Defined by                                                                                                                          |
-| :---------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| [deps](#deps-2)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps") |
-| [desc](#desc-2)         | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")  |
-| [external](#external-2) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external") |
-| [id](#id-3)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")             |
-| [name](#name-3)         | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")         |
-| [tags](#tags-3)         | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")         |
+| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                              |
+| :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| [deprecated](#deprecated-2) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-deprecated.md "C4MJS#/definitions/SourcePersonDto/properties/deprecated") |
+| [deps](#deps-2)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-dependencies.md "C4MJS#/definitions/SourcePersonDto/properties/deps")     |
+| [desc](#desc-2)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-description.md "C4MJS#/definitions/SourcePersonDto/properties/desc")      |
+| [external](#external-2)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-external.md "C4MJS#/definitions/SourcePersonDto/properties/external")     |
+| [id](#id-3)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-id.md "C4MJS#/definitions/SourcePersonDto/properties/id")                 |
+| [name](#name-3)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-name.md "C4MJS#/definitions/SourcePersonDto/properties/name")             |
+| [notes](#notes-2)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-notes.md "C4MJS#/definitions/SourcePersonDto/properties/notes")           |
+| [tags](#tags-3)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-person-properties-tags.md "C4MJS#/definitions/SourcePersonDto/properties/tags")             |
+
+### deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-person-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-deprecated.md "C4MJS#/definitions/SourcePersonDto/properties/deprecated")
+
+#### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-person-properties-deprecated.md))
+
+#### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ### deps
 
@@ -818,6 +944,24 @@ Workspace name
 "Web Application"
 ```
 
+### notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-person-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-person-properties-notes.md "C4MJS#/definitions/SourcePersonDto/properties/notes")
+
+#### notes Type
+
+`string` ([Notes](source-workspace-definitions-person-properties-notes.md))
+
 ### tags
 
 Tags that can be attached to an entity
@@ -854,16 +998,18 @@ Reference this group by using
 { "$ref": "C4MJS#/definitions/SourceSystemDto" }
 ```
 
-| Property                  | Type      | Required | Nullable       | Defined by                                                                                                                              |
-| :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| [containers](#containers) | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-containers.md "C4MJS#/definitions/SourceSystemDto/properties/containers") |
-| [deps](#deps-3)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-dependencies.md "C4MJS#/definitions/SourceSystemDto/properties/deps")     |
-| [desc](#desc-3)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-description.md "C4MJS#/definitions/SourceSystemDto/properties/desc")      |
-| [external](#external-3)   | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-external.md "C4MJS#/definitions/SourceSystemDto/properties/external")     |
-| [id](#id-4)               | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-id.md "C4MJS#/definitions/SourceSystemDto/properties/id")                 |
-| [name](#name-4)           | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-name.md "C4MJS#/definitions/SourceSystemDto/properties/name")             |
-| [tags](#tags-4)           | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tags.md "C4MJS#/definitions/SourceSystemDto/properties/tags")             |
-| [tech](#tech-2)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tech.md "C4MJS#/definitions/SourceSystemDto/properties/tech")             |
+| Property                    | Type      | Required | Nullable       | Defined by                                                                                                                              |
+| :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| [containers](#containers)   | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-containers.md "C4MJS#/definitions/SourceSystemDto/properties/containers") |
+| [deprecated](#deprecated-3) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-deprecated.md "C4MJS#/definitions/SourceSystemDto/properties/deprecated") |
+| [deps](#deps-3)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-dependencies.md "C4MJS#/definitions/SourceSystemDto/properties/deps")     |
+| [desc](#desc-3)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-description.md "C4MJS#/definitions/SourceSystemDto/properties/desc")      |
+| [external](#external-3)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-external.md "C4MJS#/definitions/SourceSystemDto/properties/external")     |
+| [id](#id-4)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-id.md "C4MJS#/definitions/SourceSystemDto/properties/id")                 |
+| [name](#name-4)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-name.md "C4MJS#/definitions/SourceSystemDto/properties/name")             |
+| [notes](#notes-3)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-notes.md "C4MJS#/definitions/SourceSystemDto/properties/notes")           |
+| [tags](#tags-4)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tags.md "C4MJS#/definitions/SourceSystemDto/properties/tags")             |
+| [tech](#tech-2)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-system-properties-tech.md "C4MJS#/definitions/SourceSystemDto/properties/tech")             |
 
 ### containers
 
@@ -882,6 +1028,34 @@ System containers
 #### containers Type
 
 `object[]` ([Container](source-workspace-definitions-container.md))
+
+### deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-system-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-deprecated.md "C4MJS#/definitions/SourceSystemDto/properties/deprecated")
+
+#### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-system-properties-deprecated.md))
+
+#### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ### deps
 
@@ -1034,6 +1208,24 @@ Workspace name
 ```json
 "Web Application"
 ```
+
+### notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-system-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-system-properties-notes.md "C4MJS#/definitions/SourceSystemDto/properties/notes")
+
+#### notes Type
+
+`string` ([Notes](source-workspace-definitions-system-properties-notes.md))
 
 ### tags
 

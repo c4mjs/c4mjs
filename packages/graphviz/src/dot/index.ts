@@ -2,7 +2,7 @@ import wrap from "word-wrap";
 
 export const title = (title: string) => `<font point-size="18"><b>${title}</b></font>`;
 
-export const subtitle = (subtitle: string) => `<font point-size="12">${subtitle}</font>`;
+export const subtitle = (subtitle: string) => `<font point-size="16">${subtitle}</font>`;
 
 export const body = (body: string) => `<font point-size="14">${wrap(body, { width: 30, newline: "<br />" })}</font>`;
 

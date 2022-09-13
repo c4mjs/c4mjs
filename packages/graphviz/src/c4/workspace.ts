@@ -1,5 +1,5 @@
 import { GroupDto, WorkspaceDto } from "@c4mjs/workspace";
-import { filter, find } from "lodash";
+import _, { filter, find } from "lodash";
 import { Entity } from "./entity";
 import { Relationship } from "./relationship";
 import { Scope } from "./scope";
@@ -29,7 +29,16 @@ export class Workspace {
     this.entities = entities.map((it) => new Entity(it));
 
     this.relationships = relationships.map(
-      (it) => new Relationship(this.getEntity(it.sender), this.getEntity(it.receiver), it.desc, it.tech)
+      (it) =>
+        new Relationship(
+          this.getEntity(it.sender),
+          this.getEntity(it.receiver),
+          it.desc,
+          it.notes,
+          it.tech,
+          [],
+          it.deprecated
+        )
     );
   }
 
@@ -63,18 +72,21 @@ export class Workspace {
   }
 
   getContextRelationships(): Relationship[] {
-    // Hoist all Relationships if they are container relationships
-    const hoistedRelationships = this.relationships
-      .map((r) => {
-        let sender = r.sender;
-        let receiver = r.receiver;
-        if (r.sender.scope === Scope.CONTAINER) sender = this.getEntity(sender.parentAddress);
-        if (r.receiver.scope === Scope.CONTAINER) receiver = this.getEntity(receiver.parentAddress);
-        return new Relationship(sender, receiver, r.desc, r.tech, r.tags);
-      })
-      // Remove Inter System Messages
-      .filter(({ sender, receiver }) => sender.address !== receiver.address);
-    return filter(hoistedRelationships, { scope: Scope.CONTEXT });
+    return (
+      _(this.relationships)
+        .map((r) => {
+          let sender = r.sender;
+          let receiver = r.receiver;
+          if (r.sender.scope === Scope.CONTAINER) sender = this.getEntity(sender.parentAddress);
+          if (r.receiver.scope === Scope.CONTAINER) receiver = this.getEntity(receiver.parentAddress);
+          return new Relationship(sender, receiver, r.desc, r.notes, r.tech, r.tags, r.deprecated);
+        })
+        // Remove Inter System Messages
+        .filter(({ sender, receiver }) => sender.address !== receiver.address)
+        .filter({ scope: Scope.CONTEXT })
+        .uniqBy((it) => it.hash)
+        .value()
+    );
   }
 
   getContainerRelationships() {
@@ -94,6 +106,13 @@ export class Workspace {
   }
 
   getContainerRelationshipsWithSystem(groupId: string, systemId: string) {
-    return [...this.getContextRelationshipsWithGroup(groupId), ...this.getContainerRelationshipsWithGroup(groupId)];
+    return [
+      ...this.getContextRelationshipsWithGroup(groupId).filter(
+        ({ sender, receiver }) => sender.systemId === systemId || receiver.systemId === systemId
+      ),
+      ...this.getContainerRelationshipsWithGroup(groupId).filter(
+        ({ sender, receiver }) => sender.systemId === systemId || receiver.systemId === systemId
+      ),
+    ];
   }
 }

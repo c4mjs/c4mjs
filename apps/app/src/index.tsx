@@ -1,6 +1,7 @@
 import "@fontsource/shadows-into-light";
 import "@fontsource/montserrat-subrayada";
 import "@fontsource/roboto-flex";
+import "@fontsource/open-sans";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -17,7 +18,7 @@ if (config.isDev) localStorage.debug = "c4mjs:*";
 
 const myTheme = createTheme({
   defaultFontStyle: {
-    fontFamily: "Roboto Flex",
+    fontFamily: "Open Sans",
   },
 });
 

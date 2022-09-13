@@ -5,6 +5,7 @@ export type NodeProperties = {
   id: string;
   shape: NodeShape;
   label: string;
+  tooltip: string;
   style: NodeStyle[];
   color: string;
   fillcolor: string;
@@ -16,6 +17,7 @@ export const node = ({
   id,
   shape,
   label,
+  tooltip,
   style,
   color,
   fillcolor,
@@ -25,6 +27,7 @@ export const node = ({
         id="${id}",
         shape="${shape}",
         label=<${label}>,
+        tooltip=<${tooltip}>
         style="${style.join(",")}",
         color="${color}",
         fillcolor="${fillcolor}",

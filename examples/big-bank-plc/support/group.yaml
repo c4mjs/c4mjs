@@ -1,25 +1,20 @@
 ---
-id: internetBankingAgent
-name: Internet Banking Agent System
+id: support
+name: Support
 people:
   - id: agent
     name: Personal Banking Agent
     desc: An agent of the bank, managing accounts on behalf of customers.
-    deps: |
-      this -> internetBankingManagementSystem : Views account balances, and makes payments using
 
 systems:
   - id: internetBankingManagementSystem
     name: Internet Banking Management System
     desc: Allows agents to manage customer banking information and perform actions on their behalf
-    deps: |
-      this -> internetBanking.emailSystem : Sends emails using
-      this -> internetBanking.mainframeBankingSystem : Gets account information from, and makes payments using
-
     containers:
       - id: agentPortal
         name: Agent Portal
         desc: Allows agents to log in and perform actions
         deps: |
           agent -> this : Perform actions using
+          this -> internetBanking.emailSystem : Sends emails using
           this -> internetBanking.internetBankingSystem.apiApp : Sends API requests to

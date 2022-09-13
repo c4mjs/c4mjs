@@ -5,7 +5,7 @@ import { database } from "./database";
 export const GroupRepository = {
   findAll: (): Promise<GroupEntity[]> =>
     new Promise((resolve, reject) =>
-      database.all(`select id, name, tags from "group"`, (error, rows) => {
+      database.all(`select * from "group"`, (error, rows) => {
         if (error) reject(error);
         resolve(
           _(rows)

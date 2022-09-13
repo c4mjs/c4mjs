@@ -19,11 +19,13 @@ Container inside a workspace System, represents a container for code
 | Property                  | Type      | Required | Nullable       | Defined by                                                                                                                                    |
 | :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
 | [components](#components) | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components") |
+| [deprecated](#deprecated) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-deprecated.md "C4MJS#/definitions/SourceContainerDto/properties/deprecated") |
 | [deps](#deps)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")     |
 | [desc](#desc)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-description.md "C4MJS#/definitions/SourceContainerDto/properties/desc")      |
 | [external](#external)     | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-external.md "C4MJS#/definitions/SourceContainerDto/properties/external")     |
 | [id](#id)                 | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-id.md "C4MJS#/definitions/SourceContainerDto/properties/id")                 |
 | [name](#name)             | `string`  | Required | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-name.md "C4MJS#/definitions/SourceContainerDto/properties/name")             |
+| [notes](#notes)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-notes.md "C4MJS#/definitions/SourceContainerDto/properties/notes")           |
 | [tags](#tags)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")             |
 | [tech](#tech)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")             |
 
@@ -44,6 +46,34 @@ Container Components
 ### components Type
 
 `object[]` ([Component](source-workspace-definitions-component.md))
+
+## deprecated
+
+Is the entity deprecated or not
+
+`deprecated`
+
+- is optional
+
+- Type: `boolean` ([Deprecated](source-workspace-definitions-container-properties-deprecated.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-deprecated.md "C4MJS#/definitions/SourceContainerDto/properties/deprecated")
+
+### deprecated Type
+
+`boolean` ([Deprecated](source-workspace-definitions-container-properties-deprecated.md))
+
+### deprecated Examples
+
+```json
+"true"
+```
+
+```json
+"false"
+```
 
 ## deps
 
@@ -196,6 +226,24 @@ Workspace name
 ```json
 "Web Application"
 ```
+
+## notes
+
+Notes to be used to convey information about the entity
+
+`notes`
+
+- is optional
+
+- Type: `string` ([Notes](source-workspace-definitions-container-properties-notes.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-notes.md "C4MJS#/definitions/SourceContainerDto/properties/notes")
+
+### notes Type
+
+`string` ([Notes](source-workspace-definitions-container-properties-notes.md))
 
 ## tags
 

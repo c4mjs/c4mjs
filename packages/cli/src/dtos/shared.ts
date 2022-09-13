@@ -28,6 +28,12 @@ export type Version = string;
 export type Description = string;
 
 /**
+ * @title Notes
+ * @description Notes to be used to convey information about the entity
+ */
+export type Notes = string;
+
+/**
  * @title Tags
  * @description Tags that can be attached to an entity
  * @examples ["cba", "critical"]
@@ -54,3 +60,10 @@ export type Dependecies = string;
  * @examples ["true", "false"]
  */
 export type External = boolean;
+
+/**
+ * @title Deprecated
+ * @description Is the entity deprecated or not
+ * @examples ["true", "false"]
+ */
+export type Deprecated = boolean;
