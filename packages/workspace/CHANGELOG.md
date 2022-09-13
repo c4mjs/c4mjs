@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @c4mjs/workspace
 
-
-
-
-
 # 1.2.0 (2022-09-12)
 
 ### Features
