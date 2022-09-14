@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.4 (2022-09-14)
+
+
+### Bug Fixes
+
+* remove deprecated status on example ([fa68cad](https://github.com/c4mjs/c4mjs/commit/fa68cad587087fc6da5ee91832a7c853e4f2a488))
+
+
+
+
+
 ## 0.2.3 (2022-09-14)
 
 ### Bug Fixes
