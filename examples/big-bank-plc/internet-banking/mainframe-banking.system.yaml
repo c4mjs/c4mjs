@@ -3,3 +3,4 @@ name: Mainframe Banking System
 external: true
 deprecated: true
 desc: Stores all of the core banking information about customers, accounts, transactions etc
+notes: Deprecated in favour of introducing new independent services within the Internet Banking System

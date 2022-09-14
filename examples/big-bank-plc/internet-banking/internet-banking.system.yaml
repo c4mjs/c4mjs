@@ -41,5 +41,4 @@ containers:
     desc: Stores user registration information, hashed authentication credentials, access logs etc.
     notes: This database schema exists within the shared database cluster for the organisation
     tech: Oracle Database Schema
-    deprecated: true
     tags: [database]

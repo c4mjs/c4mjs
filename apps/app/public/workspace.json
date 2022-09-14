@@ -52,19 +52,10 @@
       "address": "internetBanking.mainframeBankingSystem",
       "name": "Mainframe Banking System",
       "desc": "Stores all of the core banking information about customers, accounts, transactions etc",
+      "notes": "Deprecated in favour of introducing new independent services within the Internet Banking System",
       "type": "system",
       "external": true,
       "deprecated": true,
-      "tags": []
-    },
-    {
-      "id": "emailSystem",
-      "address": "internetBanking.emailSystem",
-      "name": "Email System",
-      "desc": "The internal Microsoft Exchange e-mail system.",
-      "type": "system",
-      "external": true,
-      "deprecated": false,
       "tags": []
     },
     {
@@ -74,6 +65,16 @@
       "desc": "Allows agents to manage customer banking information and perform actions on their behalf",
       "type": "system",
       "external": false,
+      "deprecated": false,
+      "tags": []
+    },
+    {
+      "id": "emailSystem",
+      "address": "internetBanking.emailSystem",
+      "name": "Email System",
+      "desc": "The internal Microsoft Exchange e-mail system.",
+      "type": "system",
+      "external": true,
       "deprecated": false,
       "tags": []
     },
@@ -89,6 +90,17 @@
       "tags": []
     },
     {
+      "id": "mobileApp",
+      "address": "internetBanking.internetBankingSystem.mobileApp",
+      "name": "Mobile Application",
+      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
+      "tech": "Xamarmin",
+      "type": "container",
+      "external": false,
+      "deprecated": false,
+      "tags": []
+    },
+    {
       "id": "database",
       "address": "internetBanking.internetBankingSystem.database",
       "name": "Database",
@@ -98,7 +110,18 @@
       "type": "container",
       "tags": ["database"],
       "external": false,
-      "deprecated": true
+      "deprecated": false
+    },
+    {
+      "id": "apiApp",
+      "address": "internetBanking.internetBankingSystem.apiApp",
+      "name": "Api Application",
+      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
+      "tech": "Java and Spring MVC",
+      "type": "container",
+      "external": false,
+      "deprecated": false,
+      "tags": []
     },
     {
       "id": "agentPortal",
@@ -120,37 +143,9 @@
       "external": false,
       "deprecated": false,
       "tags": []
-    },
-    {
-      "id": "mobileApp",
-      "address": "internetBanking.internetBankingSystem.mobileApp",
-      "name": "Mobile Application",
-      "desc": "Provides a limited subset of the internet banking functionality to customers via their mobile device.",
-      "tech": "Xamarmin",
-      "type": "container",
-      "external": false,
-      "deprecated": false,
-      "tags": []
-    },
-    {
-      "id": "apiApp",
-      "address": "internetBanking.internetBankingSystem.apiApp",
-      "name": "Api Application",
-      "desc": "Provides internet banking functionality via a JSON/HTTPS api.",
-      "tech": "Java and Spring MVC",
-      "type": "container",
-      "external": false,
-      "deprecated": false,
-      "tags": []
     }
   ],
   "relationships": [
-    {
-      "sender": "support.internetBankingManagementSystem.agentPortal",
-      "receiver": "internetBanking.emailSystem",
-      "desc": "Sends emails using",
-      "deprecated": false
-    },
     {
       "sender": "support.internetBankingManagementSystem.agentPortal",
       "receiver": "internetBanking.internetBankingSystem.apiApp",
@@ -158,15 +153,9 @@
       "deprecated": false
     },
     {
-      "sender": "support.agent",
-      "receiver": "support.internetBankingManagementSystem.agentPortal",
-      "desc": "Perform actions using",
-      "deprecated": false
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.singlePageApp",
-      "receiver": "internetBanking.internetBankingSystem.apiApp",
-      "desc": "Makes API calls to",
+      "sender": "support.internetBankingManagementSystem.agentPortal",
+      "receiver": "internetBanking.emailSystem",
+      "desc": "Sends emails using",
       "deprecated": false
     },
     {
@@ -176,16 +165,9 @@
       "deprecated": false
     },
     {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.webApp",
-      "desc": "Visits bigbank.com/ib using",
-      "tech": "HTTPS",
-      "deprecated": false
-    },
-    {
-      "sender": "internetBanking.internetBankingSystem.apiApp",
-      "receiver": "internetBanking.internetBankingSystem.database",
-      "desc": "Reads and writes to",
+      "sender": "internetBanking.internetBankingSystem.webApp",
+      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
+      "desc": "Delivers to the customers web browser",
       "deprecated": false
     },
     {
@@ -196,14 +178,33 @@
     },
     {
       "sender": "internetBanking.internetBankingSystem.apiApp",
+      "receiver": "internetBanking.internetBankingSystem.database",
+      "desc": "Reads and writes to",
+      "deprecated": false
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
+      "desc": "Views account balances, and makes payments using",
+      "deprecated": false
+    },
+    {
+      "sender": "internetBanking.internetBankingSystem.apiApp",
       "receiver": "internetBanking.mainframeBankingSystem",
       "desc": "Makes API calls to the silly system",
       "deprecated": false
     },
     {
-      "sender": "internetBanking.emailSystem",
-      "receiver": "internetBanking.customer",
-      "desc": "Sends email to",
+      "sender": "support.agent",
+      "receiver": "support.internetBankingManagementSystem.agentPortal",
+      "desc": "Perform actions using",
+      "deprecated": false
+    },
+    {
+      "sender": "internetBanking.customer",
+      "receiver": "internetBanking.internetBankingSystem.webApp",
+      "desc": "Visits bigbank.com/ib using",
+      "tech": "HTTPS",
       "deprecated": false
     },
     {
@@ -213,15 +214,15 @@
       "deprecated": false
     },
     {
-      "sender": "internetBanking.internetBankingSystem.webApp",
-      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
-      "desc": "Delivers to the customers web browser",
+      "sender": "internetBanking.emailSystem",
+      "receiver": "internetBanking.customer",
+      "desc": "Sends email to",
       "deprecated": false
     },
     {
-      "sender": "internetBanking.customer",
-      "receiver": "internetBanking.internetBankingSystem.singlePageApp",
-      "desc": "Views account balances, and makes payments using",
+      "sender": "internetBanking.internetBankingSystem.singlePageApp",
+      "receiver": "internetBanking.internetBankingSystem.apiApp",
+      "desc": "Makes API calls to",
       "deprecated": false
     }
   ]

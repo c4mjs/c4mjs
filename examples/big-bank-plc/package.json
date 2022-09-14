@@ -4,8 +4,7 @@
   "private": true,
   "description": "Bing Bank PLC Architecture",
   "scripts": {
-    "build": "c4mjs build -i workspace.yaml > workspace.json",
-    "build:watch": "npx watch \"npm run make\" workspace",
+    "build": "c4mjs build -i workspace.yaml > ../../apps/app/public/workspace.json",
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
