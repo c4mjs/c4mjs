@@ -1,30 +1,28 @@
 # C4Model JS
 
-The aim of this repository is to make it easier to store architecture as code and view it dynmaically by providing:
+C4MJS makes it easier to store architecture as code and view it by providing:
 
-2. **@c4mjs/cli** _Command line utility to build the yaml/json workspace definition to a converted `workspace.json`_
-3. **[c4model.app](https://c4model.app/)** _React App to view your `workspace.json` as interactive C4 Diagraphs rendered by [Graphviz](https://graphviz.org/)_
+2. **@c4mjs/cli** _Command line tool to compile the yaml/json workspace definition_
+3. **[c4model.app](https://c4model.app/)** _React App to view your workspace as interactive C4 Diagraphs rendered by [Graphviz](https://graphviz.org/)_
 
-The stored workspace files accept some shortcuts to make common activities easier.
+To preview an example workspace visit https://c4model.app/
 
 ### Workspace
 
-The Workspace allows us to describe our architecture in YAML/JSON 😄
+The Workspace allows us to describe our architecture in YAML/JSON
 
-$ref parsing is done automatically so you can aggregate your architecture docs as you see fit, see [Swagger](https://swagger.io/docs/specification/using-ref/) for more info.
+$ref parsing is done automatically so you can bundle/split your architecture docs as you see fit, see [Swagger](https://swagger.io/docs/specification/using-ref/) for more info.
 
-> See [Basic Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc) where we create **context** and **container**
-> levels as a single source file.
->
-> See [Full Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc-full) where we create **context**, **container**
-> and **component** diagrams for an entire system broken into multiple files to ease merge conflicts and cross reference containers and components.
+> See [Big Bank Plc Example](https://github.com/JonathanTurnock/c4mjs/tree/main/examples/big-bank-plc) for an illustrative example of workspace splitting.
 
 ### CLI
 
-Theres a CLI 🤤
+The CLI reads the workspace and creates a bundle. This bundle is then hosted and c4model.app reads and renders it, all on the client.
+
+## Usage
 
 ```shell
-mkdir my-super-architecture && cd my-super-architecture
+mkdir architecture && cd architecture
 
 npx @c4mjs/cli init
 
@@ -47,9 +45,24 @@ Explore the workspace using the interactive viewer.
 
 ## Guides
 
-See the [Author](docs/author.md) guide on how to create a Workspace.
+See the full Docs and Workspace api at https://c4mjs.github.io/c4mjs/#/
 
-See the [Viewer](docs/viewing.md) guide on how to view the C4 Model Diagrams.
+## Benefits
+
+Workspace defined in YAML/JSON with hosted Schemas for intellisense:
+- https://c4model.app/cli/Workspace.schema.json
+- https://c4model.app/cli/Person.schema.json
+- https://c4model.app/cli/System.schema.json
+- https://c4model.app/cli/Container.schema.json
+- https://c4model.app/cli/Component.schema.json
+
+Loosely coupled App allowing you to create your own apps using @c4mjs/graphviz
+
+Completely Open Source Codebase, all in this repo.
+
+All bundling and rendering is performed client side, no hosting required and no schemas sent anywhere!
+
+Take advantage of all your current development practices to manage and maintain your c4 model architecture.
 
 # References
 
