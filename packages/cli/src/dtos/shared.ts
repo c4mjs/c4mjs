@@ -36,7 +36,7 @@ export type Notes = string;
 /**
  * @title Tags
  * @description Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
- * @examples ["cba", "critical"]
+ * @examples ["critical"]
  */
 export type Tags = string[];
 
