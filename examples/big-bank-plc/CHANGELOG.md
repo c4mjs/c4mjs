@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.2.3 (2022-09-14)
 
-
 ### Bug Fixes
 
-* update language server for cli ([536ab85](https://github.com/c4mjs/c4mjs/commit/536ab853e0e431305ab18500d1d6e49ee65037c4))
-
-
-
-
+- update language server for cli ([536ab85](https://github.com/c4mjs/c4mjs/commit/536ab853e0e431305ab18500d1d6e49ee65037c4))
 
 ## 1.2.2 (2022-09-14)
 

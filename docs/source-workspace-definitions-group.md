@@ -72,7 +72,7 @@ ID, must be camel case
 
 ## name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -144,7 +144,7 @@ Software Systems in the Group
 
 ## tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 

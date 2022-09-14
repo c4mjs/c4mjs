@@ -1,8 +1,10 @@
-# Untitled string in C4MJS Schema Schema
+# Version Schema
 
 ```txt
 C4MJS#/definitions/SourceWorkspaceDto/properties/version
 ```
+
+Version, must be in semantic version format
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
@@ -10,4 +12,14 @@ C4MJS#/definitions/SourceWorkspaceDto/properties/version
 
 ## version Type
 
-`string`
+`string` ([Version](source-workspace-definitions-workspace-properties-version.md))
+
+## version Constraints
+
+**unknown format**: the value of this string must follow the format: `semver`
+
+## version Examples
+
+```json
+"1.0.0"
+```

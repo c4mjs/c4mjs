@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourceSystemDto/properties/tech
 ```
 
-What technology does the entity use
+Items Technology, this is displayed in the C4 Diagram Between the Title and Body
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourceComponentDto/properties/deprecated
 ```
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

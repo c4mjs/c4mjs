@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourceSystemDto/properties/name
 ```
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

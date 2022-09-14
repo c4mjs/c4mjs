@@ -1,8 +1,10 @@
-# Untitled string in C4MJS Schema Schema
+# Name Schema
 
 ```txt
 C4MJS#/definitions/SourceWorkspaceDto/properties/name
 ```
+
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |
@@ -10,4 +12,22 @@ C4MJS#/definitions/SourceWorkspaceDto/properties/name
 
 ## name Type
 
-`string`
+`string` ([Name](source-workspace-definitions-workspace-properties-name.md))
+
+## name Examples
+
+```json
+"Big Bank PLC"
+```
+
+```json
+"Mainframe Banking System"
+```
+
+```json
+"Email System"
+```
+
+```json
+"Web Application"
+```

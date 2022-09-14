@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourcePersonDto/properties/desc
 ```
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

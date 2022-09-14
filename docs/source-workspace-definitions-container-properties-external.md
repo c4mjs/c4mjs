@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourceContainerDto/properties/external
 ```
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

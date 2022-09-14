@@ -49,7 +49,7 @@ System containers
 
 ## deprecated
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 `deprecated`
 
@@ -77,7 +77,7 @@ Is the entity deprecated or not
 
 ## deps
 
-Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity
+Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.
 
 `deps`
 
@@ -101,7 +101,7 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 ## desc
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 `desc`
 
@@ -119,7 +119,7 @@ Description to be used to convey information about the entity
 
 ## external
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 `external`
 
@@ -193,7 +193,7 @@ ID, must be camel case
 
 ## name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -229,7 +229,7 @@ Workspace name
 
 ## notes
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 `notes`
 
@@ -247,7 +247,7 @@ Notes to be used to convey information about the entity
 
 ## tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -275,7 +275,7 @@ Tags that can be attached to an entity
 
 ## tech
 
-What technology does the entity use
+Items Technology, this is displayed in the C4 Diagram Between the Title and Body
 
 `tech`
 

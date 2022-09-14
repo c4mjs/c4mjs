@@ -90,11 +90,13 @@ ID, must be camel case
 
 ## name
 
+Items Name, can be free text and will be used as the C4 Title within the boxes
+
 `name`
 
 - is required
 
-- Type: `string`
+- Type: `string` ([Name](source-workspace-definitions-workspace-properties-name.md))
 
 - cannot be null
 
@@ -102,15 +104,35 @@ ID, must be camel case
 
 ### name Type
 
-`string`
+`string` ([Name](source-workspace-definitions-workspace-properties-name.md))
+
+### name Examples
+
+```json
+"Big Bank PLC"
+```
+
+```json
+"Mainframe Banking System"
+```
+
+```json
+"Email System"
+```
+
+```json
+"Web Application"
+```
 
 ## styles
+
+URL to a custom stylesheet, mix this with tags (which are applied as class names) to customize the look and appearance of nodes
 
 `styles`
 
 - is optional
 
-- Type: `string`
+- Type: `string` ([Styles](source-workspace-definitions-workspace-properties-styles.md))
 
 - cannot be null
 
@@ -118,15 +140,23 @@ ID, must be camel case
 
 ### styles Type
 
-`string`
+`string` ([Styles](source-workspace-definitions-workspace-properties-styles.md))
+
+### styles Examples
+
+```json
+"http://localhost:9876/workspace.css"
+```
 
 ## version
+
+Version, must be in semantic version format
 
 `version`
 
 - is required
 
-- Type: `string`
+- Type: `string` ([Version](source-workspace-definitions-workspace-properties-version.md))
 
 - cannot be null
 
@@ -134,4 +164,14 @@ ID, must be camel case
 
 ### version Type
 
-`string`
+`string` ([Version](source-workspace-definitions-workspace-properties-version.md))
+
+### version Constraints
+
+**unknown format**: the value of this string must follow the format: `semver`
+
+### version Examples
+
+```json
+"1.0.0"
+```

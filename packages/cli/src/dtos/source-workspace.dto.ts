@@ -1,5 +1,5 @@
 import { SourceGroupDto } from "./source-group.dto";
-import { ID } from "./shared";
+import { ID, Name, Styles, Version } from "./shared";
 
 /**
  * @title Workspace
@@ -7,9 +7,9 @@ import { ID } from "./shared";
  */
 export interface SourceWorkspaceDto {
   id: ID;
-  name: string;
-  version: string;
-  styles?: string;
+  name: Name;
+  version: Version;
+  styles?: Styles;
 
   /**
    * @title Groups

@@ -39,7 +39,7 @@ Reference this group by using
 
 ### cluster
 
-Cluster Name, logically groups entities when rendering
+Apply a cluster name to an item, match this with the same cluster name for another item to force them to be placed inside a Graphviz subgraph. This helps to keep items grouped together such as containers in a microservices architecture.
 
 `cluster`
 
@@ -67,7 +67,7 @@ Cluster Name, logically groups entities when rendering
 
 ### deprecated
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 `deprecated`
 
@@ -95,7 +95,7 @@ Is the entity deprecated or not
 
 ### deps
 
-Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity
+Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.
 
 `deps`
 
@@ -119,7 +119,7 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 ### desc
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 `desc`
 
@@ -137,7 +137,7 @@ Description to be used to convey information about the entity
 
 ### external
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 `external`
 
@@ -211,7 +211,7 @@ ID, must be camel case
 
 ### name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -247,7 +247,7 @@ Workspace name
 
 ### notes
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 `notes`
 
@@ -265,7 +265,7 @@ Notes to be used to convey information about the entity
 
 ### tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -293,7 +293,7 @@ Tags that can be attached to an entity
 
 ### tech
 
-What technology does the entity use
+Items Technology, this is displayed in the C4 Diagram Between the Title and Body
 
 `tech`
 
@@ -343,7 +343,7 @@ Reference this group by using
 
 ### cluster
 
-Cluster Name, logically groups entities when rendering
+Apply a cluster name to an item, match this with the same cluster name for another item to force them to be placed inside a Graphviz subgraph. This helps to keep items grouped together such as containers in a microservices architecture.
 
 `cluster`
 
@@ -389,7 +389,7 @@ Container Components
 
 ### deprecated
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 `deprecated`
 
@@ -417,7 +417,7 @@ Is the entity deprecated or not
 
 ### deps
 
-Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity
+Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.
 
 `deps`
 
@@ -441,7 +441,7 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 ### desc
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 `desc`
 
@@ -459,7 +459,7 @@ Description to be used to convey information about the entity
 
 ### external
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 `external`
 
@@ -533,7 +533,7 @@ ID, must be camel case
 
 ### name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -569,7 +569,7 @@ Workspace name
 
 ### notes
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 `notes`
 
@@ -587,7 +587,7 @@ Notes to be used to convey information about the entity
 
 ### tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -615,7 +615,7 @@ Tags that can be attached to an entity
 
 ### tech
 
-What technology does the entity use
+Items Technology, this is displayed in the C4 Diagram Between the Title and Body
 
 `tech`
 
@@ -705,7 +705,7 @@ ID, must be camel case
 
 ### name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -777,7 +777,7 @@ Software Systems in the Group
 
 ### tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -824,7 +824,7 @@ Reference this group by using
 
 ### deprecated
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 `deprecated`
 
@@ -852,7 +852,7 @@ Is the entity deprecated or not
 
 ### deps
 
-Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity
+Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.
 
 `deps`
 
@@ -876,7 +876,7 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 ### desc
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 `desc`
 
@@ -894,7 +894,7 @@ Description to be used to convey information about the entity
 
 ### external
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 `external`
 
@@ -968,7 +968,7 @@ ID, must be camel case
 
 ### name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -1004,7 +1004,7 @@ Workspace name
 
 ### notes
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 `notes`
 
@@ -1022,7 +1022,7 @@ Notes to be used to convey information about the entity
 
 ### tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -1089,7 +1089,7 @@ System containers
 
 ### deprecated
 
-Is the entity deprecated or not
+If the item is deprecated or not, this will append \[DEPRECATED] to the end of the item and surround it in a dashed red stroke
 
 `deprecated`
 
@@ -1117,7 +1117,7 @@ Is the entity deprecated or not
 
 ### deps
 
-Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity
+Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.
 
 `deps`
 
@@ -1141,7 +1141,7 @@ Multiline string representing the entities dependecies, seperate dependecies wit
 
 ### desc
 
-Description to be used to convey information about the entity
+Items Description, can be free text and will be displayed as the C4 Body within the boxes
 
 `desc`
 
@@ -1159,7 +1159,7 @@ Description to be used to convey information about the entity
 
 ### external
 
-Is the entity external or not
+If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.
 
 `external`
 
@@ -1233,7 +1233,7 @@ ID, must be camel case
 
 ### name
 
-Workspace name
+Items Name, can be free text and will be used as the C4 Title within the boxes
 
 `name`
 
@@ -1269,7 +1269,7 @@ Workspace name
 
 ### notes
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 `notes`
 
@@ -1287,7 +1287,7 @@ Notes to be used to convey information about the entity
 
 ### tags
 
-Tags that can be attached to an entity
+Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present
 
 `tags`
 
@@ -1315,7 +1315,7 @@ Tags that can be attached to an entity
 
 ### tech
 
-What technology does the entity use
+Items Technology, this is displayed in the C4 Diagram Between the Title and Body
 
 `tech`
 
@@ -1423,11 +1423,13 @@ ID, must be camel case
 
 ### name
 
+Items Name, can be free text and will be used as the C4 Title within the boxes
+
 `name`
 
 - is required
 
-- Type: `string`
+- Type: `string` ([Name](source-workspace-definitions-workspace-properties-name.md))
 
 - cannot be null
 
@@ -1435,15 +1437,35 @@ ID, must be camel case
 
 #### name Type
 
-`string`
+`string` ([Name](source-workspace-definitions-workspace-properties-name.md))
+
+#### name Examples
+
+```json
+"Big Bank PLC"
+```
+
+```json
+"Mainframe Banking System"
+```
+
+```json
+"Email System"
+```
+
+```json
+"Web Application"
+```
 
 ### styles
+
+URL to a custom stylesheet, mix this with tags (which are applied as class names) to customize the look and appearance of nodes
 
 `styles`
 
 - is optional
 
-- Type: `string`
+- Type: `string` ([Styles](source-workspace-definitions-workspace-properties-styles.md))
 
 - cannot be null
 
@@ -1451,15 +1473,23 @@ ID, must be camel case
 
 #### styles Type
 
-`string`
+`string` ([Styles](source-workspace-definitions-workspace-properties-styles.md))
+
+#### styles Examples
+
+```json
+"http://localhost:9876/workspace.css"
+```
 
 ### version
+
+Version, must be in semantic version format
 
 `version`
 
 - is required
 
-- Type: `string`
+- Type: `string` ([Version](source-workspace-definitions-workspace-properties-version.md))
 
 - cannot be null
 
@@ -1467,4 +1497,14 @@ ID, must be camel case
 
 #### version Type
 
-`string`
+`string` ([Version](source-workspace-definitions-workspace-properties-version.md))
+
+#### version Constraints
+
+**unknown format**: the value of this string must follow the format: `semver`
+
+#### version Examples
+
+```json
+"1.0.0"
+```

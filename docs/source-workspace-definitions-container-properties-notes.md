@@ -4,7 +4,7 @@
 C4MJS#/definitions/SourceContainerDto/properties/notes
 ```
 
-Notes to be used to convey information about the entity
+Notes about the item, this is displayed in the tooltip when hovering the cursor over an item
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                            |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------ |

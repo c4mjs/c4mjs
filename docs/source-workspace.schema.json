@@ -9,30 +9,30 @@
       "description": "Component inside a Systems Container, represents a software component",
       "properties": {
         "cluster": {
-          "description": "Cluster Name, logically groups entities when rendering",
+          "description": "Apply a cluster name to an item, match this with the same cluster name for another item to force them to be placed inside a Graphviz subgraph. This helps to keep items grouped together such as containers in a microservices architecture.",
           "examples": ["legacy", "api"],
           "title": "Cluster",
           "type": "string"
         },
         "deprecated": {
-          "description": "Is the entity deprecated or not",
+          "description": "If the item is deprecated or not, this will append [DEPRECATED] to the end of the item and surround it in a dashed red stroke",
           "examples": ["true", "false"],
           "title": "Deprecated",
           "type": "boolean"
         },
         "deps": {
-          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
+          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.",
           "examples": ["this -> emailSystem : Sends Emails using"],
           "title": "Dependencies",
           "type": "string"
         },
         "desc": {
-          "description": "Description to be used to convey information about the entity",
+          "description": "Items Description, can be free text and will be displayed as the C4 Body within the boxes",
           "title": "Description",
           "type": "string"
         },
         "external": {
-          "description": "Is the entity external or not",
+          "description": "If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.",
           "examples": ["true", "false"],
           "title": "External",
           "type": "boolean"
@@ -45,25 +45,25 @@
           "type": "string"
         },
         "name": {
-          "description": "Workspace name",
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
           "type": "string"
         },
         "notes": {
-          "description": "Notes to be used to convey information about the entity",
+          "description": "Notes about the item, this is displayed in the tooltip when hovering the cursor over an item",
           "title": "Notes",
           "type": "string"
         },
         "tags": {
-          "description": "Tags that can be attached to an entity",
+          "description": "Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present",
           "examples": ["cba", "critical"],
           "items": { "type": "string" },
           "title": "Tags",
           "type": "array"
         },
         "tech": {
-          "description": "What technology does the entity use",
+          "description": "Items Technology, this is displayed in the C4 Diagram Between the Title and Body",
           "examples": ["React App", "Spring MVC Controller"],
           "title": "Tech",
           "type": "string"
@@ -78,7 +78,7 @@
       "description": "Container inside a workspace System, represents a container for code",
       "properties": {
         "cluster": {
-          "description": "Cluster Name, logically groups entities when rendering",
+          "description": "Apply a cluster name to an item, match this with the same cluster name for another item to force them to be placed inside a Graphviz subgraph. This helps to keep items grouped together such as containers in a microservices architecture.",
           "examples": ["legacy", "api"],
           "title": "Cluster",
           "type": "string"
@@ -90,24 +90,24 @@
           "type": "array"
         },
         "deprecated": {
-          "description": "Is the entity deprecated or not",
+          "description": "If the item is deprecated or not, this will append [DEPRECATED] to the end of the item and surround it in a dashed red stroke",
           "examples": ["true", "false"],
           "title": "Deprecated",
           "type": "boolean"
         },
         "deps": {
-          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
+          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.",
           "examples": ["this -> emailSystem : Sends Emails using"],
           "title": "Dependencies",
           "type": "string"
         },
         "desc": {
-          "description": "Description to be used to convey information about the entity",
+          "description": "Items Description, can be free text and will be displayed as the C4 Body within the boxes",
           "title": "Description",
           "type": "string"
         },
         "external": {
-          "description": "Is the entity external or not",
+          "description": "If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.",
           "examples": ["true", "false"],
           "title": "External",
           "type": "boolean"
@@ -120,25 +120,25 @@
           "type": "string"
         },
         "name": {
-          "description": "Workspace name",
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
           "type": "string"
         },
         "notes": {
-          "description": "Notes to be used to convey information about the entity",
+          "description": "Notes about the item, this is displayed in the tooltip when hovering the cursor over an item",
           "title": "Notes",
           "type": "string"
         },
         "tags": {
-          "description": "Tags that can be attached to an entity",
+          "description": "Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present",
           "examples": ["cba", "critical"],
           "items": { "type": "string" },
           "title": "Tags",
           "type": "array"
         },
         "tech": {
-          "description": "What technology does the entity use",
+          "description": "Items Technology, this is displayed in the C4 Diagram Between the Title and Body",
           "examples": ["React App", "Spring MVC Controller"],
           "title": "Tech",
           "type": "string"
@@ -160,7 +160,7 @@
           "type": "string"
         },
         "name": {
-          "description": "Workspace name",
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
           "type": "string"
@@ -178,7 +178,7 @@
           "type": "array"
         },
         "tags": {
-          "description": "Tags that can be attached to an entity",
+          "description": "Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present",
           "examples": ["cba", "critical"],
           "items": { "type": "string" },
           "title": "Tags",
@@ -194,24 +194,24 @@
       "description": "Person inside a Workspace Group, represents an actor in the Group",
       "properties": {
         "deprecated": {
-          "description": "Is the entity deprecated or not",
+          "description": "If the item is deprecated or not, this will append [DEPRECATED] to the end of the item and surround it in a dashed red stroke",
           "examples": ["true", "false"],
           "title": "Deprecated",
           "type": "boolean"
         },
         "deps": {
-          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
+          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.",
           "examples": ["this -> emailSystem : Sends Emails using"],
           "title": "Dependencies",
           "type": "string"
         },
         "desc": {
-          "description": "Description to be used to convey information about the entity",
+          "description": "Items Description, can be free text and will be displayed as the C4 Body within the boxes",
           "title": "Description",
           "type": "string"
         },
         "external": {
-          "description": "Is the entity external or not",
+          "description": "If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.",
           "examples": ["true", "false"],
           "title": "External",
           "type": "boolean"
@@ -224,18 +224,18 @@
           "type": "string"
         },
         "name": {
-          "description": "Workspace name",
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
           "type": "string"
         },
         "notes": {
-          "description": "Notes to be used to convey information about the entity",
+          "description": "Notes about the item, this is displayed in the tooltip when hovering the cursor over an item",
           "title": "Notes",
           "type": "string"
         },
         "tags": {
-          "description": "Tags that can be attached to an entity",
+          "description": "Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present",
           "examples": ["cba", "critical"],
           "items": { "type": "string" },
           "title": "Tags",
@@ -257,24 +257,24 @@
           "type": "array"
         },
         "deprecated": {
-          "description": "Is the entity deprecated or not",
+          "description": "If the item is deprecated or not, this will append [DEPRECATED] to the end of the item and surround it in a dashed red stroke",
           "examples": ["true", "false"],
           "title": "Deprecated",
           "type": "boolean"
         },
         "deps": {
-          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
+          "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current item and gets replaced with its address at buildtime.",
           "examples": ["this -> emailSystem : Sends Emails using"],
           "title": "Dependencies",
           "type": "string"
         },
         "desc": {
-          "description": "Description to be used to convey information about the entity",
+          "description": "Items Description, can be free text and will be displayed as the C4 Body within the boxes",
           "title": "Description",
           "type": "string"
         },
         "external": {
-          "description": "Is the entity external or not",
+          "description": "If the item is external or not, this is used to swap the defaut color out for Greyscale as per the C4 standard.",
           "examples": ["true", "false"],
           "title": "External",
           "type": "boolean"
@@ -287,25 +287,25 @@
           "type": "string"
         },
         "name": {
-          "description": "Workspace name",
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
           "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
           "title": "Name",
           "type": "string"
         },
         "notes": {
-          "description": "Notes to be used to convey information about the entity",
+          "description": "Notes about the item, this is displayed in the tooltip when hovering the cursor over an item",
           "title": "Notes",
           "type": "string"
         },
         "tags": {
-          "description": "Tags that can be attached to an entity",
+          "description": "Tags that can be attached to an item, tags are included in the items class list so combine this with a custom stylesheet to customize the look of items where certain tags are present",
           "examples": ["cba", "critical"],
           "items": { "type": "string" },
           "title": "Tags",
           "type": "array"
         },
         "tech": {
-          "description": "What technology does the entity use",
+          "description": "Items Technology, this is displayed in the C4 Diagram Between the Title and Body",
           "examples": ["React App", "Spring MVC Controller"],
           "title": "Tech",
           "type": "string"
@@ -332,9 +332,25 @@
           "title": "ID",
           "type": "string"
         },
-        "name": { "type": "string" },
-        "styles": { "type": "string" },
-        "version": { "type": "string" }
+        "name": {
+          "description": "Items Name, can be free text and will be used as the C4 Title within the boxes",
+          "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
+          "title": "Name",
+          "type": "string"
+        },
+        "styles": {
+          "description": "URL to a custom stylesheet, mix this with tags (which are applied as class names) to customize the look and appearance of nodes",
+          "examples": ["http://localhost:9876/workspace.css"],
+          "title": "Styles",
+          "type": "string"
+        },
+        "version": {
+          "description": "Version, must be in semantic version format",
+          "examples": ["1.0.0"],
+          "format": "semver",
+          "title": "Version",
+          "type": "string"
+        }
       },
       "required": ["id", "name", "version"],
       "title": "Workspace",
