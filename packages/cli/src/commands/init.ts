@@ -26,6 +26,7 @@ const packageJsonTemplate = Handlebars.compile(`{
 const workspaceYamlFile =
   Handlebars.compile(`# yaml-language-server: $schema=https://c4model.app/cli/Workspace.schema.json
 ---
+id: bigBankPlc
 name: Big Bank PLC
 version: 1.0.0
 groups:
@@ -43,55 +44,18 @@ groups:
         name: Internet Banking System
         desc: Allows customers to view information about their bank accounts and make payments.
         deps: |
-          this -> mainframeBankingSystem : Stores all of the core banking information about customers, accounts, transactions etc
+          this -> mainframeBankingSystem : Gets account information from, and makes payments using
           this -> emailSystem : Sends e-mails using
-
-        containers:
-          - id: webApp
-            name: Web Application
-            desc: Delivers the static content and the Internet Banking single page application.
-            tech: Java and Spring MVC
-            deps: |
-              this <- customer : Visits bigbank.com/ib using : HTTPS
-              this -> singlePageApp : Delivers to the customers web browser
-
-          - id: singlePageApp
-            name: Single-Page Application
-            desc: Provides all of the Internet Banking functionality to the customers via their web browser
-            tech: Javascript and Angular
-            deps: |
-              this <- customer : Views account balances, and makes payments using
-              this -> apiApp : Delivers to the customers web browser
-
-          - id: mobileApp
-            name: Mobile Application
-            desc: Provides a limited subset of the internet banking functionality to customers via their mobile device.
-            tech: Xamarmin
-            deps: |
-              this <- customer : Views account balances, and makes payments using
-              this -> apiApp : Delivers to the customers web browser
-
-          - id: apiApp
-            name: Api Application
-            desc: Provides internet banking functionality via a JSON/HTTPS api.
-            tech: Java and Spring MVC
-            deps: |
-              this <- customer : Views account balances, and makes payments using
-              this -> apiApp : Delivers to the customers web browser
-
-          - id: database
-            name: Database
-            desc: Stores user registration information, hashed authentication credentials, access logs etc.
-            tech: Oracle Database Schema
-
 
       - id: mainframeBankingSystem
         name: Mainframe Banking System
         desc: Stores all of the core banking information about customers, accounts, transactions etc
+        external: true
 
       - id: emailSystem
         name: Email System
         desc: The internal Microsoft Exchange e-mail system.
+        external: true
         deps: |
           this -> customer : Sends email to
 `);

@@ -163,9 +163,5 @@ Tags that can be attached to an item, tags are included in the items class list 
 ### tags Examples
 
 ```json
-"cba"
-```
-
-```json
 "critical"
 ```
