@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.3.3 (2022-09-14)
+
+
+### Bug Fixes
+
+* update language server for cli ([536ab85](https://github.com/c4mjs/c4mjs/commit/536ab853e0e431305ab18500d1d6e49ee65037c4))
+
+
+
+
+
 ## 1.3.2 (2022-09-14)
 
 **Note:** Version bump only for package @c4mjs/cli
