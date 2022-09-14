@@ -52,6 +52,7 @@ See the full Docs and Workspace api at https://c4mjs.github.io/c4mjs/#/
 Workspace defined in YAML/JSON with hosted Schemas for intellisense:
 
 - https://c4model.app/cli/Workspace.schema.json
+- https://c4model.app/cli/Group.schema.json
 - https://c4model.app/cli/Person.schema.json
 - https://c4model.app/cli/System.schema.json
 - https://c4model.app/cli/Container.schema.json

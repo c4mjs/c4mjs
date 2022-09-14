@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @c4mjs/validation
 
-
-
-
-
 ## 1.3.1 (2022-09-14)
 
 ### Bug Fixes

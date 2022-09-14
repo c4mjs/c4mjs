@@ -1,12 +1,8 @@
 # Viewing
 
-With the `workspace.json` workspace bundled, you need to expose it so it can be read by the app.
+You need to serve the `workspace.json` file, so that it can be read by the app.
 
-The App will call out to the address provided to fetch the workspace file.
-
-> TIP: watch out for CORS issues
-
-Useful deployments are places like Github where the raw content url can be used, or anywhere it can be served from.
+The App will call out to the configured address to fetch the workspace file.
 
 For local development we use `http-server` which can serve up the `workspace.json` from the local file system, serve it by
 running
@@ -15,8 +11,26 @@ running
 npx http-server -p 9876 --cors -c-1
 ```
 
-And visiting http://localhost:9876/workspace.json
+or from a templated project run the following
 
-## Rendering
+```shell
+npm run serve
+```
 
-With the `workspace.json` accessible load up https://c4model.app and paste the workspace file into the URL bar and hit load
+And visiting http://localhost:9876/workspace.json to confirm its loading correctly.
+
+If all is setup go ahead and render it by visiting the app.
+
+https://c4model.app/#/?url=http%253A%252F%252Flocalhost%253A9876%252Fworkspace.json
+
+> NOTE: Here we have pre-loaded the url to point to `http://localhost:9876/workspace.json`
+
+## Serving for Sharing
+
+Once local development is complete the workspace.json will need to be placed somewhere it can be accessed by others.
+
+Github is particularly good as you can use the raw content address https://raw.githubusercontent.com/
+
+Alternatively host it on a pages site of choice that intended consumers would have access to.
+
+> TIP: watch out for CORS issues

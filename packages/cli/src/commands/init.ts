@@ -15,7 +15,6 @@ const packageJsonTemplate = Handlebars.compile(`{
   "description": "{{description}}",
   "scripts": {
     "build": "c4mjs build -i workspace.yaml > workspace.json",
-    "build:watch": "npx watch \\"npm run build\\" */ --ignoreDirectoryPattern=/node_modules/",
     "serve": "npx http-server -p 9876 --cors -c-1"
   },
   "dependencies": {
@@ -25,7 +24,7 @@ const packageJsonTemplate = Handlebars.compile(`{
 
 `);
 const workspaceYamlFile =
-  Handlebars.compile(`# yaml-language-server: $schema=https://raw.githubusercontent.com/c4mjs/c4mjs/main/packages/cli/src/source-workspace.schema.json#/definitions/SourceWorkspaceDto
+  Handlebars.compile(`# yaml-language-server: $schema=https://c4model.app/cli/Workspace.schema.json
 ---
 name: Big Bank PLC
 version: 1.0.0

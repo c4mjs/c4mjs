@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package big-bank-plc
 
-
-
-
-
 ## 1.2.1 (2022-09-14)
 
 ### Bug Fixes
