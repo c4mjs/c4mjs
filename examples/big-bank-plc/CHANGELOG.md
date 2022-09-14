@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 1.2.0 (2022-09-14)
 
-
 ### Features
 
-* support container clustering ([c7b86c9](https://github.com/c4mjs/c4mjs/commit/c7b86c9a0f2fa3de1e044533324fa2ef73f1323b))
-
-
-
-
+- support container clustering ([c7b86c9](https://github.com/c4mjs/c4mjs/commit/c7b86c9a0f2fa3de1e044533324fa2ef73f1323b))
 
 ## 1.1.5 (2022-09-14)
 
