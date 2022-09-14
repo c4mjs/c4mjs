@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.2.3 (2022-09-14)
+
+
+### Bug Fixes
+
+* highlight polygons as deprecated ([7f6e3d5](https://github.com/c4mjs/c4mjs/commit/7f6e3d5b8e81fc2440769cf3c00c5aa268995fa6))
+
+
+
+
+
 ## 1.2.2 (2022-09-13)
 
 **Note:** Version bump only for package @c4mjs/cli

@@ -1,6 +1,6 @@
 {
   "name": "@c4mjs/app",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "homepage": "https://c4model.app/",
   "scripts": {
@@ -12,9 +12,9 @@
     "example:build:watch": "npx watch \"npm run example:build\" big-bank-plc"
   },
   "dependencies": {
-    "@c4mjs/cli": "^1.2.2",
-    "@c4mjs/graphviz": "^1.2.2",
-    "@c4mjs/workspace": "^1.2.2",
+    "@c4mjs/cli": "^1.2.3",
+    "@c4mjs/graphviz": "^1.2.3",
+    "@c4mjs/workspace": "^1.2.3",
     "@fluentui/react": "^8.94.1",
     "@fontsource/montserrat-subrayada": "^4.5.10",
     "@fontsource/open-sans": "^4.5.11",
