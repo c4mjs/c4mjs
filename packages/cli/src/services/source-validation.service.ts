@@ -4,6 +4,8 @@ import { SourceWorkspaceDto } from "../dtos/source-workspace.dto";
 
 const validateSourceWorkspace = ajv.compile<SourceWorkspaceDto>(schema);
 
+if (!validateSourceWorkspace) throw new Error("No Validate Function Created");
+
 /**
  * Ancillary validation service to perform validation on a source workspace object
  */

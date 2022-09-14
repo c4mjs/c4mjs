@@ -1,6 +1,4 @@
 {
-  "$id": "C4MJS",
-  "$ref": "C4MJS#/definitions/SourceWorkspaceDto",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "SourceComponentDto": {
@@ -75,7 +73,7 @@
         "components": {
           "description": "Container Components",
           "items": {
-            "$ref": "C4MJS#/definitions/SourceComponentDto"
+            "$ref": "#/definitions/SourceComponentDto"
           },
           "title": "Components",
           "type": "array"
@@ -161,7 +159,7 @@
         "people": {
           "description": "People in the Group",
           "items": {
-            "$ref": "C4MJS#/definitions/SourcePersonDto"
+            "$ref": "#/definitions/SourcePersonDto"
           },
           "title": "People",
           "type": "array"
@@ -169,7 +167,7 @@
         "systems": {
           "description": "Software Systems in the Group",
           "items": {
-            "$ref": "C4MJS#/definitions/SourceSystemDto"
+            "$ref": "#/definitions/SourceSystemDto"
           },
           "title": "Systems",
           "type": "array"
@@ -254,7 +252,7 @@
         "containers": {
           "description": "System containers",
           "items": {
-            "$ref": "C4MJS#/definitions/SourceContainerDto"
+            "$ref": "#/definitions/SourceContainerDto"
           },
           "title": "Containers",
           "type": "array"
@@ -327,7 +325,7 @@
         "groups": {
           "description": "Workspace groups",
           "items": {
-            "$ref": "C4MJS#/definitions/SourceGroupDto"
+            "$ref": "#/definitions/SourceGroupDto"
           },
           "title": "Groups",
           "type": "array"

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "description": "Person inside a Workspace Group, represents an actor in the Group",
+  "properties": {
+    "deprecated": {
+      "description": "Is the entity deprecated or not",
+      "examples": ["true", "false"],
+      "title": "Deprecated",
+      "type": "boolean"
+    },
+    "deps": {
+      "description": "Multiline string representing the entities dependecies, seperate dependecies with a new line. 'this' can be used to reference the current entity",
+      "examples": ["this -> emailSystem : Sends Emails using"],
+      "title": "Dependencies",
+      "type": "string"
+    },
+    "desc": {
+      "description": "Description to be used to convey information about the entity",
+      "title": "Description",
+      "type": "string"
+    },
+    "external": {
+      "description": "Is the entity external or not",
+      "examples": ["true", "false"],
+      "title": "External",
+      "type": "boolean"
+    },
+    "id": {
+      "description": "ID, must be camel case",
+      "examples": ["bigBankPlc", "mainframeBankingSystem", "emailSystem", "webApplication"],
+      "pattern": "^([a-zA-Z0-9])*$",
+      "title": "ID",
+      "type": "string"
+    },
+    "name": {
+      "description": "Workspace name",
+      "examples": ["Big Bank PLC", "Mainframe Banking System", "Email System", "Web Application"],
+      "title": "Name",
+      "type": "string"
+    },
+    "notes": {
+      "description": "Notes to be used to convey information about the entity",
+      "title": "Notes",
+      "type": "string"
+    },
+    "tags": {
+      "description": "Tags that can be attached to an entity",
+      "examples": ["cba", "critical"],
+      "items": { "type": "string" },
+      "title": "Tags",
+      "type": "array"
+    }
+  },
+  "required": ["id", "name"],
+  "title": "Person",
+  "type": "object"
+}

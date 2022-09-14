@@ -14,10 +14,10 @@
     "c4mjs": "./dist/index.js"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' 'SourceWorkspaceDto' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --topRef --id C4MJS  --ignoreErrors",
+    "clean": "rimraf dist coverage",
+    "prebuild": "typescript-json-schema 'src/dtos/*.dto.ts' '*' > 'src/source-workspace.schema.json' --required --noExtraProps --refs --ignoreErrors && node ./scripts/dereference-schema.js",
     "build": "tsc --outDir dist",
-    "postbuild": "rimraf ../../docs/source-workspace* && node scripts/prepare-documentation-schema.js && jsonschema2md -d .schema && rimraf out/README.md && mv out/* ../../docs",
+    "postbuild": "rimraf ../../docs/source-workspace* && node scripts/prepare-documentation-schema.js && jsonschema2md -d .schema && rimraf out/README.md && mv out/* ../../docs && rimraf ./.schema",
     "build:watch": "tsc-watch --outDir dist",
     "test": "jest --passWithNoTests --coverage src"
   },
