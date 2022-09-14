@@ -26,6 +26,7 @@ Reference this group by using
 
 | Property                  | Type      | Required | Nullable       | Defined by                                                                                                                                    |
 | :------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cluster](#cluster)       | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-cluster.md "C4MJS#/definitions/SourceComponentDto/properties/cluster")       |
 | [deprecated](#deprecated) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-deprecated.md "C4MJS#/definitions/SourceComponentDto/properties/deprecated") |
 | [deps](#deps)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-dependencies.md "C4MJS#/definitions/SourceComponentDto/properties/deps")     |
 | [desc](#desc)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-description.md "C4MJS#/definitions/SourceComponentDto/properties/desc")      |
@@ -35,6 +36,34 @@ Reference this group by using
 | [notes](#notes)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-notes.md "C4MJS#/definitions/SourceComponentDto/properties/notes")           |
 | [tags](#tags)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tags.md "C4MJS#/definitions/SourceComponentDto/properties/tags")             |
 | [tech](#tech)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-component-properties-tech.md "C4MJS#/definitions/SourceComponentDto/properties/tech")             |
+
+### cluster
+
+Cluster Name, logically groups entities when rendering
+
+`cluster`
+
+- is optional
+
+- Type: `string` ([Cluster](source-workspace-definitions-component-properties-cluster.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-component-properties-cluster.md "C4MJS#/definitions/SourceComponentDto/properties/cluster")
+
+#### cluster Type
+
+`string` ([Cluster](source-workspace-definitions-component-properties-cluster.md))
+
+#### cluster Examples
+
+```json
+"legacy"
+```
+
+```json
+"api"
+```
 
 ### deprecated
 
@@ -300,6 +329,7 @@ Reference this group by using
 
 | Property                    | Type      | Required | Nullable       | Defined by                                                                                                                                    |
 | :-------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cluster](#cluster-1)       | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-cluster.md "C4MJS#/definitions/SourceContainerDto/properties/cluster")       |
 | [components](#components)   | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-components.md "C4MJS#/definitions/SourceContainerDto/properties/components") |
 | [deprecated](#deprecated-1) | `boolean` | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-deprecated.md "C4MJS#/definitions/SourceContainerDto/properties/deprecated") |
 | [deps](#deps-1)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-dependencies.md "C4MJS#/definitions/SourceContainerDto/properties/deps")     |
@@ -310,6 +340,34 @@ Reference this group by using
 | [notes](#notes-1)           | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-notes.md "C4MJS#/definitions/SourceContainerDto/properties/notes")           |
 | [tags](#tags-1)             | `array`   | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tags.md "C4MJS#/definitions/SourceContainerDto/properties/tags")             |
 | [tech](#tech-1)             | `string`  | Optional | cannot be null | [C4MJS Schema](source-workspace-definitions-container-properties-tech.md "C4MJS#/definitions/SourceContainerDto/properties/tech")             |
+
+### cluster
+
+Cluster Name, logically groups entities when rendering
+
+`cluster`
+
+- is optional
+
+- Type: `string` ([Cluster](source-workspace-definitions-container-properties-cluster.md))
+
+- cannot be null
+
+- defined in: [C4MJS Schema](source-workspace-definitions-container-properties-cluster.md "C4MJS#/definitions/SourceContainerDto/properties/cluster")
+
+#### cluster Type
+
+`string` ([Cluster](source-workspace-definitions-container-properties-cluster.md))
+
+#### cluster Examples
+
+```json
+"legacy"
+```
+
+```json
+"api"
+```
 
 ### components
 

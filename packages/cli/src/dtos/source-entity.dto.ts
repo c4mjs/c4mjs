@@ -1,4 +1,4 @@
-import { Dependecies, Deprecated, Description, External, ID, Name, Notes, Tags, Tech } from "./shared";
+import { Cluster, Dependecies, Deprecated, Description, External, ID, Name, Notes, Tags, Tech } from "./shared";
 
 export interface SourceEntityDto {
   id: ID;
@@ -10,4 +10,5 @@ export interface SourceEntityDto {
   external?: External;
   deprecated?: Deprecated;
   tech?: Tech;
+  cluster?: Cluster;
 }

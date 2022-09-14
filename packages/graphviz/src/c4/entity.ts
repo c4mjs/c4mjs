@@ -15,6 +15,7 @@ export class Entity implements Renderable {
   public readonly tags: string[];
   public readonly external?: boolean;
   public readonly deprecated?: boolean;
+  public readonly cluster?: string;
 
   constructor(private readonly properties: EntityDto) {
     this.id = properties.id;
@@ -27,6 +28,7 @@ export class Entity implements Renderable {
     this.tags = properties.tags || [];
     this.external = properties.external;
     this.deprecated = properties.deprecated;
+    this.cluster = properties.cluster;
   }
 
   get dotAddress() {

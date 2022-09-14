@@ -1,9 +1,10 @@
 import { WorkspaceDto } from "@c4mjs/workspace";
-import _, { filter, groupBy, uniqBy } from "lodash";
+import _, { entries, filter, groupBy, isNil, omitBy, uniqBy } from "lodash";
 import { debug } from "./debug";
 import { Workspace } from "./c4/workspace";
 import { digraph, subgraph } from "./dot";
 import { render } from "./dot/render";
+import { cluster } from "./dot/cluster";
 import { Relationship } from "./c4/relationship";
 
 export class GraphvizC4 {
@@ -115,12 +116,22 @@ export class GraphvizC4 {
       .filter((entity) => systemId === entity.systemId)
       .filter(({ address }) => address !== system.address);
 
+    const myClusteredEntities = groupBy(myEntities, "cluster");
+
     // Get all entities in groups other than mine
     const otherEntities = entities.filter((entity) => systemId !== entity.systemId);
 
     const dot = digraph({
       content: render([
-        subgraph({ ...system, content: render(myEntities) }),
+        subgraph({
+          ...system,
+          content: render([
+            render(myClusteredEntities["undefined"]),
+            ...entries(omitBy({ ...myClusteredEntities, undefined: undefined }, isNil)).map(([clusterId, entities]) =>
+              cluster({ id: clusterId, content: render(entities) })
+            ),
+          ]),
+        }),
         render([otherEntities, associatedRelationships]),
       ]),
     });

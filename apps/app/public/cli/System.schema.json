@@ -9,12 +9,24 @@
         "additionalProperties": false,
         "description": "Container inside a workspace System, represents a container for code",
         "properties": {
+          "cluster": {
+            "description": "Cluster Name, logically groups entities when rendering",
+            "examples": ["legacy", "api"],
+            "title": "Cluster",
+            "type": "string"
+          },
           "components": {
             "description": "Container Components",
             "items": {
               "additionalProperties": false,
               "description": "Component inside a Systems Container, represents a software component",
               "properties": {
+                "cluster": {
+                  "description": "Cluster Name, logically groups entities when rendering",
+                  "examples": ["legacy", "api"],
+                  "title": "Cluster",
+                  "type": "string"
+                },
                 "deprecated": {
                   "description": "Is the entity deprecated or not",
                   "examples": ["true", "false"],

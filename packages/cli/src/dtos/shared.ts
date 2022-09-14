@@ -67,3 +67,10 @@ export type External = boolean;
  * @examples ["true", "false"]
  */
 export type Deprecated = boolean;
+
+/**
+ * @title Cluster
+ * @description Cluster Name, logically groups entities when rendering
+ * @examples ["legacy", "api"]
+ */
+export type Cluster = string;

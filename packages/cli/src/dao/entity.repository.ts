@@ -1,7 +1,7 @@
 import _, { isNil, omitBy } from "lodash";
 import { EntityEntity } from "../entity/entity.entity";
-import { database } from "./database";
 import { debug } from "../debug";
+import { database } from "./database";
 
 export const EntityRepository = {
   findAll: (): Promise<EntityEntity[]> =>
@@ -31,7 +31,7 @@ export const EntityRepository = {
     debug(`Saving New Entity %O`, entity);
     return new Promise((resolve, reject) =>
       database.run(
-        `insert into "entity" (id, address, name, desc, notes, tech, external, deprecated, type, tags) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        `insert into "entity" (id, address, name, desc, notes, tech, external, deprecated, type, tags, cluster) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           entity.id,
           entity.address,
@@ -43,6 +43,7 @@ export const EntityRepository = {
           entity.deprecated,
           entity.type,
           entity.tags,
+          entity.cluster,
         ],
         (error) => {
           if (error) reject(error);

@@ -45,6 +45,7 @@ export const setup = async () => {
     tech     string,
     type     string  not null,
     tags     string,
+    cluster     string,
     external boolean not null default false,
     deprecated boolean not null default false
   );

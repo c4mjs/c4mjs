@@ -8,6 +8,9 @@
         "address": {
           "type": "string"
         },
+        "cluster": {
+          "type": "string"
+        },
         "deprecated": {
           "type": "boolean"
         },

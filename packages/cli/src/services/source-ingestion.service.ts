@@ -80,7 +80,7 @@ const ingestDeps = (deps: string, this_: string, lineage: string[]) => {
 };
 
 const ingestContainer = async (
-  { id, name, desc, notes, external, deprecated, tags, tech, deps }: SourceContainerDto,
+  { id, name, desc, notes, external, deprecated, tags, tech, deps, cluster }: SourceContainerDto,
   lineage: string[]
 ) => {
   await EntityRepository.save({
@@ -94,6 +94,7 @@ const ingestContainer = async (
     deprecated: Boolean(deprecated),
     type: "container",
     tags: tags?.join(","),
+    cluster,
   });
   if (deps) ingestDeps(deps, id, lineage);
 };

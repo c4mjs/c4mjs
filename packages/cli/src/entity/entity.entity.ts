@@ -9,4 +9,5 @@ export type EntityEntity = {
   tags?: string;
   external: boolean;
   deprecated: boolean;
+  cluster?: string;
 };
