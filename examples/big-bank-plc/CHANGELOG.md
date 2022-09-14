@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.5 (2022-09-14)
+
+
+### Bug Fixes
+
+* deref schema for better type hinting ([a3db807](https://github.com/c4mjs/c4mjs/commit/a3db807c9677d9d6ee39c85f8f81df3cd5415588))
+
+
+
+
+
 ## 1.1.4 (2022-09-14)
 
 ### Bug Fixes

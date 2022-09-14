@@ -1,6 +1,6 @@
 {
   "name": "@c4mjs/workspace",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "license": "MIT",
   "description": "C4Model JS Workspace Library",
   "keywords": [
@@ -19,7 +19,7 @@
     "test": "jest --passWithNoTests --coverage src"
   },
   "dependencies": {
-    "@c4mjs/validation": "^1.2.4",
+    "@c4mjs/validation": "^1.2.5",
     "debug": "^4.3.4",
     "lodash": "^4.17.21",
     "typescript-json-schema": "^0.54.0"
