@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import { useNodeWatcher } from "../hooks/use-node-watcher";
 import { isEmpty, noop } from "lodash";
+import { LoadingView } from "../views/loading.view";
 
 const { graphviz } = require("d3-graphviz");
 

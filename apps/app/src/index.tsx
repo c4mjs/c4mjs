@@ -17,8 +17,29 @@ initializeIcons();
 if (config.isDev) localStorage.debug = "c4mjs:*";
 
 const myTheme = createTheme({
-  defaultFontStyle: {
-    fontFamily: "Open Sans",
+  palette: {
+    themePrimary: "#349698",
+    themeLighterAlt: "#f4fbfb",
+    themeLighter: "#d5eeef",
+    themeLight: "#b4e0e0",
+    themeTertiary: "#75c1c2",
+    themeSecondary: "#45a4a5",
+    themeDarkAlt: "#2f888a",
+    themeDark: "#287374",
+    themeDarker: "#1d5556",
+    neutralLighterAlt: "#faf9f8",
+    neutralLighter: "#f3f2f1",
+    neutralLight: "#edebe9",
+    neutralQuaternaryAlt: "#e1dfdd",
+    neutralQuaternary: "#d0d0d0",
+    neutralTertiaryAlt: "#c8c6c4",
+    neutralTertiary: "#a19f9d",
+    neutralSecondary: "#605e5c",
+    neutralPrimaryAlt: "#3b3a39",
+    neutralPrimary: "#323130",
+    neutralDark: "#201f1e",
+    black: "#000000",
+    white: "#ffffff",
   },
 });
 

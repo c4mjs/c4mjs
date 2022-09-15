@@ -1,12 +1,10 @@
 import React from "react";
-import { MessageBar, MessageBarType, Stack, StackItem } from "@fluentui/react";
+import { Image, Stack } from "@fluentui/react";
 
 export const LoadingView: React.FC = () => {
   return (
     <Stack>
-      <StackItem>
-        <MessageBar messageBarType={MessageBarType.info}>Loading...</MessageBar>
-      </StackItem>
+      <Image src={"/navigation.gif"} height={128} width={128} />
     </Stack>
   );
 };

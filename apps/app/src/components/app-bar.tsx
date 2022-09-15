@@ -35,7 +35,7 @@ export const AppBar: React.FC<IAppBarCtr> = ({ onLoadSchema, schemaLoading, url 
     >
       <Stack horizontal tokens={{ childrenGap: spacing.m }} verticalAlign="center">
         <StackItem>
-          <Image src={"/logo128.png"} height={32} width={32} />
+          <Image src={"/navigation.png"} height={32} width={32} />
         </StackItem>
         <StackItem onClick={() => window.open("https://c4mjs.github.io/c4mjs/#/")}>
           <Text
