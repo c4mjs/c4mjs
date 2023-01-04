@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { debug } from "../debug";
+import { fromEvent, Subscription } from "rxjs";
 
 const d = debug.extend("useNodeWatcher");
 
@@ -7,27 +8,29 @@ export const useNodeWatcher = (isRendering: boolean, ids: string[], onClick: (id
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    const subscriptions: Subscription[] = [];
     d("Trying to watch nodes", { ids, isRendering });
     if (document && !isRendering) {
-      d("Watching Nodes %s", ids);
-      ids.forEach((id) => {
-        const e = document.getElementById(id);
-        if (!e) debug("Failed to attach event listener to %s", e);
-        e?.addEventListener("click", () => {
-          d("Click detected on %s", id);
-          onClick(id);
-        });
-        if (e) e.classList.add("zoomable");
-        setReady(true);
-      });
+      d("Subscribing to Node Click Events %s", ids);
 
-      return () => {
-        d("Unwatching Nodes %s", ids);
-        ids.forEach((id) => {
-          const e = document.getElementById(id);
-          if (!e) debug("Failed to remove event listener to %s", e);
-          e?.removeEventListener("click", () => onClick(id));
+      ids
+        .map((id) => ({ id, element: document.getElementById(id) }))
+        .forEach(({ id, element }) => {
+          if (!element) {
+            debug("Failed to find element with id %S", element);
+          } else {
+            element.classList.add("zoomable");
+            subscriptions.push(
+              fromEvent(element, "click").subscribe(() => {
+                onClick(id);
+              })
+            );
+          }
         });
+      setReady(true);
+      return () => {
+        d("Unsubscribing from node events");
+        subscriptions.forEach((it) => it.unsubscribe());
         setReady(false);
       };
     }

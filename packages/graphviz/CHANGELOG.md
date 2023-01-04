@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.3.5 (2022-09-14)
 
-
 ### Bug Fixes
 
-* fix issues with template ([4f2ab25](https://github.com/c4mjs/c4mjs/commit/4f2ab25cd76c0bdc88afb1c1cafcffae4ace28db))
-
-
-
-
+- fix issues with template ([4f2ab25](https://github.com/c4mjs/c4mjs/commit/4f2ab25cd76c0bdc88afb1c1cafcffae4ace28db))
 
 ## 1.3.4 (2022-09-14)
 
